@@ -31,7 +31,7 @@ namespace Assignment1.DataAccess
             },
             new MemberObject
             {
-                ID = 1,
+                ID = 3,
                 Name = "Vu",
                 City = "Ho Chi Minh city",
                 Country = "Vietnam",
@@ -40,7 +40,7 @@ namespace Assignment1.DataAccess
             },
             new MemberObject
             {
-                ID = 1,
+                ID = 4,
                 Name = "Truong",
                 City = "Ho Chi Minh city",
                 Country = "Vietnam",
@@ -49,7 +49,7 @@ namespace Assignment1.DataAccess
             },
             new MemberObject
             {
-                ID = 1,
+                ID = 5,
                 Name = "Tuong",
                 City = "Ho Chi Minh city",
                 Country = "Vietnam",

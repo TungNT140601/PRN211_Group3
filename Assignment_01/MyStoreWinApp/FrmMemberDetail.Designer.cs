@@ -41,7 +41,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtCountry = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbID
@@ -170,11 +170,11 @@
             this.txtCity.Size = new System.Drawing.Size(257, 29);
             this.txtCity.TabIndex = 13;
             // 
-            // comboBox1
+            // txtCountry
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.txtCountry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCountry.FormattingEnabled = true;
+            this.txtCountry.Items.AddRange(new object[] {
             "Afghanistan",
             "Albania",
             "Algeria",
@@ -371,17 +371,17 @@
             "Yemen",
             "Zambia",
             "Zimbabwe"});
-            this.comboBox1.Location = new System.Drawing.Point(497, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(255, 29);
-            this.comboBox1.TabIndex = 14;
+            this.txtCountry.Location = new System.Drawing.Point(497, 34);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(255, 29);
+            this.txtCountry.TabIndex = 14;
             // 
             // FrmMemberDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 349);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
@@ -418,6 +418,6 @@
         private TextBox txtEmail;
         private TextBox txtPassword;
         private TextBox txtCity;
-        private ComboBox comboBox1;
+        private ComboBox txtCountry;
     }
 }
