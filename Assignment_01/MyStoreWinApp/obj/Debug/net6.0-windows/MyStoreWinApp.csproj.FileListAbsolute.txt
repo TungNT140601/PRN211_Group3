@@ -1,0 +1,17 @@
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\bin\Debug\net6.0-windows\MyStoreWinApp.exe
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\bin\Debug\net6.0-windows\MyStoreWinApp.deps.json
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\bin\Debug\net6.0-windows\MyStoreWinApp.runtimeconfig.json
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\bin\Debug\net6.0-windows\MyStoreWinApp.dll
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\bin\Debug\net6.0-windows\MyStoreWinApp.pdb
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.csproj.AssemblyReference.cache
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.FrmMemberDetail.resources
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.csproj.GenerateResource.cache
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.AssemblyInfoInputs.cache
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.AssemblyInfo.cs
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.csproj.CoreCompileInputs.cache
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.dll
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\refint\MyStoreWinApp.dll
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.pdb
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.genruntimeconfig.cache
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\ref\MyStoreWinApp.dll
