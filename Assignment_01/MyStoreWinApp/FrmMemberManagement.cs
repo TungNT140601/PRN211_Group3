@@ -47,7 +47,8 @@ namespace MyStoreWinApp
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            LoadMemberList();
+            //LoadMemberList();
+            LoadList();
         }
 
 
@@ -139,6 +140,34 @@ namespace MyStoreWinApp
                 MessageBox.Show(ex.Message, "Load Member List");
             }
         }
+
+        private void LoadList()
+        {
+            dgvMemberList.ColumnCount = 6;
+            dgvMemberList.Columns[0].Name = "ID";
+            dgvMemberList.Columns[1].Name = "Name";
+            dgvMemberList.Columns[2].Name = "Country";
+            dgvMemberList.Columns[3].Name = "City";
+            dgvMemberList.Columns[4].Name = "Email";
+            dgvMemberList.Columns[5].Name = "Password";
+
+            var members = memberRepository.GetMembers();
+
+            foreach (var member in members)
+            {
+                string[] row = new string[] { member.ID.ToString(),
+                    member.Name,
+                    member.Country,
+                    member.City,
+                    member.Email,
+                    member.Password
+                };
+
+                dgvMemberList.Rows.Add(row);
+            }
+
+        }
+
         private void ClearText()
         {
             txtID.Text = string.Empty;
