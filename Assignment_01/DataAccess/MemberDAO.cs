@@ -59,7 +59,7 @@ namespace Assignment1.DataAccess
         };
         private static MemberDAO instance = null;
         private static readonly object instanceLock = new object();
-        private MemberDAO() { }
+        public MemberDAO() { }
         public static MemberDAO Instance
         {
             get
@@ -78,6 +78,11 @@ namespace Assignment1.DataAccess
         public MemberObject? GetMemberByID(int ID)
         {
             MemberObject? mem = MemberList.SingleOrDefault(member => member.ID == ID);
+            return mem;
+        }
+        public MemberObject? CheckLogin(string email, string password)
+        {
+            MemberObject? mem = MemberList.SingleOrDefault(member => (member.Email == email && member.Password == password));
             return mem;
         }
         public void Add(MemberObject mem)
