@@ -47,8 +47,8 @@ namespace MyStoreWinApp
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            //LoadMemberList();
-            LoadList();
+            LoadMemberList();
+            //LoadList();
         }
 
 
@@ -195,7 +195,45 @@ namespace MyStoreWinApp
 
         private void btnSort_Click(object sender, EventArgs e)
         {
-            dgvMemberList.Sort(dgvMemberList.Columns[1], ListSortDirection.Descending);
+            List<MemberObject> members = (List<MemberObject>)memberRepository.GetMembers();
+            var newList = members.OrderByDescending(x => x.Name).ToList();
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = newList;
+
+                txtID.DataBindings.Clear();
+                txtName.DataBindings.Clear();
+                txtCountry.DataBindings.Clear();
+                txtCity.DataBindings.Clear();
+                txtEmail.DataBindings.Clear();
+                txtPassword.DataBindings.Clear();
+
+                txtID.DataBindings.Add("Text", source, "ID");
+                txtName.DataBindings.Add("Text", source, "Name");
+                txtCountry.DataBindings.Add("Text", source, "Country");
+                txtCity.DataBindings.Add("Text", source, "City");
+                txtEmail.DataBindings.Add("Text", source, "Email");
+                txtPassword.DataBindings.Add("Text", source, "Password");
+
+                dgvMemberList.DataSource = null;
+                dgvMemberList.DataSource = source;
+                if (newList.Count() == 0)
+                {
+                    ClearText();
+                    btnDelete.Enabled = false;
+                    btnNew.Enabled = true;
+                }
+                else
+                {
+                    btnDelete.Enabled = true;
+                    btnNew.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Sort Member List");
+            }
         }
     }
 }
