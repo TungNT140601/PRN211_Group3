@@ -20,6 +20,7 @@ namespace MyStoreWinApp
         }
         public IMemberRepository MemberRepository { get; set; }
         public MemberObject Member { get; set; }
+        public Boolean InsertOrUpdate { get; set; }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -34,7 +35,26 @@ namespace MyStoreWinApp
                     Email = txtEmail.Text,
                     Password = txtPassword.Text
                 };
-                MemberRepository.InsertMember(member);
+                if (InsertOrUpdate == false)
+                {
+                    MemberRepository.InsertMember(member);
+                }
+                else
+                {
+
+                    DialogResult dr = MessageBox.Show("Are you sure you want to update", "Are you sure?", MessageBoxButtons.YesNo); //Gets users input by showing the message box
+
+                    if (dr == DialogResult.Yes) //Creates the yes function
+                    {
+                        MemberRepository.UpdateMember(member); //Exits off the application
+
+                    }
+
+                    else if (dr == DialogResult.No)
+                    {
+
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -42,18 +62,32 @@ namespace MyStoreWinApp
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void btnCancel_Click(object sender, EventArgs e) => Close();
 
         private void txtPassword_Click(object sender, EventArgs e)
         {
-            txtPassword.Text = "";
+            if (InsertOrUpdate == false)
+            {
+                txtPassword.Text = "";
 
-            txtPassword.ForeColor = Color.Black;
+                txtPassword.ForeColor = Color.Black;
 
-            txtPassword.PasswordChar = '●';
+                txtPassword.PasswordChar = '●';
+            }
+        }
+
+        private void FrmMemberDetail_Load(object sender, EventArgs e)
+        {
+            if (InsertOrUpdate == true)
+            {
+                txtCountry.SelectedIndex = txtCountry.FindString(Member.Country);
+                txtID.Text = Member.ID.ToString();
+                txtName.Text = Member.Name;
+                txtEmail.Text = Member.Email;
+                txtPassword.Text = Member.Password;
+                txtCity.Text = Member.City;
+                txtID.ReadOnly = true;
+            }
         }
     }
 }

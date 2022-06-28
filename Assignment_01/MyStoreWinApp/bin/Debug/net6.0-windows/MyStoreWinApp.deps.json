@@ -9,10 +9,19 @@
       "MyStoreWinApp/1.0.0": {
         "dependencies": {
           "BusinessObject": "1.0.0",
-          "DataAccess": "1.0.0"
+          "DataAccess": "1.0.0",
+          "KGySoft.CoreLibraries": "6.0.2"
         },
         "runtime": {
           "MyStoreWinApp.dll": {}
+        }
+      },
+      "KGySoft.CoreLibraries/6.0.2": {
+        "runtime": {
+          "lib/net6.0/KGySoft.CoreLibraries.dll": {
+            "assemblyVersion": "6.0.2.0",
+            "fileVersion": "6.0.2.0"
+          }
         }
       },
       "BusinessObject/1.0.0": {
@@ -35,6 +44,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "KGySoft.CoreLibraries/6.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HnbO4yt0n/4L91lIjCMkXd6sLPZPpNXtIhgPwJsMI7hxWLyt8hyUxwQeTy88l4MpvnCqgjDipQhQx0C6RVbF9A==",
+      "path": "kgysoft.corelibraries/6.0.2",
+      "hashPath": "kgysoft.corelibraries.6.0.2.nupkg.sha512"
     },
     "BusinessObject/1.0.0": {
       "type": "project",

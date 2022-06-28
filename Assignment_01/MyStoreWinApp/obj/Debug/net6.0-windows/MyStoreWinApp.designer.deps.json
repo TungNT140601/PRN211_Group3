@@ -5,7 +5,24 @@
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v6.0": {}
+    ".NETCoreApp,Version=v6.0": {
+      "KGySoft.CoreLibraries/6.0.2": {
+        "runtime": {
+          "lib/net6.0/KGySoft.CoreLibraries.dll": {
+            "assemblyVersion": "6.0.2.0",
+            "fileVersion": "6.0.2.0"
+          }
+        }
+      }
+    }
   },
-  "libraries": {}
+  "libraries": {
+    "KGySoft.CoreLibraries/6.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HnbO4yt0n/4L91lIjCMkXd6sLPZPpNXtIhgPwJsMI7hxWLyt8hyUxwQeTy88l4MpvnCqgjDipQhQx0C6RVbF9A==",
+      "path": "kgysoft.corelibraries/6.0.2",
+      "hashPath": "kgysoft.corelibraries.6.0.2.nupkg.sha512"
+    }
+  }
 }

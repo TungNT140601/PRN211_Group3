@@ -23,4 +23,4 @@ D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\bin\Debug\net6.0-windows\DataAccess.pdb
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.csproj.CopyComplete
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.FrmMemberManagement.resources
-D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.FrmConfirm.resources
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\MyStoreWinApp\bin\Debug\net6.0-windows\KGySoft.CoreLibraries.dll

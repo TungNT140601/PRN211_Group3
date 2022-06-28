@@ -26,22 +26,17 @@ namespace MyStoreWinApp
 
         private void FrmMemberManagement_Load(object sender, EventArgs e)
         {
-
-        }
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            LoadMemberList();
-        }
-        private void dgvMemberList_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            btnDelete.Enabled = false;
+            btnNew.Enabled = false;
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
+        private void dgvMemberList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             FrmMemberDetail frmMemberDetail = new FrmMemberDetail
             {
-                Text = "Add new Member",
+                Text = "Update member",
+                InsertOrUpdate = true,
+                Member = GetMemberObject(),
                 MemberRepository = memberRepository
             };
             if (frmMemberDetail.ShowDialog() == DialogResult.OK)
@@ -50,30 +45,24 @@ namespace MyStoreWinApp
                 source.Position = source.Count - 1;
             }
         }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnLoad_Click(object sender, EventArgs e)
         {
-            try
+            LoadMemberList();
+        }
+
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            FrmMemberDetail frmMemberDetail = new FrmMemberDetail
             {
-                var member = new MemberObject
-                {
-                    ID = int.Parse(txtID.Text),
-                    Name = txtName.Text,
-                    City = txtCity.Text,
-                    Country = txtCountry.Text,
-                    Email = txtEmail.Text,
-                    Password = txtPassword.Text
-                };
-                FrmConfirm frmConfirm = new FrmConfirm();
-                if (frmConfirm.ShowDialog(this) == DialogResult.OK)
-                {
-                    memberRepository.UpdateMember(member);
-                }
-                //LoadMemberList();
-            }
-            catch (Exception ex)
+                Text = "Add new Member",
+                InsertOrUpdate = false,
+                MemberRepository = memberRepository
+            };
+            if (frmMemberDetail.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(ex.Message, "Update fail");
+                LoadMemberList();
+                source.Position = source.Count - 1;
             }
         }
 
@@ -137,10 +126,12 @@ namespace MyStoreWinApp
                 {
                     ClearText();
                     btnDelete.Enabled = false;
+                    btnNew.Enabled = true;
                 }
                 else
                 {
                     btnDelete.Enabled = true;
+                    btnNew.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -159,5 +150,23 @@ namespace MyStoreWinApp
 
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var member = GetMemberObject();
+                memberRepository.DeleteMember(member.ID);
+                LoadMemberList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete member");
+            }
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            dgvMemberList.Sort(dgvMemberList.Columns[1], ListSortDirection.Descending);
+        }
     }
 }

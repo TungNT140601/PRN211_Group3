@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lZ+z0wrFCgYhzQ4ERC3WwwACU0ARXs0XyApVZk8hxPlUwTJS8AGU2/wsXGCojfPLpj3lxBSaYkqVIqsD5PvhYA==",
+  "dgSpecHash": "Ut0PtyT5gUsOhLBGHed+0x8hSEdk2ApN+69DXYYhjdbptLfO/5LcTJbx3VDLF3UyBHRBNtCBoGW3p9V5kV0W1g==",
   "success": true,
   "projectFilePath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_01\\MyStoreWinApp\\MyStoreWinApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\tungn\\.nuget\\packages\\kgysoft.corelibraries\\6.0.2\\kgysoft.corelibraries.6.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
