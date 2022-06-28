@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "BusinessObject/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BusinessObject.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessObject.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BusinessObject/1.0.0": {
+      "type": "project",
+      "path": "../BusinessObject/BusinessObject.csproj",
+      "msbuildProject": "../BusinessObject/BusinessObject.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "BusinessObject >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\tungn\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

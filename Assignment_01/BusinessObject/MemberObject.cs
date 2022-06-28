@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessObject
+namespace Assignment1.BusinessObject
 {
-    public class Member
+    public class MemberObject
     {
         public int ID { get; set; }
         public string Name { get; set; }
