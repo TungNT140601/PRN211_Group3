@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.Configuration;
 using Assignment1.BusinessObject;
 using Assignment1.DataAccess;
 using Assignment1.Repository;
@@ -16,6 +17,18 @@ namespace MyStoreWinApp
 {
     public partial class FrmMemberManagement : Form
     {
+        FrmLogin frmLogin = new FrmLogin();
+        private static string Email = FrmLogin.Email;
+        private static string GetEmailAdmin()
+        {
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", true, true)
+                .Build();
+
+
+            return config["Email:email"];
+        }
         public FrmMemberManagement()
         {
             InitializeComponent();
@@ -26,8 +39,27 @@ namespace MyStoreWinApp
 
         private void FrmMemberManagement_Load(object sender, EventArgs e)
         {
-            btnDelete.Enabled = false;
-            btnNew.Enabled = false;
+            if (Email == GetEmailAdmin())
+            {
+                btnDelete.Enabled = false;
+                btnNew.Enabled = false;
+                txtContryFilter.ReadOnly = false;
+                txtFilterCity.ReadOnly = false;
+                txtSearch.ReadOnly = false;
+                btnSearch.Enabled = true;
+                btnSort.Enabled = true;
+            }
+            else
+            {
+                btnDelete.Enabled = false;
+                btnNew.Enabled = false;
+                btnSearch.Enabled = false;
+                btnSort.Enabled = false;
+                txtContryFilter.ReadOnly = true;
+                txtFilterCity.ReadOnly = true;
+                txtSearch.ReadOnly = true;
+                LoadMemberList();
+            }
         }
 
         private void dgvMemberList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -48,7 +80,6 @@ namespace MyStoreWinApp
         private void btnLoad_Click(object sender, EventArgs e)
         {
             LoadMemberList();
-            //LoadList();
         }
 
 
@@ -146,71 +177,85 @@ namespace MyStoreWinApp
 
         private void LoadMemberList()
         {
-            var member = memberRepository.GetMembers();
-            try
-            {
-                source = new BindingSource();
-                source.DataSource = member;
-
-                txtID.DataBindings.Clear();
-                txtName.DataBindings.Clear();
-                txtCountry.DataBindings.Clear();
-                txtCity.DataBindings.Clear();
-                txtEmail.DataBindings.Clear();
-                txtPassword.DataBindings.Clear();
-
-                txtID.DataBindings.Add("Text", source, "ID");
-                txtName.DataBindings.Add("Text", source, "Name");
-                txtCountry.DataBindings.Add("Text", source, "Country");
-                txtCity.DataBindings.Add("Text", source, "City");
-                txtEmail.DataBindings.Add("Text", source, "Email");
-                txtPassword.DataBindings.Add("Text", source, "Password");
-
-                dgvMemberList.DataSource = null;
-                dgvMemberList.DataSource = source;
-                if (member.Count() == 0)
-                {
-                    ClearText();
-                    btnDelete.Enabled = false;
-                    btnNew.Enabled = true;
-                }
-                else
-                {
-                    btnDelete.Enabled = true;
-                    btnNew.Enabled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Load Member List");
-            }
-        }
-
-        private void LoadList()
-        {
-            dgvMemberList.ColumnCount = 6;
-            dgvMemberList.Columns[0].Name = "ID";
-            dgvMemberList.Columns[1].Name = "Name";
-            dgvMemberList.Columns[2].Name = "Country";
-            dgvMemberList.Columns[3].Name = "City";
-            dgvMemberList.Columns[4].Name = "Email";
-            dgvMemberList.Columns[5].Name = "Password";
-
             var members = memberRepository.GetMembers();
-
-            foreach (var member in members)
+            if (Email == GetEmailAdmin())
             {
-                string[] row = new string[] { member.ID.ToString(),
-                    member.Name,
-                    member.Country,
-                    member.City,
-                    member.Email,
-                    member.Password
-                };
+                try
+                {
+                    source = new BindingSource();
+                    source.DataSource = members;
 
-                dgvMemberList.Rows.Add(row);
+                    txtID.DataBindings.Clear();
+                    txtName.DataBindings.Clear();
+                    txtCountry.DataBindings.Clear();
+                    txtCity.DataBindings.Clear();
+                    txtEmail.DataBindings.Clear();
+                    txtPassword.DataBindings.Clear();
+
+                    txtID.DataBindings.Add("Text", source, "ID");
+                    txtName.DataBindings.Add("Text", source, "Name");
+                    txtCountry.DataBindings.Add("Text", source, "Country");
+                    txtCity.DataBindings.Add("Text", source, "City");
+                    txtEmail.DataBindings.Add("Text", source, "Email");
+                    txtPassword.DataBindings.Add("Text", source, "Password");
+
+                    dgvMemberList.DataSource = null;
+                    dgvMemberList.DataSource = source;
+                    if (members.Count() == 0)
+                    {
+                        ClearText();
+                        btnDelete.Enabled = false;
+                        btnNew.Enabled = true;
+                    }
+                    else
+                    {
+                        btnDelete.Enabled = true;
+                        btnNew.Enabled = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Load Member List");
+                }
             }
+            else
+            {
 
+                try
+                {
+                    foreach (var member in members)
+                    {
+                        if(member.Email == Email)
+                        {
+                            source = new BindingSource();
+                            source.DataSource = member;
+
+                            txtID.DataBindings.Clear();
+                            txtName.DataBindings.Clear();
+                            txtCountry.DataBindings.Clear();
+                            txtCity.DataBindings.Clear();
+                            txtEmail.DataBindings.Clear();
+                            txtPassword.DataBindings.Clear();
+
+                            txtID.DataBindings.Add("Text", source, "ID");
+                            txtName.DataBindings.Add("Text", source, "Name");
+                            txtCountry.DataBindings.Add("Text", source, "Country");
+                            txtCity.DataBindings.Add("Text", source, "City");
+                            txtEmail.DataBindings.Add("Text", source, "Email");
+                            txtPassword.DataBindings.Add("Text", source, "Password");
+
+                            dgvMemberList.DataSource = null;
+                            dgvMemberList.DataSource = source;
+                            btnDelete.Enabled = false;
+                            btnNew.Enabled = false;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Load Member List");
+                }
+            }
         }
 
         private void ClearText()
