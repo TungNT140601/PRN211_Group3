@@ -74,7 +74,52 @@ namespace MyStoreWinApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            List<MemberObject> members = (List<MemberObject>)memberRepository.GetMembers();
+            List<MemberObject>? pro = new List<MemberObject>();
+            foreach (var member in members)
+            {
+                if (member.Name.ToLower().Contains(txtSearch.Text.ToLower()))
+                {
+                    pro.Add(member);
+                }
+            }
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = pro;
 
+                txtID.DataBindings.Clear();
+                txtName.DataBindings.Clear();
+                txtCountry.DataBindings.Clear();
+                txtCity.DataBindings.Clear();
+                txtEmail.DataBindings.Clear();
+                txtPassword.DataBindings.Clear();
+
+                txtID.DataBindings.Add("Text", source, "ID");
+                txtName.DataBindings.Add("Text", source, "Name");
+                txtCountry.DataBindings.Add("Text", source, "Country");
+                txtCity.DataBindings.Add("Text", source, "City");
+                txtEmail.DataBindings.Add("Text", source, "Email");
+                txtPassword.DataBindings.Add("Text", source, "Password");
+
+                dgvMemberList.DataSource = null;
+                dgvMemberList.DataSource = source;
+                if (pro.Count() == 0)
+                {
+                    ClearText();
+                    btnDelete.Enabled = false;
+                    btnNew.Enabled = true;
+                }
+                else
+                {
+                    btnDelete.Enabled = true;
+                    btnNew.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Search Member List");
+            }
         }
 
         private MemberObject GetMemberObject()
@@ -233,6 +278,106 @@ namespace MyStoreWinApp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Sort Member List");
+            }
+        }
+
+        private void txtContryFilter_TextChanged(object sender, EventArgs e)
+        {
+            List<MemberObject> members = (List<MemberObject>)memberRepository.GetMembers();
+            List<MemberObject> result = new List<MemberObject>();
+            foreach (var member in members)
+            {
+                if (member.Country.ToLower().Contains(txtContryFilter.Text.ToLower()))
+                {
+                    result.Add(member);
+                }
+            }
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = result;
+
+                txtID.DataBindings.Clear();
+                txtName.DataBindings.Clear();
+                txtCountry.DataBindings.Clear();
+                txtCity.DataBindings.Clear();
+                txtEmail.DataBindings.Clear();
+                txtPassword.DataBindings.Clear();
+
+                txtID.DataBindings.Add("Text", source, "ID");
+                txtName.DataBindings.Add("Text", source, "Name");
+                txtCountry.DataBindings.Add("Text", source, "Country");
+                txtCity.DataBindings.Add("Text", source, "City");
+                txtEmail.DataBindings.Add("Text", source, "Email");
+                txtPassword.DataBindings.Add("Text", source, "Password");
+
+                dgvMemberList.DataSource = null;
+                dgvMemberList.DataSource = source;
+                if (result.Count() == 0)
+                {
+                    ClearText();
+                    btnDelete.Enabled = false;
+                    btnNew.Enabled = true;
+                }
+                else
+                {
+                    btnDelete.Enabled = true;
+                    btnNew.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Filter Country");
+            }
+        }
+
+        private void txtFilterCity_TextChanged(object sender, EventArgs e)
+        {
+            List<MemberObject> members = (List<MemberObject>)memberRepository.GetMembers();
+            List<MemberObject> result = new List<MemberObject>();
+            foreach (var member in members)
+            {
+                if (member.City.ToLower().Contains(txtFilterCity.Text.ToLower()))
+                {
+                    result.Add(member);
+                }
+            }
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = result;
+
+                txtID.DataBindings.Clear();
+                txtName.DataBindings.Clear();
+                txtCountry.DataBindings.Clear();
+                txtCity.DataBindings.Clear();
+                txtEmail.DataBindings.Clear();
+                txtPassword.DataBindings.Clear();
+
+                txtID.DataBindings.Add("Text", source, "ID");
+                txtName.DataBindings.Add("Text", source, "Name");
+                txtCountry.DataBindings.Add("Text", source, "Country");
+                txtCity.DataBindings.Add("Text", source, "City");
+                txtEmail.DataBindings.Add("Text", source, "Email");
+                txtPassword.DataBindings.Add("Text", source, "Password");
+
+                dgvMemberList.DataSource = null;
+                dgvMemberList.DataSource = source;
+                if (result.Count() == 0)
+                {
+                    ClearText();
+                    btnDelete.Enabled = false;
+                    btnNew.Enabled = true;
+                }
+                else
+                {
+                    btnDelete.Enabled = true;
+                    btnNew.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Filter City");
             }
         }
     }
