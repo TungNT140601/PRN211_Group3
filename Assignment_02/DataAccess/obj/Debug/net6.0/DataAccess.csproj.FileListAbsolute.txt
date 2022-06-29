@@ -1,0 +1,12 @@
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\bin\Debug\net6.0\DataAccess.dll
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\DataAccess.dll
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
