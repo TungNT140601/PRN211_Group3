@@ -48,6 +48,10 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtCountry = new System.Windows.Forms.TextBox();
             this.btnSort = new System.Windows.Forms.Button();
+            this.txtContryFilter = new System.Windows.Forms.TextBox();
+            this.lbFilterCountry = new System.Windows.Forms.Label();
+            this.lbFilterCity = new System.Windows.Forms.Label();
+            this.txtFilterCity = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemberList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,12 +154,12 @@
             // dgvMemberList
             // 
             this.dgvMemberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMemberList.Location = new System.Drawing.Point(392, 12);
+            this.dgvMemberList.Location = new System.Drawing.Point(392, 49);
             this.dgvMemberList.Name = "dgvMemberList";
             this.dgvMemberList.ReadOnly = true;
             this.dgvMemberList.RowTemplate.Height = 25;
             this.dgvMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMemberList.Size = new System.Drawing.Size(724, 529);
+            this.dgvMemberList.Size = new System.Drawing.Size(724, 492);
             this.dgvMemberList.TabIndex = 12;
             this.dgvMemberList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMemberList_CellDoubleClick);
             // 
@@ -251,11 +255,53 @@
             this.btnSort.UseVisualStyleBackColor = true;
             this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
+            // txtContryFilter
+            // 
+            this.txtContryFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtContryFilter.Location = new System.Drawing.Point(526, 13);
+            this.txtContryFilter.Name = "txtContryFilter";
+            this.txtContryFilter.Size = new System.Drawing.Size(194, 29);
+            this.txtContryFilter.TabIndex = 23;
+            this.txtContryFilter.TextChanged += new System.EventHandler(this.txtContryFilter_TextChanged);
+            // 
+            // lbFilterCountry
+            // 
+            this.lbFilterCountry.AutoSize = true;
+            this.lbFilterCountry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbFilterCountry.Location = new System.Drawing.Point(400, 15);
+            this.lbFilterCountry.Name = "lbFilterCountry";
+            this.lbFilterCountry.Size = new System.Drawing.Size(120, 21);
+            this.lbFilterCountry.TabIndex = 24;
+            this.lbFilterCountry.Text = "Filter:    Country";
+            // 
+            // lbFilterCity
+            // 
+            this.lbFilterCity.AutoSize = true;
+            this.lbFilterCity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbFilterCity.Location = new System.Drawing.Point(810, 16);
+            this.lbFilterCity.Name = "lbFilterCity";
+            this.lbFilterCity.Size = new System.Drawing.Size(47, 21);
+            this.lbFilterCity.TabIndex = 25;
+            this.lbFilterCity.Text = "- City";
+            // 
+            // txtFilterCity
+            // 
+            this.txtFilterCity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFilterCity.Location = new System.Drawing.Point(873, 13);
+            this.txtFilterCity.Name = "txtFilterCity";
+            this.txtFilterCity.Size = new System.Drawing.Size(194, 29);
+            this.txtFilterCity.TabIndex = 26;
+            this.txtFilterCity.TextChanged += new System.EventHandler(this.txtFilterCity_TextChanged);
+            // 
             // FrmMemberManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1130, 553);
+            this.Controls.Add(this.txtFilterCity);
+            this.Controls.Add(this.lbFilterCity);
+            this.Controls.Add(this.lbFilterCountry);
+            this.Controls.Add(this.txtContryFilter);
             this.Controls.Add(this.btnSort);
             this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.btnSearch);
@@ -308,5 +354,9 @@
         private Button btnSearch;
         private TextBox txtCountry;
         private Button btnSort;
+        private TextBox txtContryFilter;
+        private Label lbFilterCountry;
+        private Label lbFilterCity;
+        private TextBox txtFilterCity;
     }
 }

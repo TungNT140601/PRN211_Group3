@@ -40,7 +40,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbEmail.Location = new System.Drawing.Point(50, 47);
+            this.lbEmail.Location = new System.Drawing.Point(12, 9);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(48, 21);
             this.lbEmail.TabIndex = 0;
@@ -50,37 +50,36 @@
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbPassword.Location = new System.Drawing.Point(50, 103);
+            this.lbPassword.Location = new System.Drawing.Point(12, 56);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(69, 21);
+            this.lbPassword.Size = new System.Drawing.Size(76, 21);
             this.lbPassword.TabIndex = 1;
-            this.lbPassword.Text = "Pasword";
+            this.lbPassword.Text = "Password";
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(181, 47);
+            this.txtEmail.Location = new System.Drawing.Point(119, 6);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(221, 29);
+            this.txtEmail.Size = new System.Drawing.Size(199, 29);
             this.txtEmail.TabIndex = 2;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.Location = new System.Drawing.Point(181, 103);
+            this.txtPassword.Location = new System.Drawing.Point(119, 53);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(221, 29);
+            this.txtPassword.Size = new System.Drawing.Size(199, 29);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // btnLogin
             // 
             this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLogin.Location = new System.Drawing.Point(50, 168);
+            this.btnLogin.Location = new System.Drawing.Point(12, 106);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(92, 38);
+            this.btnLogin.Size = new System.Drawing.Size(102, 47);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -89,9 +88,9 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReset.Location = new System.Drawing.Point(310, 168);
+            this.btnReset.Location = new System.Drawing.Point(216, 106);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(92, 38);
+            this.btnReset.Size = new System.Drawing.Size(102, 47);
             this.btnReset.TabIndex = 5;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -101,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 248);
+            this.ClientSize = new System.Drawing.Size(334, 178);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -109,6 +108,7 @@
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbEmail);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
             this.ResumeLayout(false);
             this.PerformLayout();
