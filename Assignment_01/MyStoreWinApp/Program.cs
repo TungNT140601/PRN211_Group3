@@ -12,7 +12,7 @@ namespace MyStoreWinApp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new FrmMemberManagement());
+            Application.Run(new FrmLogin());
         }
     }
 }

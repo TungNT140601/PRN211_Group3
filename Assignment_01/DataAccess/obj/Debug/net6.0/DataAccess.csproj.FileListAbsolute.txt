@@ -1,4 +1,3 @@
-D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\DataAccess\bin\Debug\net6.0\appsettings.json
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\DataAccess\bin\Debug\net6.0\DataAccess.dll
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_01\DataAccess\bin\Debug\net6.0\DataAccess.pdb
