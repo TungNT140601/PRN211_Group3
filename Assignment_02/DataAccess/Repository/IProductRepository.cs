@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using BusinessObject;
 namespace DataAccess.Repository
 {
-    internal class IProductRepository
+    public interface IProductRepository
     {
+        IEnumerable<ProductObject> GetProducts();
+        ProductObject GetProductByID(int proID);
+        void InsertPro(ProductObject pro);
+        void UpdatePro(ProductObject pro);
+        void DeletePro(int proID);
     }
 }
