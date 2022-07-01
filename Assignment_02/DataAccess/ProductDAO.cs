@@ -156,7 +156,7 @@ namespace DataAccess
         public IEnumerable<ProductObject> GetProductList()
         {
             IDataReader dataReader = null;
-            string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM ";
+            string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product";
             var pro = new List<ProductObject>();
             try
             {
@@ -190,7 +190,7 @@ namespace DataAccess
         {
             ProductObject pro = null;
             IDataReader dataReader = null;
-            string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM  WHERE ProductId = @ProductId";
+            string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE ProductId = @ProductId";
             try
             {
                 var param = CreateParameter("@ProductId", 4, proID, DbType.Int32);
@@ -227,7 +227,7 @@ namespace DataAccess
                 ProductObject product = GetProductByID(pro.ProductId);
                 if (product.ProductId == null)
                 {
-                    string SQLInsert = "INSERT  values(@ProductId, @CatagoryId, @ProductName, @Weight, @UnitPrice, @UnitslnStock)";
+                    string SQLInsert = "INSERT Product values(@ProductId, @CatagoryId, @ProductName, @Weight, @UnitPrice, @UnitslnStock)";
                     var parameters = new List<SqlParameter>();
                     parameters.Add(CreateParameter("@ProductId", 4, pro.ProductId, DbType.Int32));
                     parameters.Add(CreateParameter("@CatagoryId", 4, pro.CategoryId, DbType.Int32));
@@ -259,7 +259,7 @@ namespace DataAccess
                 ProductObject p = GetProductByID(pro.ProductId);
                 if (p != null)
                 {
-                    string SQLUpdate = "UPDATE  set ProductName = @ProductName,Weight = @Weight,UnitPrice = @UnitPrice, UnitslnStock = @UnitslnStock WHERE ProductId = @ProductId AND CatagoryId = @CatagoryId";
+                    string SQLUpdate = "UPDATE Product set ProductName = @ProductName,Weight = @Weight,UnitPrice = @UnitPrice, UnitslnStock = @UnitslnStock WHERE ProductId = @ProductId AND CatagoryId = @CatagoryId";
                     var parameters = new List<SqlParameter>();
                     parameters.Add(CreateParameter("@ProductId", 4, pro.ProductId, DbType.Int32));
                     parameters.Add(CreateParameter("@CatagoryId", 4, pro.CategoryId, DbType.Int32));
@@ -291,7 +291,7 @@ namespace DataAccess
                 ProductObject pro = GetProductByID(proID);
                 if (pro != null)
                 {
-                    string SQLDelete = "DELETE  WHERE ProductId = @ProductId";
+                    string SQLDelete = "DELETE Product WHERE ProductId = @ProductId";
                     var param = CreateParameter("@ProductId", 4, proID, DbType.Int32);
                     Delete(SQLDelete, CommandType.Text, param);
                 }
