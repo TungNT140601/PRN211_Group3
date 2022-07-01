@@ -32,10 +32,10 @@ namespace Assignment1.DataAccess
             new MemberObject
             {
                 ID = 3,
-                Name = "Vu",
-                City = "Ho Chi Minh city",
+                Name = "CongVu",
+                City = "Ba Riacity",
                 Country = "Vietnam",
-                Email = "vu@email.com",
+                Email = "nguyenvu@email.com",
                 Password = "12345"
             },
             new MemberObject
