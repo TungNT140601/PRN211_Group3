@@ -23,11 +23,6 @@ namespace DataAccess
                 }
             }
         }
-        public MemberDAO()
-        {
-            var connectionString = GetConnectionString();
-            m = new MemberDAO(connectionString);
-        }
         public MemberDAO m { get; set; } = null;
         public SqlConnection connection = null;
         public string GetConnectionString()
@@ -41,9 +36,6 @@ namespace DataAccess
             return connectionString;
         }
         public void CloseConnection() => m.CloseConnection(connection);
-
-        private string ConnectionString { get; set; }
-        public MemberDAO(string connectionString) => ConnectionString = connectionString;
         public void CloseConnection(SqlConnection connection) => connection.Close();
         public SqlParameter CreateParameter(string name, int size, object value, DbType dbType, ParameterDirection direction = ParameterDirection.Input)
         {
@@ -56,12 +48,13 @@ namespace DataAccess
                 Value = value,
             };
         }
-        public IDataReader GetDataReader(string commandText, CommandType commandType, out SqlConnection connection, params SqlParameter[] parameters)
+        public IDataReader GetDataReader(string commandText, CommandType commandType,
+            out SqlConnection connection, params SqlParameter[] parameters)
         {
             IDataReader reader = null;
             try
             {
-                connection = new SqlConnection(ConnectionString);
+                connection = new SqlConnection(GetConnectionString());
                 connection.Open();
                 var command = new SqlCommand(commandText, connection);
                 command.CommandType = commandType;
@@ -84,7 +77,7 @@ namespace DataAccess
         {
             try
             {
-                using var connection = new SqlConnection(ConnectionString);
+                using var connection = new SqlConnection(GetConnectionString());
                 connection.Open();
                 using var command = new SqlCommand(commandText, connection);
                 command.CommandType = commandType;
@@ -106,7 +99,7 @@ namespace DataAccess
         {
             try
             {
-                using var connection = new SqlConnection(ConnectionString);
+                using var connection = new SqlConnection(GetConnectionString());
                 connection.Open();
                 using var command = new SqlCommand(commandText, connection);
                 command.CommandType = commandType;
@@ -128,7 +121,7 @@ namespace DataAccess
         {
             try
             {
-                using var connection = new SqlConnection(ConnectionString);
+                using var connection = new SqlConnection(GetConnectionString());
                 connection.Open();
                 using var command = new SqlCommand(commandText, connection);
                 command.CommandType = commandType;
@@ -245,7 +238,7 @@ namespace DataAccess
             IDataReader dataReader = null;
             try
             {
-                if(Check(email) == true)
+                if (Check(email) == true)
                 {
                     string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
                     var mail = CreateParameter("@Email", 50, email, DbType.String);
@@ -264,8 +257,9 @@ namespace DataAccess
                             Password = dataReader.GetString(5)
                         };
                     }
-                }   
-            }catch (Exception ex)
+                }
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
