@@ -29,7 +29,6 @@ namespace DataAccess
                 }
             }
         }
-<<<<<<< HEAD
         public MemberDAO m { get; set; } = null;
         public SqlConnection connection = null;
         public string GetConnectionString()
@@ -146,8 +145,6 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
-=======
->>>>>>> 994d2024d79a6dc9e9e2a848b4955e1f4118b3c2
 
         public IEnumerable<MemberObject> GetMemberList()
         {

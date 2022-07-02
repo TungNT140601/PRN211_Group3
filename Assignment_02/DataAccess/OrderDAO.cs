@@ -288,7 +288,6 @@ namespace DataAccess
             }
         }
 
-<<<<<<< HEAD
         //public void Update(MemberObject mem)
         //{
         //    try
@@ -345,7 +344,6 @@ namespace DataAccess
         //            CloseConnection();
         //        }
         //    }
-=======
         public void Update(OrderObject order)
         {
             try
@@ -402,13 +400,12 @@ namespace DataAccess
                 CloseConnection();
             }
         }
-        
+
         public IEnumerable<OrderObject> SortBySale()
         {
             var orders = new List<OrderObject>();
             return orders;
         }
 
->>>>>>> 994d2024d79a6dc9e9e2a848b4955e1f4118b3c2
     }
 }
