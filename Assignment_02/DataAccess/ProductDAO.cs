@@ -42,7 +42,7 @@ namespace DataAccess
                                         .SetBasePath(Directory.GetCurrentDirectory())
                                         .AddJsonFile("appsetting.json", true, true)
                                         .Build();
-            connectionString = config["ConnectionString:MyStockDB"];
+            connectionString = config["ConnectionString:FStoreDB"];
             return connectionString;
         }
         public void CloseConnection() => p.CloseConnection(connection);
@@ -156,7 +156,7 @@ namespace DataAccess
         public IEnumerable<ProductObject> GetProductList()
         {
             IDataReader dataReader = null;
-            string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM ";
+            string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product";
             var pro = new List<ProductObject>();
             try
             {
@@ -190,10 +190,44 @@ namespace DataAccess
         {
             ProductObject pro = null;
             IDataReader dataReader = null;
-            string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM  WHERE ProductId = @ProductId";
+            string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE ProductId = @ProductId";
             try
             {
                 var param = CreateParameter("@ProductId", 4, proID, DbType.Int32);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, param);
+                if (dataReader.Read())
+                {
+                    pro = new ProductObject
+                    {
+                        ProductId = dataReader.GetInt32(0),
+                        CategoryId = dataReader.GetInt32(1),
+                        ProductName = dataReader.GetString(2),
+                        Weight = dataReader.GetString(3),
+                        UnitPrice = dataReader.GetString(4),
+                        UnitslnStock = dataReader.GetInt32(5)
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                dataReader.Close();
+                CloseConnection();
+            }
+            return pro;
+        }
+
+        public ProductObject GetProductByStock(int stock)
+        {
+            ProductObject pro = null;
+            IDataReader dataReader = null;
+            string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE UnitslnStock = @UnitslnStock";
+            try
+            {
+                var param = CreateParameter("@UnitslnStock", 4, stock, DbType.Int32);
                 dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, param);
                 if (dataReader.Read())
                 {
@@ -227,7 +261,7 @@ namespace DataAccess
                 ProductObject product = GetProductByID(pro.ProductId);
                 if (product.ProductId == null)
                 {
-                    string SQLInsert = "INSERT  values(@ProductId, @CatagoryId, @ProductName, @Weight, @UnitPrice, @UnitslnStock)";
+                    string SQLInsert = "INSERT Product values(@ProductId, @CatagoryId, @ProductName, @Weight, @UnitPrice, @UnitslnStock)";
                     var parameters = new List<SqlParameter>();
                     parameters.Add(CreateParameter("@ProductId", 4, pro.ProductId, DbType.Int32));
                     parameters.Add(CreateParameter("@CatagoryId", 4, pro.CategoryId, DbType.Int32));
@@ -259,7 +293,7 @@ namespace DataAccess
                 ProductObject p = GetProductByID(pro.ProductId);
                 if (p != null)
                 {
-                    string SQLUpdate = "UPDATE  set ProductName = @ProductName,Weight = @Weight,UnitPrice = @UnitPrice, UnitslnStock = @UnitslnStock WHERE ProductId = @ProductId AND CatagoryId = @CatagoryId";
+                    string SQLUpdate = "UPDATE Product set ProductName = @ProductName,Weight = @Weight,UnitPrice = @UnitPrice, UnitslnStock = @UnitslnStock WHERE ProductId = @ProductId AND CatagoryId = @CatagoryId";
                     var parameters = new List<SqlParameter>();
                     parameters.Add(CreateParameter("@ProductId", 4, pro.ProductId, DbType.Int32));
                     parameters.Add(CreateParameter("@CatagoryId", 4, pro.CategoryId, DbType.Int32));
@@ -291,7 +325,7 @@ namespace DataAccess
                 ProductObject pro = GetProductByID(proID);
                 if (pro != null)
                 {
-                    string SQLDelete = "DELETE  WHERE ProductId = @ProductId";
+                    string SQLDelete = "DELETE Product WHERE ProductId = @ProductId";
                     var param = CreateParameter("@ProductId", 4, proID, DbType.Int32);
                     Delete(SQLDelete, CommandType.Text, param);
                 }
@@ -308,6 +342,76 @@ namespace DataAccess
             {
                 CloseConnection();
             }
+        }
+        public IEnumerable<ProductObject> SearchProductByIdAndName(int proID, int stock)
+        {
+            IDataReader dataReader = null;            
+            var pro = new List<ProductObject>();
+            try
+            {
+                string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE ProductId = @ProductId AND ProductName = @ProductName";
+                var id = CreateParameter("@ProductId", 4, proID, DbType.Int32);
+                var name = CreateParameter("@ProductName", 50, proName, DbType.String);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, id);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, name);
+                while (dataReader.Read())
+                {
+                    pro.Add(new ProductObject
+                    {
+                        ProductId = dataReader.GetInt32(0),
+                        CategoryId = dataReader.GetInt32(1),
+                        ProductName = dataReader.GetString(2),
+                        Weight = dataReader.GetString(3),
+                        UnitPrice = dataReader.GetString(4),
+                        UnitslnStock = dataReader.GetInt32(5)
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                dataReader.Close();
+                CloseConnection();
+            }
+            return pro;
+        }
+        public IEnumerable<ProductObject> SearchProductByUPriceAndUStock(int price, String stock)
+        {
+            IDataReader dataReader = null;
+            var pro = new List<ProductObject>();
+            try
+            {
+                string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE UnitPrice = @UnitPrice AND UnitslnStock = @UnitslnStock";
+                var uPrice = CreateParameter("@ProductId", 4, price, DbType.Int32);
+                var uStock = CreateParameter("@ProductName", 50, stock, DbType.String);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, uPrice);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, uStock);
+                while (dataReader.Read())
+                {
+                    pro.Add(new ProductObject
+                    {
+                        ProductId = dataReader.GetInt32(0),
+                        CategoryId = dataReader.GetInt32(1),
+                        ProductName = dataReader.GetString(2),
+                        Weight = dataReader.GetString(3),
+                        UnitPrice = dataReader.GetString(4),
+                        UnitslnStock = dataReader.GetInt32(5)
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                dataReader.Close();
+                CloseConnection();
+            }
+            return pro;
         }
     }
 }

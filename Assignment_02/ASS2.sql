@@ -10,7 +10,7 @@ create table Member(
 	Password nvarchar(30) not null
 )
 create table tbl_Order(
-	OrderId int PRIMARY KEY not null,
+	OrderId int IDENTITY(1,1) PRIMARY KEY not null,
 	MemberId int not null FOREIGN KEY REFERENCES Member(MemberId),
 	OrderDate datetime not null,
 	RequiredDate datetime null,
