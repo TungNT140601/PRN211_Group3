@@ -86,7 +86,6 @@ namespace MyStoreWinApp
             {
                 MessageBox.Show(ex.Message, "Login Fail");
             }
-
         }
 
         private void btnReset_Click(object sender, EventArgs e)
