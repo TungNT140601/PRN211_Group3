@@ -2770,11 +2770,19 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
+<<<<<<< HEAD
             "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
               "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
             },
             "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj": {
               "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj"
+=======
+            "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
+            },
+            "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj"
+>>>>>>> main
             }
           }
         }
@@ -2829,7 +2837,11 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Problem reading the cache file D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\SalesWinApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problem reading the cache file C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\SalesWinApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> main
     }
   ]
 }

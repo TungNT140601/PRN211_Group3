@@ -275,7 +275,7 @@ namespace DataAccess
                 }
                 else
                 {
-                    throw new Exception("This Member is already exits.");
+                    throw new Exception("This order is already exits.");
                 }
             }
             catch (Exception ex)
@@ -288,26 +288,26 @@ namespace DataAccess
             }
         }
 
-        public void Update(MemberObject mem)
+        public void Update(OrderObject order)
         {
             try
             {
-                MemberObject member = GetMemberByID(mem.MemberId);
-                if (member != null)
+                OrderObject o = GetOrderById(order.OrderId);
+                if (o != null)
                 {
-                    string SQLUpdate = "UPDATE Member set Email = @Email,Companyname = @Companyname,City = @City, Country = @Country, Password = @Password WHERE MemberId = @MemberId";
+                    string SQLUpdate = "UPDATE tbl_Order set OrderId = @OrderId,MemberId = @MemberId,OrderDate = @OrderDate, RequiredDate = @RequiredDate, ShippedDate = @ShippedDate,Freight= @Freight WHERE MemberId = @MemberId";
                     var parameters = new List<SqlParameter>();
-                    parameters.Add(CreateParameter("@MemberId", 4, mem.MemberId, DbType.Int32));
-                    parameters.Add(CreateParameter("@Email", 4, mem.Email, DbType.String));
-                    parameters.Add(CreateParameter("@Companyname", 50, mem.CompanyName, DbType.String));
-                    parameters.Add(CreateParameter("@City", 50, mem.City, DbType.String));
-                    parameters.Add(CreateParameter("@Country", 50, mem.Country, DbType.String));
-                    parameters.Add(CreateParameter("@Password", 4, mem.Password, DbType.String));
+                    parameters.Add(CreateParameter("@OrderId", 4, o.OrderId, DbType.Int32));
+                    parameters.Add(CreateParameter("@MemberId", 4, o.MemberId, DbType.Int32));
+                    parameters.Add(CreateParameter("@OrderDate", 50, o.OrderDate, DbType.DateTime));
+                    parameters.Add(CreateParameter("@RequiredDate", 50, o.RequiredDate, DbType.DateTime));
+                    parameters.Add(CreateParameter("@ShippedDate", 50, o.ShippedDate, DbType.DateTime));
+                    parameters.Add(CreateParameter("@Freight", 4, o.Freight, DbType.Decimal));
                     Insert(SQLUpdate, CommandType.Text, parameters.ToArray());
                 }
                 else
                 {
-                    throw new Exception("Member does not already exits.");
+                    throw new Exception("Order does not exits.");
                 }
             }
             catch (Exception ex)
@@ -319,6 +319,7 @@ namespace DataAccess
                 CloseConnection();
             }
         }
+<<<<<<< HEAD
 
         private MemberObject GetMemberByID(int memberId)
         {
@@ -326,19 +327,22 @@ namespace DataAccess
         }
 
         public void Remove(int memID)
+=======
+        public void Remove(int orderId)
+>>>>>>> main
         {
             try
             {
-                MemberObject member = GetMemberByID(memID);
+                OrderObject member = GetOrderById(orderId);
                 if (member != null)
                 {
-                    string SQLDelete = "DELETE Member WHERE MemberId = @MemberId";
-                    var param = CreateParameter("@MemberId", 4, memID, DbType.Int32);
+                    string SQLDelete = "DELETE tbl_Order WHERE OrderID = @OrderId";
+                    var param = CreateParameter("@OrderId", 4, orderId, DbType.Int32);
                     Delete(SQLDelete, CommandType.Text, param);
                 }
                 else
                 {
-                    throw new Exception("Member does not already exits.");
+                    throw new Exception("Order does not already exits.");
                 }
             }
             catch (Exception ex)
@@ -350,5 +354,12 @@ namespace DataAccess
                 CloseConnection();
             }
         }
+        
+        public IEnumerable<OrderObject> SortBySale()
+        {
+            var orders = new List<OrderObject>();
+            return orders;
+        }
+
     }
 }
