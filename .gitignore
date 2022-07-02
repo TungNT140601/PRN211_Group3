@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 .vs
 bin
-obj
+=======
+.vs/
+bin/
+>>>>>>> main
