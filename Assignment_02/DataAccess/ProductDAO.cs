@@ -220,6 +220,40 @@ namespace DataAccess
             return pro;
         }
 
+        public ProductObject GetProductByStock(int stock)
+        {
+            ProductObject pro = null;
+            IDataReader dataReader = null;
+            string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE UnitslnStock = @UnitslnStock";
+            try
+            {
+                var param = CreateParameter("@UnitslnStock", 4, stock, DbType.Int32);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, param);
+                if (dataReader.Read())
+                {
+                    pro = new ProductObject
+                    {
+                        ProductId = dataReader.GetInt32(0),
+                        CategoryId = dataReader.GetInt32(1),
+                        ProductName = dataReader.GetString(2),
+                        Weight = dataReader.GetString(3),
+                        UnitPrice = dataReader.GetString(4),
+                        UnitslnStock = dataReader.GetInt32(5)
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                dataReader.Close();
+                CloseConnection();
+            }
+            return pro;
+        }
+
         public void AddNew(ProductObject pro)
         {
             try
@@ -309,7 +343,7 @@ namespace DataAccess
                 CloseConnection();
             }
         }
-        public IEnumerable<ProductObject> SearchProductByIdAndName(int proID, String proName)
+        public IEnumerable<ProductObject> SearchProductByIdAndName(int proID, int stock)
         {
             IDataReader dataReader = null;            
             var pro = new List<ProductObject>();
