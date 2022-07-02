@@ -10,7 +10,7 @@ create table Member(
 	Password nvarchar(30) not null
 )
 create table tbl_Order(
-	OrderId int IDENTITY(1,1) PRIMARY KEY not null,
+	OrderId int IDENTITY(101,1) PRIMARY KEY not null,
 	MemberId int not null FOREIGN KEY REFERENCES Member(MemberId),
 	OrderDate datetime not null,
 	RequiredDate datetime null,
@@ -18,7 +18,7 @@ create table tbl_Order(
 	Freight money null
 )
 create table Product(
-	ProductId int PRIMARY KEY,
+	ProductId int IDENTITY(10001,1) PRIMARY KEY,
 	CategoryId int not null,
 	ProductName nvarchar(40) not null,
 	Weight nvarchar(20) not null,
