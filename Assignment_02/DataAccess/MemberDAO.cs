@@ -3,12 +3,18 @@ using System.Data;
 using Microsoft.Extensions.Configuration;
 using BusinessObject;
 using System;
+using System.Data;
+using Microsoft.Data.SqlClient;
 namespace DataAccess
 {
-    public class MemberDAO
+    public class MemberDAO : BaseDAL
     {
         private static MemberDAO instance = null;
         private static readonly object instanceLock = new object();
+        private MemberDAO()
+        {
+
+        }
         public static MemberDAO Instance
         {
             get
@@ -23,6 +29,7 @@ namespace DataAccess
                 }
             }
         }
+<<<<<<< HEAD
         public MemberDAO m { get; set; } = null;
         public SqlConnection connection = null;
         public string GetConnectionString()
@@ -139,6 +146,8 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+=======
+>>>>>>> 994d2024d79a6dc9e9e2a848b4955e1f4118b3c2
 
         public IEnumerable<MemberObject> GetMemberList()
         {
@@ -147,7 +156,7 @@ namespace DataAccess
             var mem = new List<MemberObject>();
             try
             {
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection);
                 while (dataReader.Read())
                 {
                     mem.Add(new MemberObject
@@ -180,8 +189,8 @@ namespace DataAccess
             string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE MemberId = @MemberId";
             try
             {
-                var param = CreateParameter("@MemberId", 4, memID, DbType.Int32);
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, param);
+                var param = dataProvider.CreateParameter("@MemberId", 4, memID, DbType.Int32);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, param);
                 if (dataReader.Read())
                 {
                     mem = new MemberObject
@@ -214,8 +223,8 @@ namespace DataAccess
             try
             {
                 string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email";
-                var mail = CreateParameter("@Email", 50, email, DbType.String);
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, mail);
+                var mail = dataProvider.CreateParameter("@Email", 50, email, DbType.String);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, mail);
                 if (dataReader.Read())
                 {
                     check = true;
@@ -241,10 +250,10 @@ namespace DataAccess
                 if (Check(email) == true)
                 {
                     string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
-                    var mail = CreateParameter("@Email", 50, email, DbType.String);
-                    var pass = CreateParameter("@Password", 50, password, DbType.String);
-                    dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, mail); ;
-                    dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, pass);
+                    var mail = dataProvider.CreateParameter("@Email", 50, email, DbType.String);
+                    var pass = dataProvider.CreateParameter("@Password", 50, password, DbType.String);
+                    dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, mail); ;
+                    dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, pass);
                     if (dataReader.Read())
                     {
                         mem = new MemberObject
@@ -280,13 +289,13 @@ namespace DataAccess
                 {
                     string SQLInsert = "INSERT Member values(@MemberId, @Email, @Companyname, @City, @Country, @Password)";
                     var parameters = new List<SqlParameter>();
-                    parameters.Add(CreateParameter("@MemberId", 4, mem.MemberId, DbType.Int32));
-                    parameters.Add(CreateParameter("@Email", 4, mem.Email, DbType.String));
-                    parameters.Add(CreateParameter("@Companyname", 50, mem.CompanyName, DbType.String));
-                    parameters.Add(CreateParameter("@City", 50, mem.City, DbType.String));
-                    parameters.Add(CreateParameter("@Country", 50, mem.Country, DbType.String));
-                    parameters.Add(CreateParameter("@Password", 4, mem.Password, DbType.String));
-                    Insert(SQLInsert, CommandType.Text, parameters.ToArray());
+                    parameters.Add(dataProvider.CreateParameter("@MemberId", 4, mem.MemberId, DbType.Int32));
+                    parameters.Add(dataProvider.CreateParameter("@Email", 4, mem.Email, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Companyname", 50, mem.CompanyName, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@City", 50, mem.City, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Country", 50, mem.Country, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Password", 4, mem.Password, DbType.String));
+                    dataProvider.Insert(SQLInsert, CommandType.Text, parameters.ToArray());
                 }
                 else
                 {
@@ -312,13 +321,13 @@ namespace DataAccess
                 {
                     string SQLUpdate = "UPDATE Member set Email = @Email,Companyname = @Companyname,City = @City, Country = @Country, Password = @Password WHERE MemberId = @MemberId";
                     var parameters = new List<SqlParameter>();
-                    parameters.Add(CreateParameter("@MemberId", 4, mem.MemberId, DbType.Int32));
-                    parameters.Add(CreateParameter("@Email", 4, mem.Email, DbType.String));
-                    parameters.Add(CreateParameter("@Companyname", 50, mem.CompanyName, DbType.String));
-                    parameters.Add(CreateParameter("@City", 50, mem.City, DbType.String));
-                    parameters.Add(CreateParameter("@Country", 50, mem.Country, DbType.String));
-                    parameters.Add(CreateParameter("@Password", 4, mem.Password, DbType.String));
-                    Insert(SQLUpdate, CommandType.Text, parameters.ToArray());
+                    parameters.Add(dataProvider.CreateParameter("@MemberId", 4, mem.MemberId, DbType.Int32));
+                    parameters.Add(dataProvider.CreateParameter("@Email", 4, mem.Email, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Companyname", 50, mem.CompanyName, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@City", 50, mem.City, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Country", 50, mem.Country, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Password", 4, mem.Password, DbType.String));
+                    dataProvider.Insert(SQLUpdate, CommandType.Text, parameters.ToArray());
                 }
                 else
                 {
@@ -342,8 +351,8 @@ namespace DataAccess
                 if (member != null)
                 {
                     string SQLDelete = "DELETE Member WHERE MemberId = @MemberId";
-                    var param = CreateParameter("@MemberId", 4, memID, DbType.Int32);
-                    Delete(SQLDelete, CommandType.Text, param);
+                    var param = dataProvider.CreateParameter("@MemberId", 4, memID, DbType.Int32);
+                    dataProvider.Delete(SQLDelete, CommandType.Text, param);
                 }
                 else
                 {

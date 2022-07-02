@@ -275,7 +275,7 @@ namespace DataAccess
                 }
                 else
                 {
-                    throw new Exception("This Member is already exits.");
+                    throw new Exception("This order is already exits.");
                 }
             }
             catch (Exception ex)
@@ -288,6 +288,7 @@ namespace DataAccess
             }
         }
 
+<<<<<<< HEAD
         //public void Update(MemberObject mem)
         //{
         //    try
@@ -344,5 +345,70 @@ namespace DataAccess
         //            CloseConnection();
         //        }
         //    }
+=======
+        public void Update(OrderObject order)
+        {
+            try
+            {
+                OrderObject o = GetOrderById(order.OrderId);
+                if (o != null)
+                {
+                    string SQLUpdate = "UPDATE tbl_Order set OrderId = @OrderId,MemberId = @MemberId,OrderDate = @OrderDate, RequiredDate = @RequiredDate, ShippedDate = @ShippedDate,Freight= @Freight WHERE MemberId = @MemberId";
+                    var parameters = new List<SqlParameter>();
+                    parameters.Add(CreateParameter("@OrderId", 4, o.OrderId, DbType.Int32));
+                    parameters.Add(CreateParameter("@MemberId", 4, o.MemberId, DbType.Int32));
+                    parameters.Add(CreateParameter("@OrderDate", 50, o.OrderDate, DbType.DateTime));
+                    parameters.Add(CreateParameter("@RequiredDate", 50, o.RequiredDate, DbType.DateTime));
+                    parameters.Add(CreateParameter("@ShippedDate", 50, o.ShippedDate, DbType.DateTime));
+                    parameters.Add(CreateParameter("@Freight", 4, o.Freight, DbType.Decimal));
+                    Insert(SQLUpdate, CommandType.Text, parameters.ToArray());
+                }
+                else
+                {
+                    throw new Exception("Order does not exits.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+        public void Remove(int orderId)
+        {
+            try
+            {
+                OrderObject member = GetOrderById(orderId);
+                if (member != null)
+                {
+                    string SQLDelete = "DELETE tbl_Order WHERE OrderID = @OrderId";
+                    var param = CreateParameter("@OrderId", 4, orderId, DbType.Int32);
+                    Delete(SQLDelete, CommandType.Text, param);
+                }
+                else
+                {
+                    throw new Exception("Order does not already exits.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+        
+        public IEnumerable<OrderObject> SortBySale()
+        {
+            var orders = new List<OrderObject>();
+            return orders;
+        }
+
+>>>>>>> 994d2024d79a6dc9e9e2a848b4955e1f4118b3c2
     }
 }
