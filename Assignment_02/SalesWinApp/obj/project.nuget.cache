@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "LhW2vrQBOfYSpoGHtTezMtN5QWtQflkDygAlEvFk5Djr0Wkiy3ptCgThC3ObxQZjL1yWFsanZqzwnT2qzBz9SA==",
-=======
-  "dgSpecHash": "N1itC9HvAz6q+fLvreshAQPhvpJkdFRUYCvbM7+XVAuqvAlWALTw0BLc/e5zUW3RulUtwZojYasRNSISrq4pBA==",
->>>>>>> main
+  "dgSpecHash": "Nv4YBTjVXgDI9jr7z1ayGyOlcL5fpWvWp5gDULzJiHytm+2x2n8Umjte+26WaarW0cjZeWkGtXZld9Ge4ADWgQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\SalesWinApp\\SalesWinApp.csproj",
   "expectedPackageFiles": [
@@ -62,5 +58,12 @@
     "C:\\Users\\Asus\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\SalesWinApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
