@@ -319,6 +319,12 @@ namespace DataAccess
                 CloseConnection();
             }
         }
+
+        private MemberObject GetMemberByID(int memberId)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Remove(int memID)
         {
             try
