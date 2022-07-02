@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "LhW2vrQBOfYSpoGHtTezMtN5QWtQflkDygAlEvFk5Djr0Wkiy3ptCgThC3ObxQZjL1yWFsanZqzwnT2qzBz9SA==",
+=======
+  "dgSpecHash": "N1itC9HvAz6q+fLvreshAQPhvpJkdFRUYCvbM7+XVAuqvAlWALTw0BLc/e5zUW3RulUtwZojYasRNSISrq4pBA==",
+>>>>>>> main
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\SalesWinApp\\SalesWinApp.csproj",
   "expectedPackageFiles": [

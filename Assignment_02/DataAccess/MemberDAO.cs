@@ -214,7 +214,7 @@ namespace DataAccess
             return mem;
         }
 
-        public MemberObject CheckLogin(String email, String password)
+        public MemberObject CheckLogin(string email, string password)
         {
             MemberObject mem = null;
             IDataReader dataReader = null;
