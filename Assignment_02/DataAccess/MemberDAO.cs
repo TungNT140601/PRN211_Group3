@@ -214,30 +214,57 @@ namespace DataAccess
             return mem;
         }
 
+        public bool Check(string email)
+        {
+            bool check = false;
+            IDataReader dataReader = null;
+            try
+            {
+                string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email";
+                var mail = CreateParameter("@Email", 50, email, DbType.String);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, mail);
+                if (dataReader.Read())
+                {
+                    check = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("This email does not exits");
+            }
+            finally
+            {
+                dataReader.Close();
+                CloseConnection();
+            }
+            return check;
+        }
         public MemberObject CheckLogin(string email, string password)
         {
             MemberObject mem = null;
             IDataReader dataReader = null;
             try
             {
-                
-                string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
-                var mail = CreateParameter("@Email", 4, email, DbType.String);
-                var pass = CreateParameter("@Password", 4, password, DbType.String);
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, mail); ;
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, pass);
-                if (dataReader.Read())
+                if(Check(email) == true)
                 {
-                    mem = new MemberObject
+                    string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
+                    var mail = CreateParameter("@Email", 50, email, DbType.String);
+                    var pass = CreateParameter("@Password", 50, password, DbType.String);
+                    dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, mail); ;
+                    dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, pass);
+                    if (dataReader.Read())
                     {
-                        MemberId = dataReader.GetInt32(0),
-                        Email = dataReader.GetString(1),
-                        CompanyName = dataReader.GetString(2),
-                        City = dataReader.GetString(3),
-                        Country = dataReader.GetString(4),
-                        Password = dataReader.GetString(5)
-                    };
-                }
+                        mem = new MemberObject
+                        {
+                            MemberId = dataReader.GetInt32(0),
+                            Email = dataReader.GetString(1),
+                            CompanyName = dataReader.GetString(2),
+                            City = dataReader.GetString(3),
+                            Country = dataReader.GetString(4),
+                            Password = dataReader.GetString(5)
+                        };
+                    }
+                }   
             }catch (Exception ex)
             {
                 throw new Exception(ex.Message);
