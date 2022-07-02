@@ -13,5 +13,7 @@ namespace DataAccess.Repository
         void InsertPro(ProductObject pro);
         void UpdatePro(ProductObject pro);
         void DeletePro(int proID);
+        IEnumerable<ProductObject> SearchProByIdAndName(int proID, String proName);
+        IEnumerable<ProductObject> SearchProByUPriceAndUStock(int price, String stock);
     }
 }
