@@ -309,5 +309,75 @@ namespace DataAccess
                 CloseConnection();
             }
         }
+        public IEnumerable<ProductObject> SearchProductByIdAndName(int proID, String proName)
+        {
+            IDataReader dataReader = null;            
+            var pro = new List<ProductObject>();
+            try
+            {
+                string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE ProductId = @ProductId AND ProductName = @ProductName";
+                var id = CreateParameter("@ProductId", 4, proID, DbType.Int32);
+                var name = CreateParameter("@ProductName", 50, proName, DbType.String);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, id);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, name);
+                while (dataReader.Read())
+                {
+                    pro.Add(new ProductObject
+                    {
+                        ProductId = dataReader.GetInt32(0),
+                        CategoryId = dataReader.GetInt32(1),
+                        ProductName = dataReader.GetString(2),
+                        Weight = dataReader.GetString(3),
+                        UnitPrice = dataReader.GetString(4),
+                        UnitslnStock = dataReader.GetInt32(5)
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                dataReader.Close();
+                CloseConnection();
+            }
+            return pro;
+        }
+        public IEnumerable<ProductObject> SearchProductByUPriceAndUStock(int price, String stock)
+        {
+            IDataReader dataReader = null;
+            var pro = new List<ProductObject>();
+            try
+            {
+                string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE UnitPrice = @UnitPrice AND UnitslnStock = @UnitslnStock";
+                var uPrice = CreateParameter("@ProductId", 4, price, DbType.Int32);
+                var uStock = CreateParameter("@ProductName", 50, stock, DbType.String);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, uPrice);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, uStock);
+                while (dataReader.Read())
+                {
+                    pro.Add(new ProductObject
+                    {
+                        ProductId = dataReader.GetInt32(0),
+                        CategoryId = dataReader.GetInt32(1),
+                        ProductName = dataReader.GetString(2),
+                        Weight = dataReader.GetString(3),
+                        UnitPrice = dataReader.GetString(4),
+                        UnitslnStock = dataReader.GetInt32(5)
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                dataReader.Close();
+                CloseConnection();
+            }
+            return pro;
+        }
     }
 }

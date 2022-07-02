@@ -214,17 +214,18 @@ namespace DataAccess
             return mem;
         }
 
-        public MemberObject CheckLogin(int memID, String password)
+        public MemberObject CheckLogin(String email, String password)
         {
             MemberObject mem = null;
             IDataReader dataReader = null;
             try
             {
                 
-                string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE MemberId = @MemberId AND Password = @Password";
-                var id = CreateParameter("@MemberId", 4, memID, DbType.Int32);
+                string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
+                var mail = CreateParameter("@Email", 4, email, DbType.String);
                 var pass = CreateParameter("@Password", 4, password, DbType.String);
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, id, pass);
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, mail); ;
+                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, pass);
                 if (dataReader.Read())
                 {
                     mem = new MemberObject
