@@ -10,8 +10,8 @@ namespace DataAccess.Repository
         OrderObject GetOrderByID(int orderID);
         void InsertOrder(OrderObject order);
         void UpdateOrder(OrderObject order);
-        void DeleteMem(int orderID);
-        IEnumerable<OrderObject> SearchByDay(int memID, String pass);
+        void DeleteOrder(int orderID);
+        IEnumerable<OrderObject> SearchByDay(DateTime min, DateTime max);
         IEnumerable<OrderObject> SortBySales();
     }
 
