@@ -118,7 +118,11 @@ namespace SalesWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                var order = GetOrderObject();
+               
+            }
         }
     }
 }
