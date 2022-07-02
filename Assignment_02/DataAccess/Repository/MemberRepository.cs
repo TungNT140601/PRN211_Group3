@@ -14,6 +14,6 @@ namespace DataAccess.Repository
         public void InsertMem(MemberObject mem) => MemberDAO.Instance.AddNew(mem);
         public void DeleteMem(int memID) => MemberDAO.Instance.Remove(memID);
         public void UpdateMem(MemberObject mem) => MemberDAO.Instance.Update(mem);
-        public MemberObject CheckLogin(int memID, String pass) => MemberDAO.Instance.CheckLogin(memID, pass);
+        public MemberObject CheckLogin(string email, string pass) => MemberDAO.Instance.CheckLogin(email, pass);
     }
 }

@@ -13,6 +13,6 @@ namespace DataAccess.Repository
         void InsertMem(MemberObject mem);
         void UpdateMem(MemberObject mem);
         void DeleteMem(int memID);
-        MemberObject CheckLogin(int memID, String pass);
+        MemberObject CheckLogin(string email, string pass);
     }
 }
