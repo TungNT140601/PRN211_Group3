@@ -16,5 +16,25 @@ namespace DataAccess.Repository
 
         public IEnumerable<OrderObject> SearchByDay(DateTime min, DateTime max) => OrderDAO.Instance.SearchByDay(min, max);
         public IEnumerable<OrderObject> SortBySale() => OrderDAO.Instance.SortBySale();
+
+        public OrderObject GetOrderByID(int orderID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteMem(int orderID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<OrderObject> SearchByDay(int memID, string pass)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<OrderObject> SortBySales()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
