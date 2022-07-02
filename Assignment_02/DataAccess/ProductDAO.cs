@@ -42,7 +42,7 @@ namespace DataAccess
                                         .SetBasePath(Directory.GetCurrentDirectory())
                                         .AddJsonFile("appsetting.json", true, true)
                                         .Build();
-            connectionString = config["ConnectionString:FStore"];
+            connectionString = config["ConnectionString:FStoreDB"];
             return connectionString;
         }
         public void CloseConnection() => p.CloseConnection(connection);
