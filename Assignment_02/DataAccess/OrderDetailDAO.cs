@@ -151,6 +151,8 @@ namespace DataAccess
 
         public IEnumerable<OrderDetailObject> getOrderDetailList()
         {
+            OrderDAO orderDAO = new OrderDAO();
+            ProductDAO productDAO = new ProductDAO();
             IDataReader dataReader = null;
             string SQLSelect = "SELECT * FROM OrderDetail";
             var orderdetails = new List<OrderDetailObject>();
@@ -161,8 +163,8 @@ namespace DataAccess
                 {
                     orderdetails.Add(new OrderDetailObject
                     {
-                        OrderID = dataReader.GetInt32(0),
-                        ProductID = dataReader.GetInt32(1),
+                        OrderID = orderDAO.GetOrderById(dataReader.GetInt32(0)),
+                        ProductID = productDAO.GetProductByID(dataReader.GetInt32(1)),
                         UnitPrice = dataReader.GetDecimal(2),
                         Quantity = dataReader.GetInt32(3),
                         Discount = dataReader.GetFloat(4),
@@ -183,6 +185,8 @@ namespace DataAccess
 
         public OrderDetailObject GetOrderDetailByOrderId(int orderId)
         {
+            OrderDAO orderDAO = new OrderDAO();
+            ProductDAO productDAO = new ProductDAO();
             OrderDetailObject orderdetail = null;
             IDataReader dataReader = null;
             string SQLSelect = "SELECT * FROM OrderDetail WHERE OrderId LIKE N'OrderId'";
@@ -194,8 +198,8 @@ namespace DataAccess
                 {
                     orderdetail = new OrderDetailObject
                     {
-                        OrderID = dataReader.GetInt32(0),
-                        ProductID = dataReader.GetInt32(1),
+                        OrderID = orderDAO.GetOrderById(dataReader.GetInt32(0)),
+                        ProductID = productDAO.GetProductByID(dataReader.GetInt32(1)),
                         UnitPrice = dataReader.GetDecimal(2),
                         Quantity = dataReader.GetInt32(3),
                         Discount = dataReader.GetFloat(4),
@@ -217,9 +221,11 @@ namespace DataAccess
 
         public void AddNew(OrderDetailObject orderdetail)
         {
+            OrderDAO orderDAO = new OrderDAO();
+            ProductDAO productDAO = new ProductDAO();
             try
             {
-                OrderDetailObject o = GetOrderDetailByOrderId(orderdetail.OrderID);
+                OrderDetailObject o = GetOrderDetailByOrderId(orderdetail.OrderID.OrderId);
                 if (o == null)
                 {
                     string SQLInsert = "INSERT tbl_Order values(@OrderId, @ProductId, @UnitPrice, @Quantity, @Discount)";
@@ -250,7 +256,7 @@ namespace DataAccess
         {
             try
             {
-                OrderDetailObject o = GetOrderDetailByOrderId(orderdetail.OrderID);
+                OrderDetailObject o = GetOrderDetailByOrderId(orderdetail.OrderID.OrderId);
                 if (o != null)
                 {
                     string SQLUpdate = "UPDATE OrderDetail set OrderId = @OrderId,ProductId = @ProductId,UnitPrice = @UnitPrice, Quantity = @Quantity, Discount = @Discount WHERE OrderId = @OrderId";
