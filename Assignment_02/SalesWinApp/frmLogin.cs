@@ -79,5 +79,10 @@ namespace SalesWinApp
             txtEmail.Text = "";
             txtPassword.Text = "";
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

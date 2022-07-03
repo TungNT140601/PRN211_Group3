@@ -169,3 +169,19 @@ D:\PRN211\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\ref\S
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmInsertOrUpdateOrder.resources
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProductDetails.resources
 >>>>>>> main
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.AssemblyReference.cache
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmInsertOrUpdateOrder.resources
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmLogin.resources
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMain.resources
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMembers.resources
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmOrders.resources
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProductDetails.resources
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProducts.resources
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.GenerateResource.cache
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.AssemblyInfoInputs.cache
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.AssemblyInfo.cs
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.CoreCompileInputs.cache
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.dll
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\refint\SalesWinApp.dll
+D:\Code C#\PRN_Assignment_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.pdb
