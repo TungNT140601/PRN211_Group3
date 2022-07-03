@@ -30,9 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtOrderId = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMemberId = new System.Windows.Forms.TextBox();
             this.txtOrderDate = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +45,8 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMemberId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,39 +61,23 @@
             // 
             // txtOrderId
             // 
-            this.txtOrderId.Location = new System.Drawing.Point(131, 35);
+            this.txtOrderId.Location = new System.Drawing.Point(142, 35);
             this.txtOrderId.Name = "txtOrderId";
             this.txtOrderId.Size = new System.Drawing.Size(303, 27);
             this.txtOrderId.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "MemberId";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 165);
+            this.label3.Location = new System.Drawing.Point(36, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "OrderDate";
             // 
-            // txtMemberId
-            // 
-            this.txtMemberId.Location = new System.Drawing.Point(131, 97);
-            this.txtMemberId.Name = "txtMemberId";
-            this.txtMemberId.Size = new System.Drawing.Size(303, 27);
-            this.txtMemberId.TabIndex = 4;
-            // 
             // txtOrderDate
             // 
-            this.txtOrderDate.Location = new System.Drawing.Point(131, 158);
+            this.txtOrderDate.Location = new System.Drawing.Point(143, 154);
             this.txtOrderDate.Name = "txtOrderDate";
             this.txtOrderDate.Size = new System.Drawing.Size(303, 27);
             this.txtOrderDate.TabIndex = 5;
@@ -101,7 +85,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(526, 42);
+            this.label4.Location = new System.Drawing.Point(526, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 20);
             this.label4.TabIndex = 6;
@@ -110,7 +94,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(526, 104);
+            this.label5.Location = new System.Drawing.Point(526, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 20);
             this.label5.TabIndex = 7;
@@ -119,7 +103,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(526, 165);
+            this.label6.Location = new System.Drawing.Point(526, 154);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 20);
             this.label6.TabIndex = 8;
@@ -127,21 +111,21 @@
             // 
             // txtRequiredDate
             // 
-            this.txtRequiredDate.Location = new System.Drawing.Point(633, 35);
+            this.txtRequiredDate.Location = new System.Drawing.Point(640, 28);
             this.txtRequiredDate.Name = "txtRequiredDate";
             this.txtRequiredDate.Size = new System.Drawing.Size(302, 27);
             this.txtRequiredDate.TabIndex = 9;
             // 
             // txtShippedDate
             // 
-            this.txtShippedDate.Location = new System.Drawing.Point(633, 97);
+            this.txtShippedDate.Location = new System.Drawing.Point(640, 95);
             this.txtShippedDate.Name = "txtShippedDate";
             this.txtShippedDate.Size = new System.Drawing.Size(303, 27);
             this.txtShippedDate.TabIndex = 10;
             // 
             // txtFreight
             // 
-            this.txtFreight.Location = new System.Drawing.Point(633, 158);
+            this.txtFreight.Location = new System.Drawing.Point(640, 154);
             this.txtFreight.Name = "txtFreight";
             this.txtFreight.Size = new System.Drawing.Size(303, 27);
             this.txtFreight.TabIndex = 11;
@@ -213,11 +197,29 @@
             this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "MemberId";
+            // 
+            // txtMemberId
+            // 
+            this.txtMemberId.Location = new System.Drawing.Point(142, 95);
+            this.txtMemberId.Name = "txtMemberId";
+            this.txtMemberId.Size = new System.Drawing.Size(303, 27);
+            this.txtMemberId.TabIndex = 21;
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 732);
+            this.Controls.Add(this.txtMemberId);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtSearch);
@@ -232,9 +234,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtOrderDate);
-            this.Controls.Add(this.txtMemberId);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtOrderId);
             this.Controls.Add(this.label1);
             this.Name = "frmOrders";
@@ -251,9 +251,7 @@
 
         private Label label1;
         private TextBox txtOrderId;
-        private Label label2;
         private Label label3;
-        private TextBox txtMemberId;
         private TextBox txtOrderDate;
         private Label label4;
         private Label label5;
@@ -268,5 +266,7 @@
         private TextBox txtSearch;
         private Button btnClose;
         private Button btnLoad;
+        private Label label2;
+        private TextBox txtMemberId;
     }
 }

@@ -48,7 +48,6 @@ namespace SalesWinApp
         private void ClearText()
         {
             txtOrderId.Text = string.Empty;
-            txtMemberId.Text = string.Empty;
             txtOrderDate.Text = string.Empty;
             txtRequiredDate.Text = string.Empty;
             txtShippedDate.Text = string.Empty;
@@ -57,11 +56,7 @@ namespace SalesWinApp
 
         private OrderObject GetOrderObject()
         {
-<<<<<<< HEAD
-            MemberObject memberObject = null;
-=======
             MemberDAO memberDAO = new MemberDAO();
->>>>>>> main
             OrderObject orderObject = null;
             try
             {
