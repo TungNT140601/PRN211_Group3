@@ -2717,40 +2717,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\TBL\\.nuget\\packages\\": {},
     "D:\\Software\\Shared\\NuGetPackages": {}
-=======
-    "C:\\Users\\tungn\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> main
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
       "projectPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\TBL\\.nuget\\packages\\",
       "outputPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\DataAccess\\obj\\",
-=======
-      "projectUniqueName": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
-      "projectName": "DataAccess",
-      "projectPath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\tungn\\.nuget\\packages\\",
-      "outputPath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\obj\\",
->>>>>>> main
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Software\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\TBL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\tungn\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> main
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2765,13 +2748,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-<<<<<<< HEAD
             "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
               "projectPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
-=======
-            "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
->>>>>>> main
             }
           }
         }
@@ -2823,11 +2801,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-<<<<<<< HEAD
       "message": "Problem reading the cache file D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\DataAccess\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-=======
-      "message": "Problem reading the cache file D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
->>>>>>> main
     }
   ]
 }
