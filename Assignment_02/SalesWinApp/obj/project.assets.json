@@ -2854,6 +2854,9 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
+<<<<<<< HEAD
+  }
+=======
   },
   "logs": [
     {
@@ -2863,5 +2866,6 @@
       "message": "Problem reading the cache file D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\SalesWinApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
+>>>>>>> main
 >>>>>>> main
 }
