@@ -1,6 +1,19 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "D:\\PRN211\\PRN211_Group3\\Assignment_02\\SalesWinApp\\SalesWinApp.csproj": {}
+  },
+  "projects": {
+    "D:\\PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
+        "projectName": "BusinessObject",
+        "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\obj\\",
+=======
     "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\SalesWinApp\\SalesWinApp.csproj": {}
   },
   "projects": {
@@ -12,12 +25,17 @@
         "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\obj\\",
+>>>>>>> main
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -72,6 +90,20 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\obj\\",
+=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
@@ -84,12 +116,17 @@
         "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\obj\\",
+>>>>>>> main
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -104,8 +141,13 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
+              "D:\\PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
+=======
               "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
+>>>>>>> main
               }
             }
           }
@@ -148,6 +190,20 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\PRN211\\PRN211_Group3\\Assignment_02\\SalesWinApp\\SalesWinApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\SalesWinApp\\SalesWinApp.csproj",
+        "projectName": "SalesWinApp",
+        "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\SalesWinApp\\SalesWinApp.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\SalesWinApp\\obj\\",
+=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
@@ -160,12 +216,17 @@
         "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\SalesWinApp\\SalesWinApp.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\SalesWinApp\\obj\\",
+>>>>>>> main
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -180,11 +241,19 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
+<<<<<<< HEAD
+              "D:\\PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
+              },
+              "D:\\PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj"
+=======
               "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
               },
               "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj": {
                 "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj"
+>>>>>>> main
               }
             }
           }
@@ -230,7 +299,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

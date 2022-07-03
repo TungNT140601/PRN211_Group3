@@ -43,10 +43,10 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
+            this.dgvProductList = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             this.SuspendLayout();
             // 
             // txtProductId
@@ -172,15 +172,15 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewProducts
+            // dgvProductList
             // 
-            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProducts.Location = new System.Drawing.Point(12, 305);
-            this.dataGridViewProducts.Name = "dataGridViewProducts";
-            this.dataGridViewProducts.RowHeadersWidth = 51;
-            this.dataGridViewProducts.RowTemplate.Height = 29;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(944, 348);
-            this.dataGridViewProducts.TabIndex = 17;
+            this.dgvProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductList.Location = new System.Drawing.Point(12, 305);
+            this.dgvProductList.Name = "dgvProductList";
+            this.dgvProductList.RowHeadersWidth = 51;
+            this.dgvProductList.RowTemplate.Height = 29;
+            this.dgvProductList.Size = new System.Drawing.Size(944, 348);
+            this.dgvProductList.TabIndex = 17;
             // 
             // btnSearch
             // 
@@ -206,7 +206,7 @@
             this.ClientSize = new System.Drawing.Size(966, 665);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.dataGridViewProducts);
+            this.Controls.Add(this.dgvProductList);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -225,7 +225,7 @@
             this.Name = "frmProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProducts";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +248,7 @@
         private Button btnAdd;
         private Button btnUpdate;
         private Button btnDelete;
-        private DataGridView dataGridViewProducts;
+        private DataGridView dgvProductList;
         private Button btnSearch;
         private TextBox txtSearch;
     }
