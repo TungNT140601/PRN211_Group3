@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +8,12 @@ namespace DataAccess.Repository
 {
     public interface IOrderDetailRepository
     {
-        IEnumerable<OrderDetailDAO> GetOrderDetailList ();
-        OrderDetailDAO GetOrderDetailByOrderID(int orderID);
-        void InsertOrderDetail(OrderDetailDAO order);
-        void UpdateOrderDetail(OrderDetailDAO order);
+        IEnumerable<OrderDetailObject> GetOrderDetail();
+        OrderDetailObject GetOrderDetailByOrderID(int orderID);
+        void InsertOrderDetail(OrderDetailObject orderDetail);
+        void UpdateOrderDetail(OrderDetailObject orderDetail);
         void DeleteOrderDetail(int orderID);
- 
+
     }
 
 

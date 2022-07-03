@@ -261,7 +261,7 @@ namespace DataAccess
             try
             {
                 OrderObject o = GetOrderById(order.OrderId);
-                if (o.MemberId == null)
+                if (o == null)
                 {
                     string SQLInsert = "INSERT tbl_Order values(@OrderId, @MemberId, @OrderDate, @RequiredDate, @ShippedDate, @Freight)";
                     var parameters = new List<SqlParameter>();
