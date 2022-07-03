@@ -177,7 +177,7 @@ INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUE
 go
 INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (110, 10010,2,1,1.1);
 go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (1011, 10011,2,1,1.1);
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (111, 10011,2,1,1.1);
 go
 
 
