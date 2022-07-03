@@ -27,6 +27,7 @@ namespace DataAccess
         
         public IEnumerable<OrderObject> getOrderList()
         {
+            MemberDAO memberDAO = new MemberDAO();
             IDataReader dataReader = null;
             string SQLSelect = "SELECT * FROM tbl_Order";
             var orders = new List<OrderObject>();
@@ -39,7 +40,11 @@ namespace DataAccess
                     orders.Add(new OrderObject
                     {
                         OrderId = dataReader.GetInt32(0),
+<<<<<<< HEAD
                         MemberId = memberDAO.GetMemberByID(1),
+=======
+                        MemberId = memberDAO.GetMemberByID(dataReader.GetInt32(1)),
+>>>>>>> main
                         OrderDate = dataReader.GetDateTime(2),
                         RequiredDate = dataReader.GetDateTime(3),
                         ShippedDate = dataReader.GetDateTime(4),
@@ -61,6 +66,7 @@ namespace DataAccess
 
         public OrderObject GetOrderById(int orderId)
         {
+            MemberDAO memberDAO = new MemberDAO();
             OrderObject order = null;
             IDataReader dataReader = null;
             string SQLSelect = "SELECT * FROM tbl_Order WHERE OrderId = @OrderId";
@@ -74,7 +80,11 @@ namespace DataAccess
                     order = new OrderObject
                     {
                         OrderId = dataReader.GetInt32(0),
+<<<<<<< HEAD
                         MemberId = m.GetMemberByID(1),
+=======
+                        MemberId = memberDAO.GetMemberByID(dataReader.GetInt32(1)),
+>>>>>>> main
                         OrderDate = dataReader.GetDateTime(2),
                         RequiredDate = dataReader.GetDateTime(3),
                         ShippedDate = dataReader.GetDateTime(4),
@@ -98,6 +108,7 @@ namespace DataAccess
         public IEnumerable<OrderObject> SearchByDay(DateTime min, DateTime max)
         {
 
+            MemberDAO memberDAO = new MemberDAO();
             OrderObject order = null;
             IDataReader dataReader = null;
             var orders = new List<OrderObject>();
@@ -114,7 +125,11 @@ namespace DataAccess
                     orders.Add(new OrderObject
                     {
                         OrderId = dataReader.GetInt32(0),
+<<<<<<< HEAD
                         MemberId = m.GetMemberByID(1),
+=======
+                        MemberId = memberDAO.GetMemberByID(dataReader.GetInt32(1)),
+>>>>>>> main
                         OrderDate = dataReader.GetDateTime(2),
                         RequiredDate = dataReader.GetDateTime(3),
                         ShippedDate = dataReader.GetDateTime(4),
