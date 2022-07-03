@@ -58,7 +58,7 @@ INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES
 
 
 
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10001, 1, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order (MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (1, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10002, 2, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10003, 3, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10004, 4, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
@@ -109,7 +109,8 @@ INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUE
 INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10010, 110,2,1,1.1);
 INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10011, 111,2,1,1.1);
 
-
+SELECT * FROM tbl_Order WHERE OrderDate Between convert(datetime,'18-04-12 10:34:09 PM',5) and convert(datetime,'18-09-12 10:34:09 PM',5)
+DELETE tbl_Order WHERE OrderID = 1
 
 
 

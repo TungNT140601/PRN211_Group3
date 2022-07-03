@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "sS+xn+hjQQqWi56Mjsr+tEuwrPe6xjo/Ems1xNOMX1UdTwwWeAus+rihJgcpY89flvkgG1WsZbXtA+JlNz+uLg==",
   "success": true,
   "projectFilePath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj",
-=======
-  "dgSpecHash": "AfN9znJ4pHR2nZmBobv8vyymZz40NmJZR1PMxa1ThSyT5TUqT4ImoUOw+rOqs6s7dVAY/b1h2hKD+wwoaQGp9Q==",
-  "success": true,
-  "projectFilePath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj",
->>>>>>> ef34fc807efef2964a3dce214bf9cb5ed7b1394d
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
