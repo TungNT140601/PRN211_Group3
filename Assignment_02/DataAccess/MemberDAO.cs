@@ -116,27 +116,27 @@ namespace DataAccess
             }
             return check;
         }
-        public MemberObject CheckLogin(string email, string password)
+        public MemberObject CheckLogin(string email, string pass)
         {
             MemberObject mem = null;
-            IDataReader dataReader = null;
+            IDataReader reader = null;
+            string SQL = "SELECT [MemberId],[Email],[CompanyName],[City],[Country],[Password] FROM [FStore_Ass2].[dbo].[tbl_Member] WHERE [Email] like @Email AND [Password] like @Password";
             try
             {
-                string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
-                var mail = dataProvider.CreateParameter("@Email", 50, email, DbType.String);
-                var pass = dataProvider.CreateParameter("@Password", 50, password, DbType.String);
-                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, mail); ;
-                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, pass);
-                if (dataReader.Read())
+                var parameters = new List<SqlParameter>();
+                parameters.Add(dataProvider.CreateParameter("@Email", 50, email, DbType.String));
+                parameters.Add(dataProvider.CreateParameter("@Password", 50, pass, DbType.String));
+                reader = dataProvider.GetDataReader(SQL, CommandType.Text, out connection, parameters.ToArray());
+                if (reader.Read())
                 {
                     mem = new MemberObject
                     {
-                        MemberId = dataReader.GetInt32(0),
-                        Email = dataReader.GetString(1),
-                        CompanyName = dataReader.GetString(2),
-                        City = dataReader.GetString(3),
-                        Country = dataReader.GetString(4),
-                        Password = dataReader.GetString(5)
+                        MemberId = reader.GetInt32(0),
+                        Email = reader.GetString(1),
+                        CompanyName = reader.GetString(2),
+                        City = reader.GetString(3),
+                        Country = reader.GetString(4),
+                        Password = reader.GetString(5)
                     };
                 }
             }
@@ -146,7 +146,7 @@ namespace DataAccess
             }
             finally
             {
-                dataReader.Close();
+                reader.Close();
                 CloseConnection();
             }
             return mem;
