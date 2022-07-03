@@ -42,10 +42,11 @@
             this.txtFreight = new System.Windows.Forms.TextBox();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,26 +153,18 @@
             this.dataGridViewOrders.Name = "dataGridViewOrders";
             this.dataGridViewOrders.RowHeadersWidth = 51;
             this.dataGridViewOrders.RowTemplate.Height = 29;
-            this.dataGridViewOrders.Size = new System.Drawing.Size(946, 402);
+            this.dataGridViewOrders.Size = new System.Drawing.Size(946, 358);
             this.dataGridViewOrders.TabIndex = 12;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(105, 225);
+            this.btnAdd.Location = new System.Drawing.Point(423, 225);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 29);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(404, 225);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(94, 29);
-            this.btnUpdate.TabIndex = 14;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -181,6 +174,7 @@
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearch
             // 
@@ -199,15 +193,35 @@
             this.txtSearch.TabIndex = 17;
             this.txtSearch.Text = "nhập OrderId";
             // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(131, 225);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(94, 29);
+            this.btnLoad.TabIndex = 18;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(454, 691);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 737);
+            this.ClientSize = new System.Drawing.Size(966, 732);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridViewOrders);
             this.Controls.Add(this.txtFreight);
@@ -225,6 +239,7 @@
             this.Name = "frmOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmOrders";
+            this.Load += new System.EventHandler(this.frmOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,9 +262,10 @@
         private TextBox txtFreight;
         private DataGridView dataGridViewOrders;
         private Button btnAdd;
-        private Button btnUpdate;
         private Button btnDelete;
         private Button btnSearch;
         private TextBox txtSearch;
+        private Button btnLoad;
+        private Button button1;
     }
 }

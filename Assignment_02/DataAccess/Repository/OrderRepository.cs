@@ -13,8 +13,8 @@ namespace DataAccess.Repository
         public void InsertOrder(OrderObject order) => OrderDAO.Instance.AddNew(order);
         public void DeleteOrder(int orderId) => OrderDAO.Instance.Remove(orderId);
         public void UpdateOrder(OrderObject order) => OrderDAO.Instance.Update(order);
-
         public IEnumerable<OrderObject> SearchByDay(DateTime min, DateTime max) => OrderDAO.Instance.SearchByDay(min, max);
+        public IEnumerable<OrderObject> SortBySale() => OrderDAO.Instance.SortBySale();
         public IEnumerable<OrderObject> SortBySales() => OrderDAO.Instance.SortBySale();
     }
 }

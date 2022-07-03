@@ -50,23 +50,23 @@ namespace SalesWinApp
                         this.Hide();
                     }
                 }
-                //else
-                //{
-                //    MemberDAO memDao = new MemberDAO();
-                //    MemberObject? mem = memDao.CheckLogin(txtEmail.Text.ToString(), txtPassword.Text.ToString());
-                //    if (mem != null)
-                //    {
-                //        Email = txtEmail.Text.ToString();
-                //        Password = txtPassword.Text.ToString();
-                //        frmMain frm = new frmMain();
-                //        frm.Show();
-                //        this.Hide();
-                //    }
-                //    else
-                //    {
-                //        throw new Exception("Wrong email or password.");
-                //    }
-                //}
+                else
+                {
+                    MemberDAO memDao = new MemberDAO();
+                    MemberObject? mem = memDao.CheckLogin(txtEmail.Text.ToString(), txtPassword.Text.ToString());
+                    if (mem != null)
+                    {
+                        Email = txtEmail.Text.ToString();
+                        Password = txtPassword.Text.ToString();
+                        frmMain frm = new frmMain();
+                        frm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        throw new Exception("Wrong email or password.");
+                    }
+                }
             }
             catch (Exception ex)
             {
