@@ -56,6 +56,7 @@ namespace SalesWinApp
 
         private OrderObject GetOrderObject()
         {
+            MemberObject memberObject = null;
             OrderObject orderObject = null;
             try
             {
@@ -118,10 +119,6 @@ namespace SalesWinApp
             }
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            LoadOrderList();
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -140,6 +137,16 @@ namespace SalesWinApp
             {
                 MessageBox.Show(ex.Message, "Delete a car");
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadOrderList();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

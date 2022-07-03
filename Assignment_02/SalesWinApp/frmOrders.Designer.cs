@@ -45,8 +45,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,7 +168,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(686, 225);
+            this.btnDelete.Location = new System.Drawing.Point(718, 225);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 29);
             this.btnDelete.TabIndex = 15;
@@ -193,32 +193,33 @@
             this.txtSearch.TabIndex = 17;
             this.txtSearch.Text = "nhập OrderId";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(423, 691);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(94, 29);
+            this.btnClose.TabIndex = 18;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // btnLoad
             // 
             this.btnLoad.Location = new System.Drawing.Point(131, 225);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(94, 29);
-            this.btnLoad.TabIndex = 18;
+            this.btnLoad.TabIndex = 19;
             this.btnLoad.Text = "Load";
-            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(454, 691);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 732);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
@@ -265,7 +266,7 @@
         private Button btnDelete;
         private Button btnSearch;
         private TextBox txtSearch;
+        private Button btnClose;
         private Button btnLoad;
-        private Button button1;
     }
 }
