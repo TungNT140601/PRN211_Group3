@@ -31,7 +31,6 @@ namespace DataAccess
             IDataReader dataReader = null;
             string SQLSelect = "SELECT * FROM tbl_Order";
             var orders = new List<OrderObject>();
-            MemberDAO memberDAO = new MemberDAO();
             try
             {
                 dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection);
@@ -40,11 +39,7 @@ namespace DataAccess
                     orders.Add(new OrderObject
                     {
                         OrderId = dataReader.GetInt32(0),
-<<<<<<< HEAD
                         MemberId = memberDAO.GetMemberByID(1),
-=======
-                        MemberId = memberDAO.GetMemberByID(dataReader.GetInt32(1)),
->>>>>>> main
                         OrderDate = dataReader.GetDateTime(2),
                         RequiredDate = dataReader.GetDateTime(3),
                         ShippedDate = dataReader.GetDateTime(4),
@@ -80,11 +75,7 @@ namespace DataAccess
                     order = new OrderObject
                     {
                         OrderId = dataReader.GetInt32(0),
-<<<<<<< HEAD
                         MemberId = m.GetMemberByID(1),
-=======
-                        MemberId = memberDAO.GetMemberByID(dataReader.GetInt32(1)),
->>>>>>> main
                         OrderDate = dataReader.GetDateTime(2),
                         RequiredDate = dataReader.GetDateTime(3),
                         ShippedDate = dataReader.GetDateTime(4),
@@ -125,11 +116,7 @@ namespace DataAccess
                     orders.Add(new OrderObject
                     {
                         OrderId = dataReader.GetInt32(0),
-<<<<<<< HEAD
                         MemberId = m.GetMemberByID(1),
-=======
-                        MemberId = memberDAO.GetMemberByID(dataReader.GetInt32(1)),
->>>>>>> main
                         OrderDate = dataReader.GetDateTime(2),
                         RequiredDate = dataReader.GetDateTime(3),
                         ShippedDate = dataReader.GetDateTime(4),

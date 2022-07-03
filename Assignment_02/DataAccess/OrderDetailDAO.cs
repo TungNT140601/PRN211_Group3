@@ -41,13 +41,8 @@ namespace DataAccess
                 {
                     orderdetails.Add(new OrderDetailObject
                     {
-<<<<<<< HEAD
                         OrderID = o.GetOrderById(0),
                         ProductID = p.GetProductByID(1),
-=======
-                        OrderID = orderDAO.GetOrderById(dataReader.GetInt32(0)),
-                        ProductID = productDAO.GetProductByID(dataReader.GetInt32(1)),
->>>>>>> main
                         UnitPrice = dataReader.GetDecimal(2),
                         Quantity = dataReader.GetInt32(3),
                         Discount = dataReader.GetFloat(4),
@@ -83,13 +78,8 @@ namespace DataAccess
                 {
                     orderdetail = new OrderDetailObject
                     {
-<<<<<<< HEAD
                         OrderID = o.GetOrderById(0),
                         ProductID = p.GetProductByID(1),
-=======
-                        OrderID = orderDAO.GetOrderById(dataReader.GetInt32(0)),
-                        ProductID = productDAO.GetProductByID(dataReader.GetInt32(1)),
->>>>>>> main
                         UnitPrice = dataReader.GetDecimal(2),
                         Quantity = dataReader.GetInt32(3),
                         Discount = dataReader.GetFloat(4),
