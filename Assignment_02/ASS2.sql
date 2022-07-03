@@ -85,42 +85,48 @@ go
 
 
 <<<<<<< HEAD
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 1, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 2, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+=======
+<<<<<<< HEAD
 INSERT INTO tbl_Order (MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (1, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 =======
 INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10001, 1, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
 >>>>>>> main
 INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10002, 2, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+>>>>>>> main
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10003, 3, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 3, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10004, 4, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 4, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10005, 5, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 5, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10006, 6, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 6, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10007, 7, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 7, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10008, 8, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 8, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10009, 9, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 9, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10010, 10, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 10, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10011, 11, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 11, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10012, 12, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 12, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10013, 13, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 13, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10014, 14, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 14, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10015, 15, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 15, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10016, 16, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 16, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10017, 17, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 17, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
 
 

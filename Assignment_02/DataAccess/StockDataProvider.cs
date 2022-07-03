@@ -10,14 +10,18 @@ namespace DataAccess
 {
     public class StockDataProvider
     {
-        public StockDataProvider()
-        {
-
-        }
+        public StockDataProvider() { }
+        //-----------------------------
         private string ConnectionString { get; set; }
+        //-----------------------------
         public StockDataProvider(string connectionString) => ConnectionString = connectionString;
+
+        //-----------------------------
         public void CloseConnection(SqlConnection connection) => connection.Close();
-        public SqlParameter CreateParameter(string name, int size, object value, DbType dbType, ParameterDirection direction = ParameterDirection.Input)
+
+        //-----------------------------
+        public SqlParameter CreateParameter(string name, int size, object value, DbType dbType,
+            ParameterDirection direction = ParameterDirection.Input)
         {
             return new SqlParameter
             {
@@ -25,10 +29,12 @@ namespace DataAccess
                 ParameterName = name,
                 Size = size,
                 Direction = direction,
-                Value = value,
+                Value = value
             };
         }
-        public IDataReader GetDataReader(string commandText, CommandType commandType, out SqlConnection connection, params SqlParameter[] parameters)
+        //-----------------------------
+        public IDataReader GetDataReader(string commandText, CommandType commandType,
+            out SqlConnection connection, params SqlParameter[] parameters)
         {
             IDataReader reader = null;
             try
@@ -52,7 +58,33 @@ namespace DataAccess
             }
             return reader;
         }
-        public void Delete(string commandText, CommandType commandType, params SqlParameter[] parameters)
+        //-----------------------------
+        public void Delete(string commandText, CommandType commandType,
+            params SqlParameter[] parameters)
+        {
+            try
+            {
+                using var connection = new SqlConnection(ConnectionString);
+                connection.Open();
+                using var command = new SqlCommand(commandText, connection);
+                command.CommandType = commandType;
+                if (parameters != null)
+                {
+                    foreach (var parameter in parameters)
+                    {
+                        command.Parameters.Add(parameter);
+                    }
+                }
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Data Provider: Delete Method", ex.InnerException);
+            }
+        }
+        //-----------------------------
+        public void Insert(string commandText, CommandType commandType,
+            params SqlParameter[] parameters)
         {
             try
             {
@@ -74,29 +106,9 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
-        public void Insert(string commandText, CommandType commandType, params SqlParameter[] parameters)
-        {
-            try
-            {
-                using var connection = new SqlConnection(ConnectionString);
-                connection.Open();
-                using var command = new SqlCommand(commandText, connection);
-                command.CommandType = commandType;
-                if (parameters != null)
-                {
-                    foreach (var parameter in parameters)
-                    {
-                        command.Parameters.Add(parameter);
-                    }
-                }
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-        public void Update(string commandText, CommandType commandType, params SqlParameter[] parameters)
+        //-----------------------------
+        public void Update(string commandText, CommandType commandType,
+            params SqlParameter[] parameters)
         {
             try
             {
