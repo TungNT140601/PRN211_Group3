@@ -84,19 +84,10 @@ go
 
 
 
-<<<<<<< HEAD
+
 INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 1, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
 INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 2, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
-=======
-<<<<<<< HEAD
-INSERT INTO tbl_Order (MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (1, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
-=======
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10001, 1, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
-go
->>>>>>> main
-INSERT INTO tbl_Order (OrderId, MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES (10002, 2, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
->>>>>>> main
 go
 INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 3, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
@@ -130,67 +121,65 @@ INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  
 go
 
 
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (101, 1, N'T-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 1, N'T-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (102, 2, N'A-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 2, N'A-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (103, 3, N'V-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 3, N'V-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (104, 4, N'B-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 4, N'B-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (105, 5, N'C-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 5, N'C-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (106, 6, N'D-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 6, N'D-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (107, 7, N'R-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 7, N'R-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (108, 8, N'W-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 8, N'W-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (109, 9, N'Q-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 9, N'Q-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (110, 10, N'S-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 10, N'S-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (111, 11, N'T-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 11, N'T-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (112, 12, N'T-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 12, N'T-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (113, 13, N'T-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 13, N'T-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (114, 14, N'T-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 14, N'T-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (115, 15, N'T-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 15, N'T-shirt',2,'$ 0.0001',1);
 go
-INSERT INTO Product (ProductId, CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES (116, 16, N'T-shirt',2,'$ 0.0001',1);
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 16, N'T-shirt',2,'$ 0.0001',1);
 go
+
 
 
 
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (101, 10001,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (102, 10002,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (103, 10003,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (104, 10004,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (105, 10005,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (106, 10006,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (107, 10007,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (108, 10008,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (109, 10009,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (110, 10010,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (1011, 10011,2,1,1.1);
+go
 
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10001, 101,2,1,1.1);
-go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10002, 102,2,1,1.1);
-go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10003, 103,2,1,1.1);
-go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10004, 104,2,1,1.1);
-go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10005, 105,2,1,1.1);
-go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10006, 106,2,1,1.1);
-go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10007, 107,2,1,1.1);
-go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10008, 108,2,1,1.1);
-go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10009, 109,2,1,1.1);
-go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10010, 110,2,1,1.1);
-go
-INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (10011, 111,2,1,1.1);
-go
-
-SELECT * FROM tbl_Order WHERE OrderDate Between convert(datetime,'18-04-12 10:34:09 PM',5) and convert(datetime,'18-09-12 10:34:09 PM',5)
-DELETE tbl_Order WHERE OrderID = 1
 
 
 
