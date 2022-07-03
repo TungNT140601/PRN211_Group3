@@ -1,21 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "gxhHpAczpHMii4MvEdfxtS29aFQNiMxnQ9QvDVgMeK5+WJBlGW/eCXh/OudxwIqyl+cXNenCAaXaBzTBoNynEw==",
+  "dgSpecHash": "va8bU3Y16YIcsumEC51G5mt9o6o9SCzDCBNU+3fwVOCSSg4vL9atx1fKxyhh27wFIGD9ImprK8B5vf9HRyhBuw==",
   "success": true,
-  "projectFilePath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj",
-=======
-  "dgSpecHash": "/QzlEmqowe9utVYXn1KTQwsSCmdpygX1fr9Cqcsi8I6+f9FuX5708lLApHcAN5lpfz1Z8sfyHiS8jOcc3m5v/g==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj",
->>>>>>> main
+  "projectFilePath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [],
   "logs": [
     {
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Problem reading the cache file D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_01\\DataAccess\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
 }
