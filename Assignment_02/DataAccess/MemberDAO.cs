@@ -9,10 +9,6 @@ namespace DataAccess
     {
         private static MemberDAO instance = null;
         private static readonly object instanceLock = new object();
-        private MemberDAO()
-        {
-
-        }
         public static MemberDAO Instance
         {
             get
@@ -25,6 +21,122 @@ namespace DataAccess
                     }
                     return instance;
                 }
+            }
+        }
+        public MemberDAO m { get; set; } = null;
+        public SqlConnection connection = null;
+        public string GetConnectionString()
+        {
+            string connectionString;
+            IConfiguration config = new ConfigurationBuilder()
+                                        .SetBasePath(Directory.GetCurrentDirectory())
+                                        .AddJsonFile("appsetting.json", true, true)
+                                        .Build();
+            connectionString = config["ConnectionString:FStoreDB"];
+            return connectionString;
+        }
+        public void CloseConnection() => m.CloseConnection(connection);
+        public void CloseConnection(SqlConnection connection) => connection.Close();
+        public SqlParameter CreateParameter(string name, int size, object value, DbType dbType, ParameterDirection direction = ParameterDirection.Input)
+        {
+            return new SqlParameter
+            {
+                DbType = dbType,
+                ParameterName = name,
+                Size = size,
+                Direction = direction,
+                Value = value,
+            };
+        }
+        public IDataReader GetDataReader(string commandText, CommandType commandType,
+            out SqlConnection connection, params SqlParameter[] parameters)
+        {
+            IDataReader reader = null;
+            try
+            {
+                connection = new SqlConnection(GetConnectionString());
+                connection.Open();
+                var command = new SqlCommand(commandText, connection);
+                command.CommandType = commandType;
+                if (parameters != null)
+                {
+                    foreach (var parameter in parameters)
+                    {
+                        command.Parameters.Add(parameter);
+                    }
+                }
+                reader = command.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return reader;
+        }
+        public void Delete(string commandText, CommandType commandType, params SqlParameter[] parameters)
+        {
+            try
+            {
+                using var connection = new SqlConnection(GetConnectionString());
+                connection.Open();
+                using var command = new SqlCommand(commandText, connection);
+                command.CommandType = commandType;
+                if (parameters != null)
+                {
+                    foreach (var parameter in parameters)
+                    {
+                        command.Parameters.Add(parameter);
+                    }
+                }
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public void Insert(string commandText, CommandType commandType, params SqlParameter[] parameters)
+        {
+            try
+            {
+                using var connection = new SqlConnection(GetConnectionString());
+                connection.Open();
+                using var command = new SqlCommand(commandText, connection);
+                command.CommandType = commandType;
+                if (parameters != null)
+                {
+                    foreach (var parameter in parameters)
+                    {
+                        command.Parameters.Add(parameter);
+                    }
+                }
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public void Update(string commandText, CommandType commandType, params SqlParameter[] parameters)
+        {
+            try
+            {
+                using var connection = new SqlConnection(GetConnectionString());
+                connection.Open();
+                using var command = new SqlCommand(commandText, connection);
+                command.CommandType = commandType;
+                if (parameters != null)
+                {
+                    foreach (var parameter in parameters)
+                    {
+                        command.Parameters.Add(parameter);
+                    }
+                }
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
 
@@ -126,6 +238,7 @@ namespace DataAccess
             IDataReader dataReader = null;
             try
             {
+<<<<<<< HEAD
                     string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
                     var mail = dataProvider.CreateParameter("@Email", 50, email, DbType.String);
                     var pass = dataProvider.CreateParameter("@Password", 50, password, DbType.String);
@@ -144,6 +257,30 @@ namespace DataAccess
                         };
                     } 
             }catch (Exception ex)
+=======
+                //if (Check(email) == true)
+                //{
+                string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
+                var mail = dataProvider.CreateParameter("@Email", 50, email, DbType.String);
+                var pass = dataProvider.CreateParameter("@Password", 50, password, DbType.String);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, mail); ;
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, pass);
+                if (dataReader.Read())
+                {
+                    mem = new MemberObject
+                    {
+                        MemberId = dataReader.GetInt32(0),
+                        Email = dataReader.GetString(1),
+                        CompanyName = dataReader.GetString(2),
+                        City = dataReader.GetString(3),
+                        Country = dataReader.GetString(4),
+                        Password = dataReader.GetString(5)
+                    };
+                }
+                //}
+            }
+            catch (Exception ex)
+>>>>>>> main
             {
                 throw new Exception(ex.Message);
             }

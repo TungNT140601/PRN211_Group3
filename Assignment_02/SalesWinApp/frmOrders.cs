@@ -11,7 +11,7 @@ using BusinessObject;
 using DataAccess.Repository;
 
 namespace SalesWinApp
-{ 
+{
     public partial class frmOrders : Form
     {
         IOrderRepository orderRepository = new OrderRepository();
@@ -29,7 +29,19 @@ namespace SalesWinApp
 
         private void DataGridViewOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            frmInsertOrUpdateOrder frmOrderDetails = new frmInsertOrUpdateOrder
+            {
+                Text = "Update order",
+                InsertOrUpdate = true,
+                OrderInfo = GetOrderObject(),
+                OrderRepository = orderRepository
 
+            };
+            //if (frmInsertOrUpdateOrder.ShowDialog() == DialogResult.OK)
+            //{
+            //    LoadOrderList();
+            //    source.Position = source.Count - 1;
+            //}
         }
 
         private void ClearText()
@@ -56,9 +68,9 @@ namespace SalesWinApp
                     ShippedDate = DateTime.Parse(txtShippedDate.Text),
                     Freight = decimal.Parse(txtFreight.Text),
                 };
-                
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Get Order");
             }
@@ -90,7 +102,7 @@ namespace SalesWinApp
                 dataGridViewOrders.DataSource = null;
                 dataGridViewOrders.DataSource = source;
 
-                if(orders.Count() == 0)
+                if (orders.Count() == 0)
                 {
                     ClearText();
                     btnDelete.Enabled = false;
@@ -100,7 +112,7 @@ namespace SalesWinApp
                     btnDelete.Enabled = true;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Load order list");
             }
@@ -118,11 +130,24 @@ namespace SalesWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            //try
+            //{
+            //    var order = GetOrderObject();
+
+            //}
+=======
             try
             {
                 var order = GetOrderObject();
-               
+                orderRepository.DeleteOrder(order.OrderId);
+                LoadOrderList();
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete a car");
+            }
+>>>>>>> main
         }
     }
 }

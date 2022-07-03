@@ -31,7 +31,7 @@ namespace DataAccess
             var connectionString = GetConnectionString();
             orderDAO = new OrderDAO(connectionString);
         }
-     
+
         public string GetConnectionString()
         {
             string connectionString;
@@ -201,7 +201,7 @@ namespace DataAccess
                         RequiredDate = dataReader.GetDateTime(3),
                         ShippedDate = dataReader.GetDateTime(4),
                         Freight = dataReader.GetDecimal(5)
-                    
+
                     };
                 }
             }
@@ -261,7 +261,7 @@ namespace DataAccess
             try
             {
                 OrderObject o = GetOrderById(order.OrderId);
-                if (o.MemberId == null)
+                if (o == null)
                 {
                     string SQLInsert = "INSERT tbl_Order values(@OrderId, @MemberId, @OrderDate, @RequiredDate, @ShippedDate, @Freight)";
                     var parameters = new List<SqlParameter>();
@@ -288,6 +288,62 @@ namespace DataAccess
             }
         }
 
+        //public void Update(MemberObject mem)
+        //{
+        //    try
+        //    {
+        //        MemberObject member = GetMemberByID(mem.MemberId);
+        //        if (member != null)
+        //        {
+        //            string SQLUpdate = "UPDATE Member set Email = @Email,Companyname = @Companyname,City = @City, Country = @Country, Password = @Password WHERE MemberId = @MemberId";
+        //            var parameters = new List<SqlParameter>();
+        //            parameters.Add(CreateParameter("@MemberId", 4, mem.MemberId, DbType.Int32));
+        //            parameters.Add(CreateParameter("@Email", 4, mem.Email, DbType.String));
+        //            parameters.Add(CreateParameter("@Companyname", 50, mem.CompanyName, DbType.String));
+        //            parameters.Add(CreateParameter("@City", 50, mem.City, DbType.String));
+        //            parameters.Add(CreateParameter("@Country", 50, mem.Country, DbType.String));
+        //            parameters.Add(CreateParameter("@Password", 4, mem.Password, DbType.String));
+        //            Insert(SQLUpdate, CommandType.Text, parameters.ToArray());
+        //        }
+        //        else
+        //        {
+        //            throw new Exception("Member does not already exits.");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        CloseConnection();
+        //    }
+        //}
+        //    public void Remove(int memID)
+        //    {
+        //        try
+        //        {
+        //            MemberObject member = GetMemberByID(memID);
+        //            if (member != null)
+        //            {
+        //                string SQLDelete = "DELETE Member WHERE MemberId = @MemberId";
+        //                var param = CreateParameter("@MemberId", 4, memID, DbType.Int32);
+        //                Delete(SQLDelete, CommandType.Text, param);
+        //            }
+        //            else
+        //            {
+        //                throw new Exception("Member does not already exits.");
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            throw new Exception(ex.Message);
+        //        }
+        //        finally
+        //        {
+        //            CloseConnection();
+        //        }
+        //    }
         public void Update(OrderObject order)
         {
             try
@@ -319,17 +375,7 @@ namespace DataAccess
                 CloseConnection();
             }
         }
-<<<<<<< HEAD
-
-        private MemberObject GetMemberByID(int memberId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(int memID)
-=======
         public void Remove(int orderId)
->>>>>>> main
         {
             try
             {
@@ -354,7 +400,7 @@ namespace DataAccess
                 CloseConnection();
             }
         }
-        
+
         public IEnumerable<OrderObject> SortBySale()
         {
             var orders = new List<OrderObject>();
