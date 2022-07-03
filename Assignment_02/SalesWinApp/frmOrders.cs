@@ -29,7 +29,19 @@ namespace SalesWinApp
 
         private void DataGridViewOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            frmInsertOrUpdateOrder frmOrderDetails = new frmInsertOrUpdateOrder
+            {
+                Text = "Update order",
+                InsertOrUpdate = true,
+                OrderInfo = GetOrderObject(),
+                OrderRepository = orderRepository
 
+            };
+            //if (frmInsertOrUpdateOrder.ShowDialog() == DialogResult.OK)
+            //{
+            //    LoadOrderList();
+            //    source.Position = source.Count - 1;
+            //}
         }
 
         private void ClearText()
@@ -118,11 +130,24 @@ namespace SalesWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             //try
             //{
             //    var order = GetOrderObject();
 
             //}
+=======
+            try
+            {
+                var order = GetOrderObject();
+                orderRepository.DeleteOrder(order.OrderId);
+                LoadOrderList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete a car");
+            }
+>>>>>>> main
         }
     }
 }
