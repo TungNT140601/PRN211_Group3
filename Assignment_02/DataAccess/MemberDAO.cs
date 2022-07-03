@@ -1,20 +1,14 @@
-﻿using Microsoft.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Data;
 using Microsoft.Extensions.Configuration;
 using BusinessObject;
 using System;
-using System.Data;
-using Microsoft.Data.SqlClient;
 namespace DataAccess
 {
     public class MemberDAO : BaseDAL
     {
         private static MemberDAO instance = null;
         private static readonly object instanceLock = new object();
-        private MemberDAO()
-        {
-
-        }
         public static MemberDAO Instance
         {
             get
@@ -128,27 +122,25 @@ namespace DataAccess
             IDataReader dataReader = null;
             try
             {
-                if(Check(email) == true)
+                string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
+                var mail = dataProvider.CreateParameter("@Email", 50, email, DbType.String);
+                var pass = dataProvider.CreateParameter("@Password", 50, password, DbType.String);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, mail); ;
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, pass);
+                if (dataReader.Read())
                 {
-                    string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
-                    var mail = dataProvider.CreateParameter("@Email", 50, email, DbType.String);
-                    var pass = dataProvider.CreateParameter("@Password", 50, password, DbType.String);
-                    dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, mail); ;
-                    dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, pass);
-                    if (dataReader.Read())
+                    mem = new MemberObject
                     {
-                        mem = new MemberObject
-                        {
-                            MemberId = dataReader.GetInt32(0),
-                            Email = dataReader.GetString(1),
-                            CompanyName = dataReader.GetString(2),
-                            City = dataReader.GetString(3),
-                            Country = dataReader.GetString(4),
-                            Password = dataReader.GetString(5)
-                        };
-                    }
-                }   
-            }catch (Exception ex)
+                        MemberId = dataReader.GetInt32(0),
+                        Email = dataReader.GetString(1),
+                        CompanyName = dataReader.GetString(2),
+                        City = dataReader.GetString(3),
+                        Country = dataReader.GetString(4),
+                        Password = dataReader.GetString(5)
+                    };
+                }
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }

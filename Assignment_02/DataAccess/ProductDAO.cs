@@ -10,7 +10,7 @@ using BusinessObject;
 
 namespace DataAccess
 {
-    public class ProductDAO
+    public class ProductDAO : BaseDAL
     {
         private static ProductDAO instance = null;
         private static readonly object instanceLock = new object();
@@ -28,131 +28,7 @@ namespace DataAccess
                 }
             }
         }
-        public ProductDAO()
-        {
-            var connectionString = GetConnectionString();
-            p = new ProductDAO(connectionString);
-        }
-        public ProductDAO p { get; set; } = null;
-        public SqlConnection connection = null;
-        public string GetConnectionString()
-        {
-            string connectionString;
-            IConfiguration config = new ConfigurationBuilder()
-                                        .SetBasePath(Directory.GetCurrentDirectory())
-                                        .AddJsonFile("appsetting.json", true, true)
-                                        .Build();
-            connectionString = config["ConnectionString:FStoreDB"];
-            return connectionString;
-        }
-        public void CloseConnection() => p.CloseConnection(connection);
-
-        private string ConnectionString { get; set; }
-        public ProductDAO(string connectionString) => ConnectionString = connectionString;
-        public void CloseConnection(SqlConnection connection) => connection.Close();
-        public SqlParameter CreateParameter(string name, int size, object value, DbType dbType, ParameterDirection direction = ParameterDirection.Input)
-        {
-            return new SqlParameter
-            {
-                DbType = dbType,
-                ParameterName = name,
-                Size = size,
-                Direction = direction,
-                Value = value,
-            };
-        }
-        public IDataReader GetDataReader(string commandText, CommandType commandType, out SqlConnection connection, params SqlParameter[] parameters)
-        {
-            IDataReader reader = null;
-            try
-            {
-                connection = new SqlConnection(ConnectionString);
-                connection.Open();
-                var command = new SqlCommand(commandText, connection);
-                command.CommandType = commandType;
-                if (parameters != null)
-                {
-                    foreach (var parameter in parameters)
-                    {
-                        command.Parameters.Add(parameter);
-                    }
-                }
-                reader = command.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return reader;
-        }
-        public void Delete(string commandText, CommandType commandType, params SqlParameter[] parameters)
-        {
-            try
-            {
-                using var connection = new SqlConnection(ConnectionString);
-                connection.Open();
-                using var command = new SqlCommand(commandText, connection);
-                command.CommandType = commandType;
-                if (parameters != null)
-                {
-                    foreach (var parameter in parameters)
-                    {
-                        command.Parameters.Add(parameter);
-                    }
-                }
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-        public void Insert(string commandText, CommandType commandType, params SqlParameter[] parameters)
-        {
-            try
-            {
-                using var connection = new SqlConnection(ConnectionString);
-                connection.Open();
-                using var command = new SqlCommand(commandText, connection);
-                command.CommandType = commandType;
-                if (parameters != null)
-                {
-                    foreach (var parameter in parameters)
-                    {
-                        command.Parameters.Add(parameter);
-                    }
-                }
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-        public void Update(string commandText, CommandType commandType, params SqlParameter[] parameters)
-        {
-            try
-            {
-                using var connection = new SqlConnection(ConnectionString);
-                connection.Open();
-                using var command = new SqlCommand(commandText, connection);
-                command.CommandType = commandType;
-                if (parameters != null)
-                {
-                    foreach (var parameter in parameters)
-                    {
-                        command.Parameters.Add(parameter);
-                    }
-                }
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-
+        
         public IEnumerable<ProductObject> GetProductList()
         {
             IDataReader dataReader = null;
@@ -160,7 +36,7 @@ namespace DataAccess
             var pro = new List<ProductObject>();
             try
             {
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection);
                 while (dataReader.Read())
                 {
                     pro.Add(new ProductObject
@@ -193,8 +69,8 @@ namespace DataAccess
             string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE ProductId = @ProductId";
             try
             {
-                var param = CreateParameter("@ProductId", 4, proID, DbType.Int32);
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, param);
+                var param = dataProvider.CreateParameter("@ProductId", 4, proID, DbType.Int32);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, param);
                 if (dataReader.Read())
                 {
                     pro = new ProductObject
@@ -227,8 +103,8 @@ namespace DataAccess
             string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE UnitslnStock = @UnitslnStock";
             try
             {
-                var param = CreateParameter("@UnitslnStock", 4, stock, DbType.Int32);
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, param);
+                var param = dataProvider.CreateParameter("@UnitslnStock", 4, stock, DbType.Int32);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, param);
                 if (dataReader.Read())
                 {
                     pro = new ProductObject
@@ -260,8 +136,8 @@ namespace DataAccess
             string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE ProductName like N'@ProductName'";
             try
             {
-                var param = CreateParameter("@ProductName", 50, name, DbType.String);
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, param);
+                var param = dataProvider.CreateParameter("@ProductName", 50, name, DbType.String);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, param);
                 if (dataReader.Read())
                 {
                     pro = new ProductObject
@@ -294,8 +170,8 @@ namespace DataAccess
             string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE UnitPrice = @UnitPrice";
             try
             {
-                var p = CreateParameter("@UnitPrice", 50, price, DbType.Decimal);
-                dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, p);
+                var p = dataProvider.CreateParameter("@UnitPrice", 50, price, DbType.Decimal);
+                dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, p);
                 if (dataReader.Read())
                 {
                     pro = new ProductObject
@@ -330,13 +206,13 @@ namespace DataAccess
                 {
                     string SQLInsert = "INSERT Product values(@ProductId, @CatagoryId, @ProductName, @Weight, @UnitPrice, @UnitslnStock)";
                     var parameters = new List<SqlParameter>();
-                    parameters.Add(CreateParameter("@ProductId", 4, pro.ProductId, DbType.Int32));
-                    parameters.Add(CreateParameter("@CatagoryId", 4, pro.CategoryId, DbType.Int32));
-                    parameters.Add(CreateParameter("@ProductName", 50, pro.ProductName, DbType.String));
-                    parameters.Add(CreateParameter("@Weight", 50, pro.Weight, DbType.String));
-                    parameters.Add(CreateParameter("@UnitPrice", 50, pro.UnitPrice, DbType.String));
-                    parameters.Add(CreateParameter("@UnitslnStock", 4, pro.UnitslnStock, DbType.Int32));
-                    Insert(SQLInsert, CommandType.Text, parameters.ToArray());
+                    parameters.Add(dataProvider.CreateParameter("@ProductId", 4, pro.ProductId, DbType.Int32));
+                    parameters.Add(dataProvider.CreateParameter("@CatagoryId", 4, pro.CategoryId, DbType.Int32));
+                    parameters.Add(dataProvider.CreateParameter("@ProductName", 50, pro.ProductName, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Weight", 50, pro.Weight, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@UnitPrice", 50, pro.UnitPrice, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@UnitslnStock", 4, pro.UnitslnStock, DbType.Int32));
+                    dataProvider.Insert(SQLInsert, CommandType.Text, parameters.ToArray());
                 }
                 else
                 {
@@ -362,13 +238,13 @@ namespace DataAccess
                 {
                     string SQLUpdate = "UPDATE Product set ProductName = @ProductName,Weight = @Weight,UnitPrice = @UnitPrice, UnitslnStock = @UnitslnStock WHERE ProductId = @ProductId AND CatagoryId = @CatagoryId";
                     var parameters = new List<SqlParameter>();
-                    parameters.Add(CreateParameter("@ProductId", 4, pro.ProductId, DbType.Int32));
-                    parameters.Add(CreateParameter("@CatagoryId", 4, pro.CategoryId, DbType.Int32));
-                    parameters.Add(CreateParameter("@ProductName", 50, pro.ProductName, DbType.String));
-                    parameters.Add(CreateParameter("@Weight", 50, pro.Weight, DbType.String));
-                    parameters.Add(CreateParameter("@UnitPrice", 50, pro.UnitPrice, DbType.String));
-                    parameters.Add(CreateParameter("@UnitslnStock", 4, pro.UnitslnStock, DbType.Int32));
-                    Insert(SQLUpdate, CommandType.Text, parameters.ToArray());
+                    parameters.Add(dataProvider.CreateParameter("@ProductId", 4, pro.ProductId, DbType.Int32));
+                    parameters.Add(dataProvider.CreateParameter("@CatagoryId", 4, pro.CategoryId, DbType.Int32));
+                    parameters.Add(dataProvider.CreateParameter("@ProductName", 50, pro.ProductName, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Weight", 50, pro.Weight, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@UnitPrice", 50, pro.UnitPrice, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@UnitslnStock", 4, pro.UnitslnStock, DbType.Int32));
+                    dataProvider.Insert(SQLUpdate, CommandType.Text, parameters.ToArray());
                 }
                 else
                 {
@@ -393,8 +269,8 @@ namespace DataAccess
                 if (pro != null)
                 {
                     string SQLDelete = "DELETE Product WHERE ProductId = @ProductId";
-                    var param = CreateParameter("@ProductId", 4, proID, DbType.Int32);
-                    Delete(SQLDelete, CommandType.Text, param);
+                    var param = dataProvider.CreateParameter("@ProductId", 4, proID, DbType.Int32);
+                    dataProvider.Delete(SQLDelete, CommandType.Text, param);
                 }
                 else
                 {
@@ -421,8 +297,8 @@ namespace DataAccess
                 if (pId.ProductId != 0)
                 {
                     string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE ProductId = @ProductId";
-                    var id = CreateParameter("@ProductId", 4, proID, DbType.Int32);
-                    dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, id);
+                    var id = dataProvider.CreateParameter("@ProductId", 4, proID, DbType.Int32);
+                    dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, id);
                     while (dataReader.Read())
                     {
                         pro.Add(new ProductObject
@@ -438,8 +314,8 @@ namespace DataAccess
                 }else if(stk.UnitslnStock != 0)
                 {
                     string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE UnitslnStock = @UnitslnStock";
-                    var s = CreateParameter("@UnitslnStock", 4, stock, DbType.Int32);
-                    dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, s);
+                    var s = dataProvider.CreateParameter("@UnitslnStock", 4, stock, DbType.Int32);
+                    dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, s);
                     while (dataReader.Read())
                     {
                         pro.Add(new ProductObject
@@ -476,8 +352,8 @@ namespace DataAccess
                 if (pname.ProductName != null)
                 {
                     string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE ProductId like N'@ProductName'";
-                    var proName = CreateParameter("@ProductName", 50, name, DbType.String);
-                    dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, proName);
+                    var proName = dataProvider.CreateParameter("@ProductName", 50, name, DbType.String);
+                    dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, proName);
                     while (dataReader.Read())
                     {
                         pro.Add(new ProductObject
@@ -513,8 +389,8 @@ namespace DataAccess
                 if (p.UnitPrice != null)
                 {
                     string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE UnitPrice = @UnitPrice";
-                    var proPrice = CreateParameter("@UnitPrice", 50, price, DbType.Decimal);
-                    dataReader = GetDataReader(SQLSelect, CommandType.Text, out connection, proPrice);
+                    var proPrice = dataProvider.CreateParameter("@UnitPrice", 50, price, DbType.Decimal);
+                    dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, proPrice);
                     while (dataReader.Read())
                     {
                         pro.Add(new ProductObject
