@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessObject;
 using DataAccess.Repository;
+using DataAccess;
 
 namespace SalesWinApp
 {
@@ -56,13 +57,14 @@ namespace SalesWinApp
 
         private OrderObject GetOrderObject()
         {
+            MemberDAO memberDAO = new MemberDAO();
             OrderObject orderObject = null;
             try
             {
                 orderObject = new OrderObject
                 {
                     OrderId = int.Parse(txtOrderId.Text),
-                    MemberId = int.Parse(txtMemberId.Text),
+                    MemberId = memberDAO.GetMemberByID(int.Parse(txtMemberId.Text)),
                     OrderDate = DateTime.Parse(txtOrderDate.Text),
                     RequiredDate = DateTime.Parse(txtRequiredDate.Text),
                     ShippedDate = DateTime.Parse(txtShippedDate.Text),
