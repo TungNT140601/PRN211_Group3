@@ -25,7 +25,7 @@ namespace DataAccess
                 .AddJsonFile("appsetting.json", true, true)
                 .Build();
             connectionString = config["ConnectionString:FStoreDB"];
-            return connectionString;
+            return "Server=(local);uid=sa;pwd=12345;database=FStore;TrustServerCertificate=True";
         }
         public void CloseConnection() => dataProvider.CloseConnection(connection);
     }

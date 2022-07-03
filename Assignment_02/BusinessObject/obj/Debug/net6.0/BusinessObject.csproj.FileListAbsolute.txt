@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.deps.json
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.dll
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.pdb
@@ -10,7 +12,6 @@ D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\BusinessObjec
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\refint\BusinessObject.dll
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll
-<<<<<<< HEAD
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.deps.json
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.dll
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.pdb
@@ -23,7 +24,7 @@ C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\BusinessObject\obj
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\refint\BusinessObject.dll
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll
-=======
+>>>>>>> main
 D:\PRN211\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.deps.json
 D:\PRN211\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.dll
 D:\PRN211\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.pdb
@@ -36,6 +37,7 @@ D:\PRN211\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\BusinessOb
 D:\PRN211\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\refint\BusinessObject.dll
 D:\PRN211\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
 D:\PRN211\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll
+<<<<<<< HEAD
 D:\PRN-SE1624-CLASS\GroupProject\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.deps.json
 D:\PRN-SE1624-CLASS\GroupProject\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.dll
 D:\PRN-SE1624-CLASS\GroupProject\PRN211_Group3\Assignment_02\BusinessObject\bin\Debug\net6.0\BusinessObject.pdb
@@ -48,4 +50,6 @@ D:\PRN-SE1624-CLASS\GroupProject\PRN211_Group3\Assignment_02\BusinessObject\obj\
 D:\PRN-SE1624-CLASS\GroupProject\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\refint\BusinessObject.dll
 D:\PRN-SE1624-CLASS\GroupProject\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
 D:\PRN-SE1624-CLASS\GroupProject\PRN211_Group3\Assignment_02\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll
+>>>>>>> main
+=======
 >>>>>>> main

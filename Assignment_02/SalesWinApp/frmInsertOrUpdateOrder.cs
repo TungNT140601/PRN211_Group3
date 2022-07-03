@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.Repository;
+using DataAccess;
 namespace SalesWinApp
 {
     public partial class frmInsertOrUpdateOrder : Form
@@ -24,7 +25,7 @@ namespace SalesWinApp
         private void frmInsertOrUpdateOrder_Load(object sender, EventArgs e)
         {
             txtOrderId.Enabled = !InsertOrUpdate;
-            if(InsertOrUpdate == true)
+            if (InsertOrUpdate == true)
             {
                 txtOrderId.Text = OrderInfo.OrderId.ToString();
                 txtMemberId.Text = OrderInfo.MemberId.ToString();
@@ -37,18 +38,19 @@ namespace SalesWinApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            MemberDAO memberDAO = new MemberDAO();
             try
             {
                 var order = new OrderObject
                 {
                     OrderId = int.Parse(txtOrderId.Text),
-                    MemberId = int.Parse(txtMemberId.Text),
+                    MemberId = memberDAO.GetMemberByID(int.Parse(txtMemberId.Text)),
                     OrderDate = DateTime.Parse(txtOrderDate.Text),
                     RequiredDate = DateTime.Parse(txtRequiredDate.Text),
                     ShippedDate = DateTime.Parse(txtShippedDate.Text),
                     Freight = decimal.Parse(txtFreight.Text),
                 };
-                if(InsertOrUpdate == false)
+                if (InsertOrUpdate == false)
                 {
                     OrderRepository.InsertOrder(order);
                 }
@@ -57,7 +59,7 @@ namespace SalesWinApp
                     OrderRepository.UpdateOrder(order);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add a new order" : "Update a order");
             }
