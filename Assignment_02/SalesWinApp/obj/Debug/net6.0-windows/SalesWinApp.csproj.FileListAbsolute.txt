@@ -169,3 +169,5 @@ D:\PRN211\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\ref\S
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmInsertOrUpdateOrder.resources
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProductDetails.resources
 >>>>>>> main
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmInsertOrUpdateOrder.resources
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProductDetails.resources
