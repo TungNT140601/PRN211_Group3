@@ -21,9 +21,9 @@ namespace DataAccess
         {
             string connectionString;
             IConfiguration config = new ConfigurationBuilder()
-                                        .SetBasePath(Directory.GetCurrentDirectory())
-                                        .AddJsonFile("appsetting.json", true, true)
-                                        .Build();
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsetting.json", true, true)
+                .Build();
             connectionString = config["ConnectionString:FStoreDB"];
             return connectionString;
         }

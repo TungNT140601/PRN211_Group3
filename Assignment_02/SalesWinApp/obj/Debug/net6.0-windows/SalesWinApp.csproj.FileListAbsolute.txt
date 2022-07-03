@@ -109,3 +109,5 @@ D:\PRN211\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\refin
 D:\PRN211\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.pdb
 D:\PRN211\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.genruntimeconfig.cache
 D:\PRN211\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\ref\SalesWinApp.dll
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmInsertOrUpdateOrder.resources
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProductDetails.resources

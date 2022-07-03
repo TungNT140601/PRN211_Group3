@@ -130,24 +130,16 @@ namespace SalesWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            //try
-            //{
-            //    var order = GetOrderObject();
-
-            //}
-=======
             try
             {
                 var order = GetOrderObject();
                 orderRepository.DeleteOrder(order.OrderId);
                 LoadOrderList();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Delete a car");
             }
->>>>>>> main
         }
     }
 }
