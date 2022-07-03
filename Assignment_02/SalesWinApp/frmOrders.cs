@@ -11,7 +11,7 @@ using BusinessObject;
 using DataAccess.Repository;
 
 namespace SalesWinApp
-{ 
+{
     public partial class frmOrders : Form
     {
         IOrderRepository orderRepository = new OrderRepository();
@@ -68,9 +68,9 @@ namespace SalesWinApp
                     ShippedDate = DateTime.Parse(txtShippedDate.Text),
                     Freight = decimal.Parse(txtFreight.Text),
                 };
-                
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Get Order");
             }
@@ -102,7 +102,7 @@ namespace SalesWinApp
                 dataGridViewOrders.DataSource = null;
                 dataGridViewOrders.DataSource = source;
 
-                if(orders.Count() == 0)
+                if (orders.Count() == 0)
                 {
                     ClearText();
                     btnDelete.Enabled = false;
@@ -112,7 +112,7 @@ namespace SalesWinApp
                     btnDelete.Enabled = true;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Load order list");
             }
@@ -130,6 +130,13 @@ namespace SalesWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            //try
+            //{
+            //    var order = GetOrderObject();
+
+            //}
+=======
             try
             {
                 var order = GetOrderObject();
@@ -140,6 +147,7 @@ namespace SalesWinApp
             {
                 MessageBox.Show(ex.Message, "Delete a car");
             }
+>>>>>>> main
         }
     }
 }
