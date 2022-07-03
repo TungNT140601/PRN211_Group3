@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\PRN211\\PRN211_Group3\\Assignment_01\\MyStoreWinApp\\MyStoreWinApp.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\obj\\",
+=======
+    "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\MyStoreWinApp\\MyStoreWinApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj",
+        "projectName": "BusinessObject",
+        "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\obj\\",
+>>>>>>> main
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -58,10 +76,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< HEAD
     "D:\\PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -70,12 +89,26 @@
         "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\obj\\",
+=======
+    "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\obj\\",
+>>>>>>> main
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -90,8 +123,13 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
               "D:\\PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj"
+=======
+              "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj"
+>>>>>>> main
               }
             }
           }
@@ -120,10 +158,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< HEAD
     "D:\\PRN211\\PRN211_Group3\\Assignment_01\\MyStoreWinApp\\MyStoreWinApp.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -132,12 +171,26 @@
         "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\MyStoreWinApp\\MyStoreWinApp.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
         "outputPath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\MyStoreWinApp\\obj\\",
+=======
+    "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\MyStoreWinApp\\MyStoreWinApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\MyStoreWinApp\\MyStoreWinApp.csproj",
+        "projectName": "MyStoreWinApp",
+        "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\MyStoreWinApp\\MyStoreWinApp.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\MyStoreWinApp\\obj\\",
+>>>>>>> main
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -152,11 +205,19 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
+<<<<<<< HEAD
               "D:\\PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj"
               },
               "D:\\PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj": {
                 "projectPath": "D:\\PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj"
+=======
+              "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj"
+              },
+              "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj"
+>>>>>>> main
               }
             }
           }
@@ -198,7 +259,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
