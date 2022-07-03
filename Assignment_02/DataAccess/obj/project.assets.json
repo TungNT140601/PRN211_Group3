@@ -2717,23 +2717,56 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\TBL\\.nuget\\packages\\": {},
     "D:\\Software\\Shared\\NuGetPackages": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Asus\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+>>>>>>> main
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> main
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
       "projectPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\TBL\\.nuget\\packages\\",
       "outputPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\DataAccess\\obj\\",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
+      "projectName": "DataAccess",
+      "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\obj\\",
+=======
+      "projectUniqueName": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
+      "projectName": "DataAccess",
+      "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\obj\\",
+>>>>>>> main
+>>>>>>> main
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Software\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\TBL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> main
+>>>>>>> main
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2748,8 +2781,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
             "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
               "projectPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
+=======
+            "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
+>>>>>>> main
+>>>>>>> main
             }
           }
         }
@@ -2792,7 +2835,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+>>>>>>> main
       }
     }
   },
@@ -2801,7 +2848,11 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\DataAccess\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+<<<<<<< HEAD
+      "message": "Problem reading the cache file C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problem reading the cache file D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> main
     }
   ]
 }

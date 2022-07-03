@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessObject;
 using DataAccess.Repository;
+using DataAccess;
 
 namespace SalesWinApp
 {
@@ -29,7 +30,7 @@ namespace SalesWinApp
 
         private void DataGridViewOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmInsertOrUpdateOrder frmOrderDetails = new frmInsertOrUpdateOrder
+            frmInsertOrUpdateOrder frmInsertOrUpdateOrder = new frmInsertOrUpdateOrder
             {
                 Text = "Update order",
                 InsertOrUpdate = true,
@@ -37,17 +38,16 @@ namespace SalesWinApp
                 OrderRepository = orderRepository
 
             };
-            //if (frmInsertOrUpdateOrder.ShowDialog() == DialogResult.OK)
-            //{
-            //    LoadOrderList();
-            //    source.Position = source.Count - 1;
-            //}
+            if (frmInsertOrUpdateOrder.ShowDialog() == DialogResult.OK)
+            {
+                LoadOrderList();
+                source.Position = source.Count - 1;
+            }
         }
 
         private void ClearText()
         {
             txtOrderId.Text = string.Empty;
-            txtMemberId.Text = string.Empty;
             txtOrderDate.Text = string.Empty;
             txtRequiredDate.Text = string.Empty;
             txtShippedDate.Text = string.Empty;
@@ -56,13 +56,14 @@ namespace SalesWinApp
 
         private OrderObject GetOrderObject()
         {
+            MemberDAO memberDAO = new MemberDAO();
             OrderObject orderObject = null;
             try
             {
                 orderObject = new OrderObject
                 {
                     OrderId = int.Parse(txtOrderId.Text),
-                    MemberId = int.Parse(txtMemberId.Text),
+                    MemberId = memberDAO.GetMemberByID(int.Parse(txtMemberId.Text)),
                     OrderDate = DateTime.Parse(txtOrderDate.Text),
                     RequiredDate = DateTime.Parse(txtRequiredDate.Text),
                     ShippedDate = DateTime.Parse(txtShippedDate.Text),
@@ -118,10 +119,6 @@ namespace SalesWinApp
             }
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            LoadOrderList();
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -140,6 +137,16 @@ namespace SalesWinApp
             {
                 MessageBox.Show(ex.Message, "Delete a car");
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadOrderList();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
