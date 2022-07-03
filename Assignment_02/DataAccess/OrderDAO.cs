@@ -375,17 +375,7 @@ namespace DataAccess
                 CloseConnection();
             }
         }
-<<<<<<< HEAD
-
-        private MemberObject GetMemberByID(int memberId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(int memID)
-=======
         public void Remove(int orderId)
->>>>>>> main
         {
             try
             {
