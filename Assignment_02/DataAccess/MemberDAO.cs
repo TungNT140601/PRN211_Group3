@@ -3,8 +3,6 @@ using System.Data;
 using Microsoft.Extensions.Configuration;
 using BusinessObject;
 using System;
-using System.Data;
-using Microsoft.Data.SqlClient;
 namespace DataAccess
 {
     public class MemberDAO : BaseDAL
@@ -128,8 +126,6 @@ namespace DataAccess
             IDataReader dataReader = null;
             try
             {
-                if(Check(email) == true)
-                {
                     string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
                     var mail = dataProvider.CreateParameter("@Email", 50, email, DbType.String);
                     var pass = dataProvider.CreateParameter("@Password", 50, password, DbType.String);
@@ -146,8 +142,7 @@ namespace DataAccess
                             Country = dataReader.GetString(4),
                             Password = dataReader.GetString(5)
                         };
-                    }
-                }   
+                    } 
             }catch (Exception ex)
             {
                 throw new Exception(ex.Message);
