@@ -1,6 +1,9 @@
 {
   "version": 2,
 <<<<<<< HEAD
+  "dgSpecHash": "D+Zr+2WdLsjIKRUgAyZ/p1pun4O2UJYdZ3YqOOQbgYhML5j9j6qohMvd3NL7zhj4RG2k4kNatSJHcq7+YZJ1mg==",
+=======
+<<<<<<< HEAD
   "dgSpecHash": "+vzJm5P+peJ30YIPzYztiuw0L8YiayaQuvWl55ivPkwlOMSvF4nZji7RzgKYMSB5E2ZQ4ZreZF2C2d23xCvZ+g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
@@ -60,6 +63,7 @@
     "C:\\Users\\Asus\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
 =======
   "dgSpecHash": "X3b3r9fEdgUCpYRa+l0DYTrnXlwoBPuy6uuGQDQ6IJktOptDePb/Mdpme5XpT/UKf+wQXe47KdfIaFuyv725Og==",
+>>>>>>> main
   "success": true,
   "projectFilePath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [

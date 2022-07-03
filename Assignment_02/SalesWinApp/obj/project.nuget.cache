@@ -1,6 +1,9 @@
 {
   "version": 2,
 <<<<<<< HEAD
+  "dgSpecHash": "N1itC9HvAz6q+fLvreshAQPhvpJkdFRUYCvbM7+XVAuqvAlWALTw0BLc/e5zUW3RulUtwZojYasRNSISrq4pBA==",
+=======
+<<<<<<< HEAD
   "dgSpecHash": "Nv4YBTjVXgDI9jr7z1ayGyOlcL5fpWvWp5gDULzJiHytm+2x2n8Umjte+26WaarW0cjZeWkGtXZld9Ge4ADWgQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\SalesWinApp\\SalesWinApp.csproj",
@@ -60,6 +63,7 @@
     "C:\\Users\\Asus\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
 =======
   "dgSpecHash": "NL7gpueZ1/QRRTEAc8ClCQaQeqglrkB6Xa341wFLt2TKreFZMMwbv98v7f/NM+fO91LlW+tCcHBMfn8nErIV8Q==",
+>>>>>>> main
   "success": true,
   "projectFilePath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\SalesWinApp\\SalesWinApp.csproj",
   "expectedPackageFiles": [

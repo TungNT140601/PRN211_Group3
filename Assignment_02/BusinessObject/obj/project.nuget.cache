@@ -1,6 +1,9 @@
 {
   "version": 2,
 <<<<<<< HEAD
+  "dgSpecHash": "jCNGVsv8ODv8A7eTLzGGa5pDm49FiSgvocHN5wvxZyZ2HWrFXsaDH7j2fX7pPpcGp7ODO2YTz6dhc3B/Bs0jGQ==",
+=======
+<<<<<<< HEAD
   "dgSpecHash": "vrz8R6MdcMhLlu/wPiqXjL/1BQHtu9bkiI5NXykgCknHWWDYRklHupW+c/DCro1eS3774OueRrmlyA4mLRY2Dg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
@@ -60,6 +63,7 @@
     "C:\\Users\\Asus\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
 =======
   "dgSpecHash": "DeIuouDxKBlw+vUqMBkEOOFW5DrW4SBKo1BhjOPMBw7yplNyOyVHTvMsF6ZewKeTSGNTTYp05cCguoNwG82wmA==",
+>>>>>>> main
   "success": true,
   "projectFilePath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
   "expectedPackageFiles": [
