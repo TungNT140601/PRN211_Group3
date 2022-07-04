@@ -8,7 +8,7 @@ namespace DataAccess
     {
         private static MemberDAO instance = null;
         private static readonly object instanceLock = new object();
-        private MemberDAO() { }
+        public MemberDAO() { }
         public static MemberDAO Instance
         {
             get
