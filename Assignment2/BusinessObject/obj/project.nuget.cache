@@ -1,15 +1,25 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "J0jUPNE7C4oc33tPSuOxdDqciQ3IbztMCLDmTo/rMhEKCOuZB9P/QNqQqcYbinHpnHu1SwBo+rYFwXF9PS/H8A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment2\\BusinessObject\\BusinessObject.csproj",
+=======
+  "dgSpecHash": "bMiJVGUd8apVBb++UaDOMyfV7FYbmeSRCvFZVulABrJxS2G+cbC6CYDG0zzpJnuZWMKhFRq9PCKqCSVKyQcz3g==",
+  "success": true,
+  "projectFilePath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment2\\BusinessObject\\BusinessObject.csproj",
+>>>>>>> main
   "expectedPackageFiles": [],
   "logs": [
     {
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Problem reading the cache file C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment2\\BusinessObject\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problem reading the cache file D:\\Code C#\\PRN_Assignment_Group3\\Assignment2\\BusinessObject\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> main
     }
   ]
 }
