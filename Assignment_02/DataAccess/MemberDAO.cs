@@ -7,7 +7,7 @@ namespace DataAccess
 {
     public class MemberDAO : BaseDAL
     {
-        private static MemberDAO instance = null;
+        private static MemberDAO? instance = null;
         private static readonly object instanceLock = new object();
         public static MemberDAO Instance
         {
@@ -26,7 +26,7 @@ namespace DataAccess
 
         public IEnumerable<MemberObject> GetMemberList()
         {
-            IDataReader dataReader = null;
+            IDataReader? dataReader = null;
             string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member";
             var mem = new List<MemberObject>();
             try
@@ -59,8 +59,8 @@ namespace DataAccess
 
         public MemberObject GetMemberByID(int memID)
         {
-            MemberObject mem = null;
-            IDataReader dataReader = null;
+            MemberObject? mem = null;
+            IDataReader? dataReader = null;
             string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE MemberId = @MemberId";
             try
             {
@@ -94,7 +94,7 @@ namespace DataAccess
         public bool Check(string email)
         {
             bool check = false;
-            IDataReader dataReader = null;
+            IDataReader? dataReader = null;
             try
             {
                 string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email";
@@ -118,8 +118,8 @@ namespace DataAccess
         }
         public MemberObject CheckLogin(string email, string pass)
         {
-            MemberObject mem = null;
-            IDataReader reader = null;
+            MemberObject? mem = null;
+            IDataReader? reader = null;
             string SQL = "SELECT [MemberId],[Email],[CompanyName],[City],[Country],[Password] FROM [FStore_Ass2].[dbo].[tbl_Member] WHERE [Email] like @Email AND [Password] like @Password";
             try
             {

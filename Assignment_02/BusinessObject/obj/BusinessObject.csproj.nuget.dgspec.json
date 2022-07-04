@@ -1,55 +1,23 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
+    "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\obj\\",
-=======
-    "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {}
->>>>>>> main
-  },
-  "projects": {
-    "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
-        "projectName": "BusinessObject",
-<<<<<<< HEAD
         "projectPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\TBL\\.nuget\\packages\\",
         "outputPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\obj\\",
-=======
-        "projectPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN-SE1624-CLASS\\GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\obj\\",
->>>>>>> main
->>>>>>> main
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Software\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\TBL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-<<<<<<< HEAD
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> main
->>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -104,11 +72,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
->>>>>>> main
         }
       }
     }
