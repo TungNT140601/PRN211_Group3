@@ -1,5 +1,11 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "/QzlEmqowe9utVYXn1KTQwsSCmdpygX1fr9Cqcsi8I6+f9FuX5708lLApHcAN5lpfz1Z8sfyHiS8jOcc3m5v/g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj",
+  "expectedPackageFiles": [],
+=======
   "dgSpecHash": "WcYpg6D00XMvreIdJ+bChpKBGkiyFDqJg3H48D1/inqCRQWDs/PUBe6pMOnd00udPy0m9MqSMau0F6QEBu0j9A==",
   "success": true,
   "projectFilePath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_01\\DataAccess\\DataAccess.csproj",
@@ -58,5 +64,6 @@
     "C:\\Users\\TBL\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "C:\\Users\\TBL\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
+>>>>>>> main
   "logs": []
 }

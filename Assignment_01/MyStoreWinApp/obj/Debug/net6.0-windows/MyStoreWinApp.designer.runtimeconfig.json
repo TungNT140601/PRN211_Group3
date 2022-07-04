@@ -12,9 +12,15 @@
       }
     ],
     "additionalProbingPaths": [
+<<<<<<< HEAD
+      "C:\\Users\\Asus\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Asus\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+=======
       "C:\\Users\\TBL\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\TBL\\.nuget\\packages",
       "D:\\Software\\Shared\\NuGetPackages"
+>>>>>>> main
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
