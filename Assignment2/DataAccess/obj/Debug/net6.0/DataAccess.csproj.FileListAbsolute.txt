@@ -30,6 +30,7 @@ D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\DataAccess\obj\
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+<<<<<<< HEAD
 D:\Code C#\PRN_Assignment_Group3\Assignment2\DataAccess\bin\Debug\net6.0\appsettings.json
 D:\Code C#\PRN_Assignment_Group3\Assignment2\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
 D:\Code C#\PRN_Assignment_Group3\Assignment2\DataAccess\bin\Debug\net6.0\DataAccess.dll
@@ -46,3 +47,21 @@ D:\Code C#\PRN_Assignment_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAcc
 D:\Code C#\PRN_Assignment_Group3\Assignment2\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
 D:\Code C#\PRN_Assignment_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 D:\Code C#\PRN_Assignment_Group3\Assignment2\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+=======
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\bin\Debug\net6.0\appsettings.json
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\bin\Debug\net6.0\DataAccess.dll
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\bin\Debug\net6.0\BusinessObject.dll
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\bin\Debug\net6.0\BusinessObject.pdb
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CopyComplete
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAccess.dll
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+>>>>>>> main
