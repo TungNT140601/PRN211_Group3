@@ -45,9 +45,9 @@ namespace Assignment1.DataAccess
                     {
                         ID = dataReader.GetInt32(0),
                         Name = dataReader.GetString(1),
-                        City = dataReader.GetString(2),
-                        Country = dataReader.GetString(3),
-                        Email = dataReader.GetString(4),
+                        Email = dataReader.GetString(2),
+                        City = dataReader.GetString(3),
+                        Country = dataReader.GetString(4),
                         Password = dataReader.GetString(5)
                     });
                 }
@@ -140,9 +140,9 @@ namespace Assignment1.DataAccess
                     {
                         ID = reader.GetInt32(0),
                         Name = reader.GetString(1),
-                        City = reader.GetString(2),
-                        Country = reader.GetString(3),
-                        Email = reader.GetString(4),
+                        Email = reader.GetString(2),
+                        City = reader.GetString(3),
+                        Country = reader.GetString(4),
                         Password = reader.GetString(5)
                     };
                 }
@@ -164,7 +164,7 @@ namespace Assignment1.DataAccess
             try
             {
                 MemberObject member = GetMemberByID(mem.ID);
-                if (member.ID == null)
+                if (member == null)
                 {
                     string SQLInsert = "INSERT Member values(@MemberID, @MemberName, @Email, @City, @Country, @Password)";
                     var parameters = new List<SqlParameter>();

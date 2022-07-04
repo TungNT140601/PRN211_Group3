@@ -38,7 +38,7 @@ namespace MyStoreWinApp
                 txtFilterCity.ReadOnly = false;
                 txtSearch.ReadOnly = false;
                 btnSearch.Enabled = true;
-                btnSort.Enabled = true;
+                btnSort.Enabled = false;
             }
             else
             {
@@ -198,11 +198,13 @@ namespace MyStoreWinApp
                         ClearText();
                         btnDelete.Enabled = false;
                         btnNew.Enabled = true;
+                        btnSort.Enabled = false;
                     }
                     else
                     {
                         btnDelete.Enabled = true;
                         btnNew.Enabled = true;
+                        btnSort.Enabled = true;
                     }
                 }
                 catch (Exception ex)

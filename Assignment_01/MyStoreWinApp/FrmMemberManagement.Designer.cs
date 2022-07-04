@@ -258,7 +258,7 @@
             // txtContryFilter
             // 
             this.txtContryFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtContryFilter.Location = new System.Drawing.Point(526, 13);
+            this.txtContryFilter.Location = new System.Drawing.Point(536, 13);
             this.txtContryFilter.Name = "txtContryFilter";
             this.txtContryFilter.Size = new System.Drawing.Size(194, 29);
             this.txtContryFilter.TabIndex = 23;
