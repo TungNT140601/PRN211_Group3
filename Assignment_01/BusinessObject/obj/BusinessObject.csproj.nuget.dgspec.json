@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj": {}
   },
   "projects": {
@@ -13,29 +12,12 @@
         "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_01\\BusinessObject\\obj\\",
-=======
-    "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj": {}
-  },
-  "projects": {
-    "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj",
-        "projectName": "BusinessObject",
-        "projectPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_01\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\TBL\\.nuget\\packages\\",
-        "outputPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_01\\BusinessObject\\obj\\",
->>>>>>> main
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Software\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\TBL\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -90,11 +72,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
->>>>>>> main
         }
       }
     }
