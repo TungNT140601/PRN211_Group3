@@ -136,11 +136,11 @@ namespace DataAccess
                     string SQLInsert = "INSERT Member values(@MemberId, @Email, @Companyname, @City, @Country, @Password)";
                     var parameters = new List<SqlParameter>();
                     parameters.Add(dataProvider.CreateParameter("@MemberId", 4, mem.MemberId, DbType.Int32));
-                    parameters.Add(dataProvider.CreateParameter("@Email", 4, mem.Email, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Email", 50, mem.Email, DbType.String));
                     parameters.Add(dataProvider.CreateParameter("@Companyname", 50, mem.CompanyName, DbType.String));
                     parameters.Add(dataProvider.CreateParameter("@City", 50, mem.City, DbType.String));
                     parameters.Add(dataProvider.CreateParameter("@Country", 50, mem.Country, DbType.String));
-                    parameters.Add(dataProvider.CreateParameter("@Password", 4, mem.Password, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Password", 50, mem.Password, DbType.String));
                     dataProvider.Insert(SQLInsert, CommandType.Text, parameters.ToArray());
                 }
                 else
@@ -168,11 +168,11 @@ namespace DataAccess
                     string SQLUpdate = "UPDATE Member set Email = @Email,Companyname = @Companyname,City = @City, Country = @Country, Password = @Password WHERE MemberId = @MemberId";
                     var parameters = new List<SqlParameter>();
                     parameters.Add(dataProvider.CreateParameter("@MemberId", 4, mem.MemberId, DbType.Int32));
-                    parameters.Add(dataProvider.CreateParameter("@Email", 4, mem.Email, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Email", 50, mem.Email, DbType.String));
                     parameters.Add(dataProvider.CreateParameter("@Companyname", 50, mem.CompanyName, DbType.String));
                     parameters.Add(dataProvider.CreateParameter("@City", 50, mem.City, DbType.String));
                     parameters.Add(dataProvider.CreateParameter("@Country", 50, mem.Country, DbType.String));
-                    parameters.Add(dataProvider.CreateParameter("@Password", 4, mem.Password, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Password", 50, mem.Password, DbType.String));
                     dataProvider.Insert(SQLUpdate, CommandType.Text, parameters.ToArray());
                 }
                 else
