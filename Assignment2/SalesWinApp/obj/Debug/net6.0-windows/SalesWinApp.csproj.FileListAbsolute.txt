@@ -117,7 +117,6 @@ D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\bin
 <<<<<<< HEAD
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMemberDetail.resources
 =======
-<<<<<<< HEAD
 D:\Code C#\PRN_Assignment_Group3\Assignment2\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.exe
 D:\Code C#\PRN_Assignment_Group3\Assignment2\SalesWinApp\bin\Debug\net6.0-windows\appsettings.json
 D:\Code C#\PRN_Assignment_Group3\Assignment2\SalesWinApp\bin\Debug\net6.0-windows\appsetting.json
@@ -177,7 +176,6 @@ D:\Code C#\PRN_Assignment_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-window
 D:\Code C#\PRN_Assignment_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.pdb
 D:\Code C#\PRN_Assignment_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.genruntimeconfig.cache
 D:\Code C#\PRN_Assignment_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\ref\SalesWinApp.dll
-=======
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.exe
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\bin\Debug\net6.0-windows\appsettings.json
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\bin\Debug\net6.0-windows\appsetting.json
@@ -237,5 +235,4 @@ C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\obj\Debu
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.pdb
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.genruntimeconfig.cache
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\ref\SalesWinApp.dll
->>>>>>> main
 >>>>>>> main
