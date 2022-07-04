@@ -13,11 +13,16 @@
     ],
     "additionalProbingPaths": [
 <<<<<<< HEAD
+<<<<<<< HEAD
       "C:\\Users\\HP\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\HP\\.nuget\\packages",
 =======
       "C:\\Users\\Asus\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\Asus\\.nuget\\packages",
+>>>>>>> main
+=======
+      "C:\\Users\\Admin\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Admin\\.nuget\\packages",
 >>>>>>> main
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
