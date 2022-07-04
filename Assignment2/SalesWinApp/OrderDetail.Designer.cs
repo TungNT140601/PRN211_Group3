@@ -38,7 +38,7 @@
             this.txtMemberId = new System.Windows.Forms.TextBox();
             this.txtOrderDate = new System.Windows.Forms.TextBox();
             this.txtRequiredDate = new System.Windows.Forms.TextBox();
-            this.ShippedDate = new System.Windows.Forms.TextBox();
+            this.txtShippedDate = new System.Windows.Forms.TextBox();
             this.txtFreight = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -126,12 +126,12 @@
             this.txtRequiredDate.Size = new System.Drawing.Size(280, 27);
             this.txtRequiredDate.TabIndex = 9;
             // 
-            // ShippedDate
+            // txtShippedDate
             // 
-            this.ShippedDate.Location = new System.Drawing.Point(131, 233);
-            this.ShippedDate.Name = "ShippedDate";
-            this.ShippedDate.Size = new System.Drawing.Size(280, 27);
-            this.ShippedDate.TabIndex = 10;
+            this.txtShippedDate.Location = new System.Drawing.Point(131, 233);
+            this.txtShippedDate.Name = "txtShippedDate";
+            this.txtShippedDate.Size = new System.Drawing.Size(280, 27);
+            this.txtShippedDate.TabIndex = 10;
             // 
             // txtFreight
             // 
@@ -149,6 +149,7 @@
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -168,7 +169,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtFreight);
-            this.Controls.Add(this.ShippedDate);
+            this.Controls.Add(this.txtShippedDate);
             this.Controls.Add(this.txtRequiredDate);
             this.Controls.Add(this.txtOrderDate);
             this.Controls.Add(this.txtMemberId);
@@ -182,6 +183,7 @@
             this.Name = "OrderDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderDetail";
+            this.Load += new System.EventHandler(this.OrderDetail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,7 +201,7 @@
         private TextBox txtMemberId;
         private TextBox txtOrderDate;
         private TextBox txtRequiredDate;
-        private TextBox ShippedDate;
+        private TextBox txtShippedDate;
         private TextBox txtFreight;
         private Button btnSave;
         private Button btnCancel;
