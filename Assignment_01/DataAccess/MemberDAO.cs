@@ -33,7 +33,7 @@ namespace Assignment1.DataAccess
         public IEnumerable<MemberObject> GetMemberList()
         {
             IDataReader? dataReader = null;
-            string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member";
+            string SQLSelect = "SELECT MemberID, MemberName, Email, City, Country, Password FROM Member";
             var mem = new List<MemberObject>();
             try
             {
@@ -67,10 +67,10 @@ namespace Assignment1.DataAccess
         {
             MemberObject? mem = null;
             IDataReader? dataReader = null;
-            string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE MemberId = @MemberId";
+            string SQLSelect = "SELECT MemberID, MemberName, Email, City, Country, Password FROM Member WHERE MemberID = @MemberID";
             try
             {
-                var param = dataProvider.CreateParameter("@MemberId", 4, memID, DbType.Int32);
+                var param = dataProvider.CreateParameter("@MemberID", 4, memID, DbType.Int32);
                 dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, param);
                 if (dataReader.Read())
                 {
@@ -103,7 +103,7 @@ namespace Assignment1.DataAccess
             IDataReader? dataReader = null;
             try
             {
-                string SQLSelect = "SELECT MemberId, Email, Companyname, City, Country, Password FROM Member WHERE Email = @Email";
+                string SQLSelect = "SELECT MemberID, MemberName, Email, City, Country, Password FROM Member WHERE Email = @Email";
                 var mail = dataProvider.CreateParameter("@Email", 50, email, DbType.String);
                 dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection, mail);
                 if (dataReader.Read())
@@ -126,7 +126,7 @@ namespace Assignment1.DataAccess
         {
             MemberObject? mem = null;
             IDataReader? reader = null;
-            string SQL = "SELECT [MemberId],[Email],[CompanyName],[City],[Country],[Password] FROM [FStore_Ass2].[dbo].[tbl_Member] WHERE [Email] like @Email AND [Password] like @Password";
+            string SQL = "SELECT MemberID, MemberName, Email, City, Country, Password FROM Member WHERE Email = @Email AND Password = @Password";
             try
             {
                 var parameters = new List<SqlParameter>();
@@ -165,14 +165,14 @@ namespace Assignment1.DataAccess
                 MemberObject member = GetMemberByID(mem.ID);
                 if (member.ID == null)
                 {
-                    string SQLInsert = "INSERT Member values(@MemberId, @Email, @Companyname, @City, @Country, @Password)";
+                    string SQLInsert = "INSERT Member values(@MemberID, @MemberName, @Email, @City, @Country, @Password)";
                     var parameters = new List<SqlParameter>();
-                    parameters.Add(dataProvider.CreateParameter("@MemberId", 4, mem.ID, DbType.Int32));
-                    parameters.Add(dataProvider.CreateParameter("@Email", 4, mem.Name, DbType.String));
-                    parameters.Add(dataProvider.CreateParameter("@Companyname", 50, mem.City, DbType.String));
-                    parameters.Add(dataProvider.CreateParameter("@City", 50, mem.Country, DbType.String));
-                    parameters.Add(dataProvider.CreateParameter("@Country", 50, mem.Email, DbType.String));
-                    parameters.Add(dataProvider.CreateParameter("@Password", 4, mem.Password, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@MemberID", 4, mem.ID, DbType.Int32));
+                    parameters.Add(dataProvider.CreateParameter("@MemberName", 50, mem.Name, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Email", 50, mem.Email, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@City", 50, mem.City, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Country", 50, mem.Country, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Password", 50, mem.Password, DbType.String));
                     dataProvider.Insert(SQLInsert, CommandType.Text, parameters.ToArray());
                 }
                 else
@@ -197,14 +197,14 @@ namespace Assignment1.DataAccess
                 MemberObject member = GetMemberByID(mem.ID);
                 if (member != null)
                 {
-                    string SQLUpdate = "UPDATE Member set Email = @Email,Companyname = @Companyname,City = @City, Country = @Country, Password = @Password WHERE MemberId = @MemberId";
+                    string SQLUpdate = "UPDATE Member set MemberName = @MemberName,Email = @Email,City = @City, Country = @Country, Password = @Password WHERE MemberID = @MemberID";
                     var parameters = new List<SqlParameter>();
-                    parameters.Add(dataProvider.CreateParameter("@MemberId", 4, mem.ID, DbType.Int32));
-                    parameters.Add(dataProvider.CreateParameter("@Email", 4, mem.Name, DbType.String));
-                    parameters.Add(dataProvider.CreateParameter("@Companyname", 50, mem.City, DbType.String));
-                    parameters.Add(dataProvider.CreateParameter("@City", 50, mem.Country, DbType.String));
-                    parameters.Add(dataProvider.CreateParameter("@Country", 50, mem.Email, DbType.String));
-                    parameters.Add(dataProvider.CreateParameter("@Password", 4, mem.Password, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@MemberID", 4, mem.ID, DbType.Int32));
+                    parameters.Add(dataProvider.CreateParameter("@MemberName", 50, mem.Name, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Email", 50, mem.Email, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@City", 50, mem.City, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Country", 50, mem.Country, DbType.String));
+                    parameters.Add(dataProvider.CreateParameter("@Password", 50, mem.Password, DbType.String));
                     dataProvider.Insert(SQLUpdate, CommandType.Text, parameters.ToArray());
                 }
                 else
@@ -228,8 +228,8 @@ namespace Assignment1.DataAccess
                 MemberObject member = GetMemberByID(memID);
                 if (member != null)
                 {
-                    string SQLDelete = "DELETE Member WHERE MemberId = @MemberId";
-                    var param = dataProvider.CreateParameter("@MemberId", 4, memID, DbType.Int32);
+                    string SQLDelete = "DELETE Member WHERE MemberID = @MemberID";
+                    var param = dataProvider.CreateParameter("@MemberID", 4, memID, DbType.Int32);
                     dataProvider.Delete(SQLDelete, CommandType.Text, param);
                 }
                 else
