@@ -8,7 +8,7 @@ namespace DataAccess
     {
         private static MemberDAO instance = null;
         private static readonly object instanceLock = new object();
-        private MemberDAO() { }
+        public MemberDAO() { }
         public static MemberDAO Instance
         {
             get
@@ -131,7 +131,7 @@ namespace DataAccess
             try
             {
                 MemberObject member = GetMemberByID(mem.MemberId);
-                if (member.MemberId == null)
+                if (member == null)
                 {
                     string SQLInsert = "INSERT Member values(@MemberId, @Email, @Companyname, @City, @Country, @Password)";
                     var parameters = new List<SqlParameter>();

@@ -8,7 +8,7 @@ namespace DataAccess
     {
         private static ProductDAO instance = null;
         private static readonly object instanceLock = new object();
-        private ProductDAO() { }
+        public ProductDAO() { }
         public static ProductDAO Instance
         {
             get
@@ -196,7 +196,7 @@ namespace DataAccess
             try
             {
                 ProductObject product = GetProductByID(pro.ProductId);
-                if (product.ProductId == null)
+                if (product == null)
                 {
                     string SQLInsert = "INSERT Product values(@ProductId, @CatagoryId, @ProductName, @Weight, @UnitPrice, @UnitslnStock)";
                     var parameters = new List<SqlParameter>();
@@ -282,7 +282,7 @@ namespace DataAccess
         }
         public IEnumerable<ProductObject> SearchProduct(int proID, int stock)
         {
-            IDataReader dataReader = null;
+            IDataReader? dataReader = null;
             var pro = new List<ProductObject>();
             ProductObject pId = GetProductByID(proID);
             ProductObject stk = GetProductByStock(stock);
@@ -339,12 +339,12 @@ namespace DataAccess
         }
         public IEnumerable<ProductObject> SearchProduct(string name)
         {
-            IDataReader dataReader = null;
+            IDataReader? dataReader = null;
             var pro = new List<ProductObject>();
             ProductObject pname = GetProductByName(name);
             try
             {
-                if (pname.ProductName != null)
+                if (pname != null)
                 {
                     string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE ProductId like N'@ProductName'";
                     var proName = dataProvider.CreateParameter("@ProductName", 50, name, DbType.String);
@@ -381,7 +381,7 @@ namespace DataAccess
             ProductObject p = GetProductByPrice(price);
             try
             {
-                if (p.UnitPrice != null)
+                if (p != null)
                 {
                     string SQLSelect = "SELECT ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock FROM Product WHERE UnitPrice = @UnitPrice";
                     var proPrice = dataProvider.CreateParameter("@UnitPrice", 50, price, DbType.Decimal);
