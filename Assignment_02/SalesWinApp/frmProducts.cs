@@ -46,28 +46,10 @@ namespace SalesWinApp
             txtUnitslnStock.Text = string.Empty;
         }
 
-        private ProductObject GetProductObject(){
+       
 
-            ProductObject product = null;
-            try
-            {
-                product = new ProductObject
-                {
-                    ProductId = int.Parse(txtProductId.Text),
-                    ProductName = txtProductName.Text,
-                    CategoryId = int.Parse(txtCategoryId.Text),
-                    UnitPrice = txtUnitPrice.Text,
-                    UnitslnStock = int.Parse(txtUnitslnStock.Text),
-                    Weight = txtWeight.Text,
-                };  
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Get products");
-            }
-            return product;
-        }
 
+        // Load List Products
         public void LoadProductList()
         {
             var products = productRepository.GetProducts();
@@ -112,11 +94,13 @@ namespace SalesWinApp
         {
             LoadProductList();
         }
+
+        // Hàm Add Products
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmProductDetails frmProductDetails = new frmProductDetails
             {
-                Text = "Add product",
+                Text = "Add a new product",
                 InsertorUpdate = false,
                 ProductRepository = productRepository
             };
@@ -127,6 +111,7 @@ namespace SalesWinApp
             }
         }
 
+        // Hàm Delete Products
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
@@ -141,20 +126,23 @@ namespace SalesWinApp
             }
         }
 
-        //private void btnUpdate_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        var product = GetProductObject();
-        //        productRepository.UpdatePro(product.ProductId, product.ProductName, product.CategoryId, product.Weight, product.UnitPrice, product.UnitslnStock);
-        //        LoadProductList();       
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Update product");
-        //    }
-        //}
+        // Hàm update Products
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            frmProductDetails frmProductDetails = new frmProductDetails
+            {
+                Text = "Update products",
+                InsertorUpdate = true,
+                ProductRepository = productRepository
+            };
+            if (frmProductDetails.ShowDialog() == DialogResult.OK)
+            {
+                LoadProductList();
+                source.Position = source.Count - 1;
+            }
+        }
 
+        // Hàm search Products
         private void btnSearch_Click(object sender, EventArgs e)
         {
             List<ProductObject> products = (List<ProductObject>)productRepository.GetProducts();
