@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessObject;
 using DataAccess.Repository;
+using DataAccess;
 
 namespace SalesWinApp
-{ 
+{
     public partial class frmOrders : Form
     {
         IOrderRepository orderRepository = new OrderRepository();
@@ -29,7 +30,7 @@ namespace SalesWinApp
 
         private void DataGridViewOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmInsertOrUpdateOrder frmOrderDetails = new frmInsertOrUpdateOrder
+            frmInsertOrUpdateOrder frmInsertOrUpdateOrder = new frmInsertOrUpdateOrder
             {
                 Text = "Update order",
                 InsertOrUpdate = true,
@@ -37,17 +38,16 @@ namespace SalesWinApp
                 OrderRepository = orderRepository
 
             };
-            //if (frmInsertOrUpdateOrder.ShowDialog() == DialogResult.OK)
-            //{
-            //    LoadOrderList();
-            //    source.Position = source.Count - 1;
-            //}
+            if (frmInsertOrUpdateOrder.ShowDialog() == DialogResult.OK)
+            {
+                LoadOrderList();
+                source.Position = source.Count - 1;
+            }
         }
 
         private void ClearText()
         {
             txtOrderId.Text = string.Empty;
-            txtMemberId.Text = string.Empty;
             txtOrderDate.Text = string.Empty;
             txtRequiredDate.Text = string.Empty;
             txtShippedDate.Text = string.Empty;
@@ -56,21 +56,22 @@ namespace SalesWinApp
 
         private OrderObject GetOrderObject()
         {
+            MemberDAO memberDAO = new MemberDAO();
             OrderObject orderObject = null;
             try
             {
                 orderObject = new OrderObject
                 {
                     OrderId = int.Parse(txtOrderId.Text),
-                    MemberId = int.Parse(txtMemberId.Text),
+                    MemberId = memberDAO.GetMemberByID(int.Parse(txtMemberId.Text)),
                     OrderDate = DateTime.Parse(txtOrderDate.Text),
                     RequiredDate = DateTime.Parse(txtRequiredDate.Text),
                     ShippedDate = DateTime.Parse(txtShippedDate.Text),
                     Freight = decimal.Parse(txtFreight.Text),
                 };
-                
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Get Order");
             }
@@ -102,7 +103,7 @@ namespace SalesWinApp
                 dataGridViewOrders.DataSource = null;
                 dataGridViewOrders.DataSource = source;
 
-                if(orders.Count() == 0)
+                if (orders.Count() == 0)
                 {
                     ClearText();
                     btnDelete.Enabled = false;
@@ -112,16 +113,12 @@ namespace SalesWinApp
                     btnDelete.Enabled = true;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Load order list");
             }
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            LoadOrderList();
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -136,10 +133,20 @@ namespace SalesWinApp
                 orderRepository.DeleteOrder(order.OrderId);
                 LoadOrderList();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Delete a car");
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadOrderList();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

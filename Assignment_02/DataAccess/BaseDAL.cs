@@ -21,11 +21,11 @@ namespace DataAccess
         {
             string connectionString;
             IConfiguration config = new ConfigurationBuilder()
-                                        .SetBasePath(Directory.GetCurrentDirectory())
-                                        .AddJsonFile("appsetting.json", true, true)
-                                        .Build();
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsetting.json", true, true)
+                .Build();
             connectionString = config["ConnectionString:FStoreDB"];
-            return connectionString;
+            return "Server=(local);uid=sa;pwd=12345;database=FStore;TrustServerCertificate=True";
         }
         public void CloseConnection() => dataProvider.CloseConnection(connection);
     }
