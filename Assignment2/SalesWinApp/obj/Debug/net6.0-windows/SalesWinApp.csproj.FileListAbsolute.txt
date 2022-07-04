@@ -100,7 +100,6 @@ D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMembers.resources
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmOrders.resources
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProducts.resources
-D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.MemberDetail.resources
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.OrderDetail.resources
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.ProductDetail.resources
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.GenerateResource.cache
@@ -115,6 +114,9 @@ D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.genruntimeconfig.cache
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\ref\SalesWinApp.dll
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\bin\Debug\net6.0-windows\appsetting.json
+<<<<<<< HEAD
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMemberDetail.resources
+=======
 <<<<<<< HEAD
 D:\Code C#\PRN_Assignment_Group3\Assignment2\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.exe
 D:\Code C#\PRN_Assignment_Group3\Assignment2\SalesWinApp\bin\Debug\net6.0-windows\appsettings.json
@@ -235,4 +237,5 @@ C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\obj\Debu
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.pdb
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.genruntimeconfig.cache
 C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\ref\SalesWinApp.dll
+>>>>>>> main
 >>>>>>> main
