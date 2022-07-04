@@ -14,5 +14,6 @@ namespace Assignment1.Repository
         void InsertMember(MemberObject mem);
         void UpdateMember(MemberObject mem);
         void DeleteMember(int ID);
+        MemberObject CheckLogin(string email, string pass);
     }
 }
