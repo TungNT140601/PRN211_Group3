@@ -8,11 +8,11 @@ namespace Assignment1.BusinessObject
 {
     public class MemberObject
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public int ID { get; set; } = 0;
+        public string Name { get; set; } = null;
+        public string City { get; set; } = null;
+        public string Country { get; set; } = null;
+        public string Email { get; set; } = null;
+        public string Password { get; set; } = null;
     }
 }

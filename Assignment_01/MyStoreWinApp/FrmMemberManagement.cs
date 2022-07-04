@@ -19,16 +19,6 @@ namespace MyStoreWinApp
     {
         FrmLogin frmLogin = new FrmLogin();
         private static string Email = FrmLogin.Email;
-        private static string GetEmailAdmin()
-        {
-            IConfiguration config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true, true)
-                .Build();
-
-
-            return config["Email:email"];
-        }
         public FrmMemberManagement()
         {
             InitializeComponent();
@@ -39,7 +29,8 @@ namespace MyStoreWinApp
 
         private void FrmMemberManagement_Load(object sender, EventArgs e)
         {
-            if (Email == GetEmailAdmin())
+            MemberObject admin = memberRepository.GetAdminAccount();
+            if (Email == admin.Email)
             {
                 btnDelete.Enabled = false;
                 btnNew.Enabled = false;
@@ -177,8 +168,9 @@ namespace MyStoreWinApp
 
         private void LoadMemberList()
         {
+            MemberObject admin = memberRepository.GetAdminAccount();
             var members = memberRepository.GetMembers();
-            if (Email == GetEmailAdmin())
+            if (Email == admin.Email)
             {
                 try
                 {
@@ -225,7 +217,7 @@ namespace MyStoreWinApp
                 {
                     foreach (var member in members)
                     {
-                        if(member.Email == Email)
+                        if (member.Email == Email)
                         {
                             source = new BindingSource();
                             source.DataSource = member;
