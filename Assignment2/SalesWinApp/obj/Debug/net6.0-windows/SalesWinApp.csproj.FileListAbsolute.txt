@@ -114,3 +114,4 @@ D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.pdb
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.genruntimeconfig.cache
 D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\obj\Debug\net6.0-windows\ref\SalesWinApp.dll
+D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment2\SalesWinApp\bin\Debug\net6.0-windows\appsetting.json
