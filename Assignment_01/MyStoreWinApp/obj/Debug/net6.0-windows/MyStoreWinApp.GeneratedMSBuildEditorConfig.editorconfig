@@ -13,4 +13,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyStoreWinApp
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_01\MyStoreWinApp\
+=======
+build_property.ProjectDir = D:\Code C#\PRN_Assignment_Group3\Assignment_01\MyStoreWinApp\
+>>>>>>> main

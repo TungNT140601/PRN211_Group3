@@ -85,7 +85,7 @@ go
 
 
 
-INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 1, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 1, convert(datetime,'18-06-12 10:34:09 PM',5),convert(datetime,'18-06-12 10:34:09 PM',5),convert(datetime,'18-06-12 10:34:09 PM',5),1);
 go
 INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 2, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
@@ -120,6 +120,7 @@ go
 INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 17, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
 
+upd
 
 INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 1, N'T-shirt',2,'$ 0.0001',1);
 go
