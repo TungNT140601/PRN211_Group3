@@ -59,6 +59,7 @@ namespace SalesWinApp
         private void btnViewAllMemberAdmin_Click(object sender, EventArgs e)
         {
             frmMembers memberForm = new frmMembers();
+            member = null;
             memberForm.MdiParent = this;
             memberForm.Show();
         }
