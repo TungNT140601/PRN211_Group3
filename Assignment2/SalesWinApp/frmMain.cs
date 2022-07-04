@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessObject;
+using DataAccess;
+using DataAccess.Repository;
 using Microsoft.Extensions.Configuration;
 
 namespace SalesWinApp
@@ -15,6 +17,7 @@ namespace SalesWinApp
     public partial class frmMain : Form
     {
         private static MemberObject member = frmLogin.member;
+        IMemberRepository memberRepository = new MemberRepository();
         private static string AdminEmail()
         {
             IConfiguration config = new ConfigurationBuilder()
@@ -59,19 +62,30 @@ namespace SalesWinApp
         private void btnViewAllMemberAdmin_Click(object sender, EventArgs e)
         {
             frmMembers memberForm = new frmMembers();
-            member = null;
             memberForm.MdiParent = this;
             memberForm.Show();
         }
 
         private void btnAddNewMemberAdmin_Click(object sender, EventArgs e)
         {
-
+            frmMemberDetail memberDetail = new frmMemberDetail
+            {
+                Text = "Add Member",
+                InsertOrUpdate = false,
+                MemberRepository = memberRepository
+            };
+            if (memberDetail.ShowDialog() == DialogResult.OK)
+            {
+                frmMembers memberForm = new frmMembers();
+                memberForm.MdiParent = this;
+                memberForm.Show();
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             frmLogin login = new frmLogin();
+            member = null;
             login.Show();
             this.Hide();
         }

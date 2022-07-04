@@ -2732,23 +2732,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TBL\\.nuget\\packages\\": {},
-    "D:\\Software\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment2\\SalesWinApp\\SalesWinApp.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment2\\SalesWinApp\\SalesWinApp.csproj",
       "projectName": "SalesWinApp",
-      "projectPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment2\\SalesWinApp\\SalesWinApp.csproj",
-      "packagesPath": "C:\\Users\\TBL\\.nuget\\packages\\",
-      "outputPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment2\\SalesWinApp\\obj\\",
+      "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment2\\SalesWinApp\\SalesWinApp.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment2\\SalesWinApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Software\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\TBL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2763,11 +2763,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\Code C#\\PRN_Assignment_Group3\\Assignment2\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment2\\BusinessObject\\BusinessObject.csproj"
+            "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment2\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment2\\BusinessObject\\BusinessObject.csproj"
             },
-            "D:\\Code C#\\PRN_Assignment_Group3\\Assignment2\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment2\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment2\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment2\\DataAccess\\DataAccess.csproj"
             }
           }
         }
@@ -2805,7 +2805,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -2814,7 +2814,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\Code C#\\PRN_Assignment_Group3\\Assignment2\\SalesWinApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Problem reading the cache file C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment2\\SalesWinApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
 }
