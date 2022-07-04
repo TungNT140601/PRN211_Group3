@@ -2,6 +2,7 @@
   "format": 1,
   "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
@@ -15,16 +16,25 @@
         "outputPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\obj\\",
 =======
     "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj": {}
+=======
+    "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj": {}
+>>>>>>> main
   },
   "projects": {
-    "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
+    "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
+<<<<<<< HEAD
         "projectPath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\tungn\\.nuget\\packages\\",
         "outputPath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\obj\\",
+>>>>>>> main
+=======
+        "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\obj\\",
 >>>>>>> main
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -32,9 +42,13 @@
         ],
         "configFilePaths": [
 <<<<<<< HEAD
+<<<<<<< HEAD
           "C:\\Users\\TBL\\AppData\\Roaming\\NuGet\\NuGet.Config",
 =======
           "C:\\Users\\tungn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> main
+=======
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -91,6 +105,7 @@
             }
           },
 <<<<<<< HEAD
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
@@ -105,17 +120,26 @@
         "outputPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\DataAccess\\obj\\",
 =======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+>>>>>>> main
         }
       }
     },
-    "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
+<<<<<<< HEAD
         "projectPath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\tungn\\.nuget\\packages\\",
         "outputPath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\DataAccess\\obj\\",
+>>>>>>> main
+=======
+        "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\DataAccess\\obj\\",
 >>>>>>> main
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -123,9 +147,13 @@
         ],
         "configFilePaths": [
 <<<<<<< HEAD
+<<<<<<< HEAD
           "C:\\Users\\TBL\\AppData\\Roaming\\NuGet\\NuGet.Config",
 =======
           "C:\\Users\\tungn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> main
+=======
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -142,11 +170,16 @@
             "targetAlias": "net6.0",
             "projectReferences": {
 <<<<<<< HEAD
+<<<<<<< HEAD
               "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "D:\\Code C#\\PRN_Assignment_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
 =======
               "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "D:\\Ky5\\File\\PRN211\\PRN211_GroupProject\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
+>>>>>>> main
+=======
+              "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\Asus\\Desktop\\Ass1_PRN211\\PRN211_Group3\\Assignment_02\\BusinessObject\\BusinessObject.csproj"
 >>>>>>> main
               }
             }
@@ -191,9 +224,13 @@
             }
           },
 <<<<<<< HEAD
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
 =======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+>>>>>>> main
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
 >>>>>>> main
         }
       }

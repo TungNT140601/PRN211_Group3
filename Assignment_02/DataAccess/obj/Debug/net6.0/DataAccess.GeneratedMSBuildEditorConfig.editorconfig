@@ -8,7 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DataAccess
 <<<<<<< HEAD
+<<<<<<< HEAD
 build_property.ProjectDir = D:\Code C#\PRN_Assignment_Group3\Assignment_02\DataAccess\
 =======
 build_property.ProjectDir = D:\Ky5\File\PRN211\PRN211_GroupProject\PRN211_Group3\Assignment_02\DataAccess\
+>>>>>>> main
+=======
+build_property.ProjectDir = C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\DataAccess\
 >>>>>>> main

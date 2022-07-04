@@ -65,6 +65,7 @@ D:\PRN-SE1624-CLASS\GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debu
 D:\PRN-SE1624-CLASS\GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 D:\PRN-SE1624-CLASS\GroupProject\PRN211_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\Code C#\PRN_Assignment_Group3\Assignment_02\DataAccess\bin\Debug\net6.0\appsetting.json
 D:\Code C#\PRN_Assignment_Group3\Assignment_02\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
 D:\Code C#\PRN_Assignment_Group3\Assignment_02\DataAccess\bin\Debug\net6.0\DataAccess.dll
@@ -74,4 +75,7 @@ D:\Code C#\PRN_Assignment_Group3\Assignment_02\DataAccess\bin\Debug\net6.0\Busin
 D:\Code C#\PRN_Assignment_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CopyComplete
 D:\Code C#\PRN_Assignment_Group3\Assignment_02\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
 =======
+>>>>>>> main
+=======
+C:\Users\Asus\Desktop\Ass1_PRN211\PRN211_Group3\Assignment_02\DataAccess\bin\Debug\net6.0\appsetting.json
 >>>>>>> main
