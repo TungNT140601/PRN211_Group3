@@ -37,11 +37,11 @@ namespace SalesWinApp
                 };
                 if (InsertOrUpdate == false)
                 {
-
+                    MemberRepository.InsertMem(member);
                 }
                 else
                 {
-
+                    MemberRepository.UpdateMem(member);
                 }
             }
             catch (Exception ex)
