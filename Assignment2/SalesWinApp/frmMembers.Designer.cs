@@ -48,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(1054, 594);
             this.Controls.Add(this.dgvMember);
             this.Name = "frmMembers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMembers";
             this.Load += new System.EventHandler(this.frmMembers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMember)).EndInit();

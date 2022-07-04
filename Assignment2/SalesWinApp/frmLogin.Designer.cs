@@ -107,6 +107,7 @@
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbEmail);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

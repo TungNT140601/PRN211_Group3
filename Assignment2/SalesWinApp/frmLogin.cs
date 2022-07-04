@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BusinessObject;
 using DataAccess;
 using DataAccess.Repository;
+using Microsoft.Extensions.Configuration;
 
 namespace SalesWinApp
 {
@@ -17,7 +18,22 @@ namespace SalesWinApp
     {
         public static MemberObject member = null;
         IMemberRepository memberRepository = new MemberRepository();
-
+        private static string AdminEmail()
+        {
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsetting.json", true, true)
+                .Build();
+            return config["AdminAccount:Email"];
+        }
+        private static string AdminPassword()
+        {
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsetting.json", true, true)
+                .Build();
+            return config["AdminAccount:Password"];
+        }
         public frmLogin()
         {
             InitializeComponent();
@@ -34,7 +50,13 @@ namespace SalesWinApp
             try
             {
                 var mem = memberRepository.CheckLogin(txtEmail.Text, txtPassword.Text);
-                if (mem != null)
+                if (txtEmail.Text.Equals(AdminEmail()) && txtPassword.Text.Equals(AdminPassword()))
+                {
+                    this.Hide();
+                    frmMain frm = new frmMain();
+                    frm.Show();
+                }
+                else if (mem != null)
                 {
                     member = new MemberObject();
                     member = mem;
