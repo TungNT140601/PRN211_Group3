@@ -7,6 +7,7 @@ using Assignment1.BusinessObject;
 using DataAccess;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using Microsoft.Extensions.Configuration;
 namespace Assignment1.DataAccess
 {
     public class MemberDAO : BaseDAL
@@ -245,6 +246,28 @@ namespace Assignment1.DataAccess
             {
                 CloseConnection();
             }
+        }
+        public MemberObject GetAdminAccount()
+        {
+            MemberObject admin = null;
+            string email;
+            string password;
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", true, true)
+                .Build();
+            email = config["AdminAccount:Email"];
+            password = config["AdminAccount:Password"];
+            admin = new MemberObject
+            {
+                ID = 0,
+                Email = email,
+                Password = password,
+                City = "",
+                Country = "",
+                Name = "Admin"
+            };
+            return admin;
         }
     }
 }

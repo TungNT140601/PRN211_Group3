@@ -24,43 +24,27 @@ namespace MyStoreWinApp
         }
 
         public IMemberRepository MemberRepository { get; set; }
+        IMemberRepository memberRepository = new MemberRepository();
         public static string Email = "";
         public static string Password = "";
-        private static string GetEmailAdmin()
-        {
-            IConfiguration config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true, true)
-                .Build();
-
-
-            return config["Email:email"];
-        }
-        private static string GetPasswordAdmin()
-        {
-            IConfiguration config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true, true)
-                .Build();
-
-
-            return config["Password:password"];
-        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                string emailAd = GetEmailAdmin();
-                string passwordAd = GetPasswordAdmin();
-                if (emailAd.Equals(txtEmail.Text))
+                MemberObject admin = memberRepository.GetAdminAccount();
+                if (admin.Email.Equals(txtEmail.Text))
                 {
-                    if (passwordAd.Equals(txtPassword.Text))
+                    if (admin.Password.Equals(txtPassword.Text))
                     {
-                        Email = emailAd;
-                        Password = passwordAd;
+                        Email = admin.Email;
+                        Password = admin.Password;
                         FrmMemberManagement frm = new FrmMemberManagement();
                         frm.Show();
                         this.Hide();
+                    }
+                    else
+                    {
+                        throw new Exception("Wrong email or password.");
                     }
                 }
                 else

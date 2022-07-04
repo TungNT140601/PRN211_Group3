@@ -11,6 +11,7 @@ namespace Assignment1.Repository
     {
         IEnumerable<MemberObject> GetMembers();
         MemberObject GetMemberByID(int ID);
+        MemberObject GetAdminAccount();
         void InsertMember(MemberObject mem);
         void UpdateMember(MemberObject mem);
         void DeleteMember(int ID);

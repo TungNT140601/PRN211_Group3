@@ -16,5 +16,6 @@ namespace Assignment1.Repository
         public void DeleteMember(int ID) => MemberDAO.Instance.Remove(ID);
         public void UpdateMember(MemberObject mem) => MemberDAO.Instance.Update(mem);
         public MemberObject CheckLogin(string email, string pass) => MemberDAO.Instance.CheckLogin(email, pass);
+        public MemberObject GetAdminAccount() => MemberDAO.Instance.GetAdminAccount();
     }
 }
