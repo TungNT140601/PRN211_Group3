@@ -1,77 +1,181 @@
-create database FStore_Ass2
+drop database FStore
+ go
+create database FStore
 go
-use FStore_Ass2
+use FStore
+create table Member(
+	MemberId int PRIMARY KEY not null,
+	Email nvarchar(100) not null,
+	Companyname nvarchar(40) not null,
+	City nvarchar(15) not null,
+	Country nvarchar(15) not null,
+	Password nvarchar(30) not null
+)
 go
-create table tbl_Member
-(
-MemberId int primary key not null,
-Email varchar(100) not null,
-CompanyName varchar(40) not null,
-City varchar(15) not null,
-Country varchar(15) not null,
-Password varchar(30) not null
+create table tbl_Order(
+	OrderId int IDENTITY(101,1) PRIMARY KEY not null,
+	MemberId int not null FOREIGN KEY REFERENCES Member(MemberId),
+	OrderDate datetime not null,
+	RequiredDate datetime null,
+	ShippedDate datetime  null,
+	Freight money null
 )
-Go
-create table tbl_Order
-(
-OrderId int identity primary key not null,
-MemberId int foreign key references tbl_Member(MemberId) not null,
-OrderDate datetime not null,
-RequiredDate datetime null,
-ShippedDate datetime null,
-Freight money not null
+go
+create table Product(
+	ProductId int IDENTITY(10001,1) PRIMARY KEY,
+	CategoryId int not null,
+	ProductName nvarchar(40) not null,
+	Weight nvarchar(20) not null,
+	UnitPrice money not null,
+	UnitInStock int not null
 )
-GO
-create table tbl_Product
-(
-ProductId int primary key not null,
-CategoryId int not null,
-ProductName varchar(40) not null,
-Weight varchar(20) not null,
-UnitPrice money not null,
-UnitslnStock int not null
-)
-Go
-create table tbl_OrderDetail
-(
-OrderId int foreign key references tbl_Order(OrderId) not null,
-ProductId int foreign key references tbl_Product(ProductId) not null,
-UnitPrice money not null,
-Quantity int not null,
-Discount float not null
+go
+create table OrderDetail(
+	OrderId int FOREIGN KEY REFERENCES tbl_Order(OrderId) not null,
+	ProductId int FOREIGN KEY REFERENCES Product(ProductId) not null,
+	UnitPrice money not null,
+	Quantity int not null,
+	Discount float not null
 )
 go
 
-insert into tbl_Member (MemberId, Email, CompanyName, City, Country, Password) values (1, 'tung@gmail.com', N'Thanh Tùng', N'Hồ Chí Minh', 'Vietnam', '12345');
+
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (1, 'member1@gmail.com', 'company1','HCM','VietNam','123');
 go
-insert into tbl_Member (MemberId, Email, CompanyName, City, Country, Password) values (2, 'qdjokovic1@netlog.com', 'Photobug', N'Quế Sơn', 'Vietnam', '12345');
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (2, 'member2@gmail.com', 'company1','HCM','VietNam','123');
 go
-insert into tbl_Member (MemberId, Email, CompanyName, City, Country, Password) values (3, 'kmarrow2@cnet.com', 'Devshare', N'Chợ Chu', 'Vietnam', '12345');
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (3, 'member3@gmail.com', 'company1','HCM','VietNam','123');
 go
-insert into tbl_Member (MemberId, Email, CompanyName, City, Country, Password) values (4, 'lbarwack3@skype.com', 'Flashspan', N'Chư Ty', 'Vietnam', '12345');
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (4, 'member4@gmail.com', 'company1','HCM','VietNam','123');
 go
-insert into tbl_Member (MemberId, Email, CompanyName, City, Country, Password) values (5, 'bguilloton4@gov.uk', 'Vitz', N'Phú Túc', 'Vietnam', '12345');
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (5, 'member5@gmail.com', 'company1','HCM','VietNam','123');
 go
-insert into tbl_Member (MemberId, Email, CompanyName, City, Country, Password) values (6, 'rzecchii5@google.com.br', 'Babbleblab', N'Thị Trấn Mỹ Lộc', 'Vietnam', '12345');
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (6, 'member6@gmail.com', 'company1','HCM','VietNam','123');
 go
-insert into tbl_Member (MemberId, Email, CompanyName, City, Country, Password) values (7, 'mcassie6@vistaprint.com', 'Gevee', N'La Gi', 'Vietnam', '12345');
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (7, 'member7@gmail.com', 'company1','HCM','VietNam','123');
 go
-insert into tbl_Member (MemberId, Email, CompanyName, City, Country, Password) values (8, 'ldanihel7@ifeng.com', 'Rhycero', N'Thủ Thừa', 'Vietnam', '12345');
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (8, 'member8@gmail.com', 'company1','HCM','VietNam','123');
 go
-insert into tbl_Member (MemberId, Email, CompanyName, City, Country, Password) values (9, 'dferonet8@constantcontact.com', 'Layo', N'Trà Vinh', 'Vietnam', '12345');
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (9, 'member9@gmail.com', 'company1','HCM','VietNam','123');
 go
-insert into tbl_Member (MemberId, Email, CompanyName, City, Country, Password) values (10, 'vjiran9@issuu.com', 'Camido', N'Văn Giang', 'Vietnam', '12345');
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (10, 'member10@gmail.com', 'company1','HCM','VietNam','123');
+go
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (11, 'member11@gmail.com', 'company1','HCM','VietNam','123');
+go
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (12, 'member12@gmail.com', 'company1','HCM','VietNam','123');
+go
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (13, 'member13@gmail.com', 'company1','HCM','VietNam','123');
+go
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (14, 'member15@gmail.com', 'company1','HCM','VietNam','123');
+go
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (15, 'member17@gmail.com', 'company1','HCM','VietNam','123');
+go
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (16, 'member16@gmail.com', 'company1','HCM','VietNam','123');
+go
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (17, 'member17@gmail.com', 'company1','HCM','VietNam','123');
+go
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (18, 'member18@gmail.com', 'company1','HCM','VietNam','123');
+go
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (19, 'member19@gmail.com', 'company1','HCM','VietNam','123');
+go
+INSERT INTO Member (MemberId, Email, Companyname, City,Country,Password)  VALUES (20, 'member20@gmail.com', 'company1','HCM','VietNam','123');
 go
 
-insert into tbl_Product (ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock) values (1,1,N'Product 1','250g',20000,20)
+
+
+
+
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 1, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-insert into tbl_Product (ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock) values (2,1,N'Product 2','250g',20000,20)
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 2, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-insert into tbl_Product (ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock) values (3,2,N'Product 3','350g',30000,20)
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 3, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-insert into tbl_Product (ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock) values (4,2,N'Product 4','350g',30000,20)
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 4, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-insert into tbl_Product (ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock) values (5,3,N'Product 5','450g',40000,20)
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 5, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
-insert into tbl_Product (ProductId, CategoryId, ProductName, Weight, UnitPrice, UnitslnStock) values (6,3,N'Product 6','450g',40000,20)
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 6, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 7, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 8, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 9, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 10, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 11, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 12, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 13, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 14, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 15, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 16, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 17, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
+go
+
+
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 1, N'T-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 2, N'A-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 3, N'V-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 4, N'B-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 5, N'C-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 6, N'D-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 7, N'R-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 8, N'W-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 9, N'Q-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 10, N'S-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 11, N'T-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 12, N'T-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 13, N'T-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 14, N'T-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 15, N'T-shirt',2,'$ 0.0001',1);
+go
+INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 16, N'T-shirt',2,'$ 0.0001',1);
+go
+
+
+
+
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (101, 10001,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (102, 10002,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (103, 10003,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (104, 10004,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (105, 10005,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (106, 10006,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (107, 10007,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (108, 10008,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (109, 10009,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (110, 10010,2,1,1.1);
+go
+INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (111, 10011,2,1,1.1);
 go
