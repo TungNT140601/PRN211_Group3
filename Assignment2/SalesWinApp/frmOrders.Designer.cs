@@ -45,6 +45,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,7 +157,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(403, 229);
+            this.btnAdd.Location = new System.Drawing.Point(318, 229);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 29);
             this.btnAdd.TabIndex = 13;
@@ -194,11 +195,22 @@
             this.dataGridViewOrders.Size = new System.Drawing.Size(956, 398);
             this.dataGridViewOrders.TabIndex = 16;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(519, 229);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(94, 29);
+            this.btnUpdate.TabIndex = 17;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 741);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dataGridViewOrders);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
@@ -245,5 +257,6 @@
         private Button btnDelete;
         private Button btnClose;
         private DataGridView dataGridViewOrders;
+        private Button btnUpdate;
     }
 }

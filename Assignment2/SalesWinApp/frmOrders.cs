@@ -24,8 +24,8 @@ namespace SalesWinApp
 
         private void frmOrders_Load(object sender, EventArgs e)
         {
-            btnDelete.Enabled = false;
-            dataGridViewOrders.CellDoubleClick += DataGridViewOrders_CellDoubleCleck;
+            LoadOrderList();
+            
         }
         private void DataGridViewOrders_CellDoubleCleck(object sender, DataGridViewCellEventArgs e)
         {
@@ -40,7 +40,6 @@ namespace SalesWinApp
             if (orderDetail.ShowDialog() == DialogResult.OK)
             {
                 LoadOrderList();
-                source.Position = source.Count - 1;
             }
         }
 
@@ -145,7 +144,33 @@ namespace SalesWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            OrderDetail orderDetail = new OrderDetail
+            {
+                Text = "Add order",
+                InsertOrUpdate = false,
+                OrderRepository = orderRepository
 
+            };
+            if (orderDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadOrderList();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            OrderDetail orderDetail = new OrderDetail
+            {
+                Text = "Update order",
+                InsertOrUpdate = true,
+                OrderInfo = GetOrderObject(),
+                OrderRepository = orderRepository
+
+            };
+            if (orderDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadOrderList();
+            }
         }
     }
 }
