@@ -46,28 +46,7 @@ namespace SalesWinApp
             txtUnitslnStock.Text = string.Empty;
         }
 
-        // Get Products 
-        private ProductObject GetProductObject(){
-
-            ProductObject product = null;
-            try
-            {
-                product = new ProductObject
-                {
-                    ProductId = int.Parse(txtProductId.Text),
-                    ProductName = txtProductName.Text,
-                    CategoryId = int.Parse(txtCategoryId.Text),
-                    UnitPrice = txtUnitPrice.Text,
-                    UnitslnStock = int.Parse(txtUnitslnStock.Text),
-                    Weight = txtWeight.Text,
-                };  
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Get products");
-            }
-            return product;
-        }
+       
 
 
         // Load List Products
