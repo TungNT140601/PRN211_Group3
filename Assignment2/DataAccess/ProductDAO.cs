@@ -8,7 +8,7 @@ namespace DataAccess
     {
         private static ProductDAO instance = null;
         private static readonly object instanceLock = new object();
-        private ProductDAO() { }
+        public ProductDAO() { }
         public static ProductDAO Instance
         {
             get
