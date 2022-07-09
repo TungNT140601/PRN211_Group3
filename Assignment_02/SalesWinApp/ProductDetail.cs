@@ -9,9 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessObject.Models;
 using DataAccess.Repositories;
-
-
-namespace SaveWinApp
+namespace SalesWinApp
 {
     public partial class ProductDetail : Form
     {
@@ -70,5 +68,6 @@ namespace SaveWinApp
                 txtProductID.ReadOnly = true;
             }
         }
+
     }
 }
