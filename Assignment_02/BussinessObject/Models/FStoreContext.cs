@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -21,12 +22,41 @@ namespace BussinessObject.Models
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<TblOrder> TblOrders { get; set; }
-
+        private string connectionString()
+        {
+            string connectionString = "";
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsetting.json", true, true)
+                .Build();
+            connectionString = config["ConnectionString:FstoreDB"];
+            return connectionString;
+        }
+        public string GetAdminEmail()
+        {
+            string email = "";
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsetting.json", true, true)
+                .Build();
+            email = config["AdminAccount:Email"];
+            return email;
+        }
+        public string GetAdminPassword()
+        {
+            string password = "";
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsetting.json", true, true)
+                .Build();
+            password = config["AdminAccount:Password"];
+            return password;
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(local);Uid=sa;Pwd=12345;Database=FStore");
+                optionsBuilder.UseSqlServer(connectionString());
             }
         }
 
