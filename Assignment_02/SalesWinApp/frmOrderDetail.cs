@@ -17,7 +17,17 @@ namespace SalesWinApp
     {
         public IOrderDetailRepository orderDetailRepository = new OrderDetailRepository();
         public BindingSource source;
-        public TblOrder OrderInfo { get; set; }
+        //public TblOrder OrderInfo { get; set; }
+        public TblOrder OrderInfo = new TblOrder
+        {
+            OrderId = 101,
+            MemberId = 1,
+            OrderDate = DateTime.Parse("2012-06-18 22:34:09.000"),
+            RequiredDate = DateTime.Parse("2012-06-18 22:34:09.000"),
+            ShippedDate = DateTime.Parse("2012-06-18 22:34:09.000"),
+            Freight = null
+
+        };
         public frmOrderDetail()
         {
             InitializeComponent();
