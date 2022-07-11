@@ -8,13 +8,13 @@ namespace DataAccess.Repositories
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> GetProducts();
-        Product GetProductByID(int ID);
-        void DeleteProduct(int product);
-        void InsertProduct(Product product);
-        void UpdateProduct(Product product);
-        IEnumerable<Product> SearchProduct(int proID, int stock);
-        IEnumerable<Product> SearchProduct(string name);
-        IEnumerable<Product> SearchProduct(decimal price);
+        public List<Product> GetProductList();
+        public Product GetProductByID(int ID);
+        public void InsertProduct(Product product);
+        public void UpdateProduct(Product product);
+        public void DeleteProduct(int product);
+        public List<Product> GetProductByStock(int stock1, int stock2);
+        public List<Product> GetProductByName(string name);
+         public List<Product> GetProductByPrice(decimal price1, decimal price2);
     }
 }
