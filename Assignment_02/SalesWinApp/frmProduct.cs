@@ -55,11 +55,11 @@ namespace SalesWinApp
             {
                 product = new Product
                 {
-                    ProductId = Convert.ToInt32(txtProductID.Text),
+                    ProductId = int.Parse(txtProductID.Text),
                     ProductName = txtProductName.Text,
-                    CategoryId = Convert.ToInt32(txtCategogyId.Text),
-                    UnitPrice = Convert.ToDecimal(txtUnitPrice.Text),
-                    UnitInStock = Convert.ToInt32(txtUnitsInStock.Text),
+                    CategoryId = int.Parse(txtCategogyId.Text),
+                    UnitPrice =decimal.Parse(txtUnitPrice.Text),
+                    UnitInStock = int.Parse(txtUnitsInStock.Text),
                     Weight = txtWeight.Text,
                 };
             }
@@ -159,6 +159,7 @@ namespace SalesWinApp
             {
                 Text = "Update products",
                 InsertorUpdate = true,
+                Product = GetProductObject(),
                 ProductRepository = productRepository
             };
             if (frmProductDetails.ShowDialog() == DialogResult.OK)
