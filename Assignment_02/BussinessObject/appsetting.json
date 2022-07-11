@@ -3,7 +3,7 @@
     "FstoreDB": "Server=(local);Uid=sa;Pwd=12345;Database=FStore"
   },
   "AdminAccount": {
-    "Email": "admin",
-    "Password": "1"
+    "Email": "admin@fstore.com",
+    "Password": "admin@@"
   }
 }

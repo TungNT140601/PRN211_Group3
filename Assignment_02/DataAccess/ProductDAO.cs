@@ -5,7 +5,7 @@ using Microsoft.Data.SqlClient;
 
 namespace DataAccess
 {
-    public class ProductDAO : BaseDAL
+    public class ProductDAO : FStoreContext
     {
         private static ProductDAO instance = null;
         private static readonly object instanceLock = new object();
@@ -41,7 +41,7 @@ namespace DataAccess
 
             return listProducts;
         }
-    
+
 
         // Get IdByList
         public Product GetProductByID(int proID)
@@ -66,7 +66,7 @@ namespace DataAccess
         public List<Product> GetProductByStock(int stock1, int stock2)
         {
             List<Product> listProducts = new List<Product>();
-            if(stock1 > stock2)
+            if (stock1 > stock2)
             {
                 var stock = stock1;
                 stock1 = stock2;
@@ -84,10 +84,10 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
             return listProducts;
-           
+
         }
 
-        // Hàm GetNameByList
+        // GetNameByList
         public List<Product> GetProductByName(string name)
         {
             List<Product> listProducts = new List<Product>();
@@ -106,11 +106,11 @@ namespace DataAccess
             return listProducts;
         }
 
-        // Hàm GetPriceByList
+        //GetPriceByList
         public List<Product> GetProductByPrice(decimal price1, decimal price2)
         {
             List<Product> listProducts = new List<Product>();
-            if(price1 > price2)
+            if (price1 > price2)
             {
                 var price = price1;
                 price1 = price2;
@@ -123,7 +123,7 @@ namespace DataAccess
                           .Where(a => a.UnitPrice <= price2 && a.UnitPrice >= price1)
                           .ToList();
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -147,7 +147,7 @@ namespace DataAccess
 
         }
 
-        // Hàm UpdateProducts
+        //UpdateProducts
         public void Update(Product pro)
         {
             try
@@ -163,7 +163,7 @@ namespace DataAccess
 
         }
 
-        // Hàm RemoveProducts
+        //RemoveProducts
         public void Remove(int proID)
         {
             try

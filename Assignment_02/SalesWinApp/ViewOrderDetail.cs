@@ -18,7 +18,7 @@ namespace SalesWinApp
         public IOrderRepository OrderRepository { get; set; }
         public bool InsertOrUpdate { get; set; }
         public TblOrder OrderInfo { get; set; }
-        public Member MembertTest { get; set; }
+        public Member Membert { get; set; }
         public ViewOrderDetail()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace SalesWinApp
             if (InsertOrUpdate == true)
             {
                 txtOrderId.Text = OrderInfo.OrderId.ToString();
-                txtMemberId.Text = /*OrderInfo.Member.MemberId.ToString()*/ MembertTest.MemberId.ToString();
+                txtMemberId.Text = Membert.MemberId.ToString();
                 txtOrderDate.Text = OrderInfo.OrderDate.ToString();
                 txtRequiredDate.Text = OrderInfo.RequiredDate.ToString();
                 txtShippedDate.Text = OrderInfo.ShippedDate.ToString();
