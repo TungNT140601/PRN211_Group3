@@ -19,7 +19,7 @@ namespace SalesWinApp
         }
         public IProductRepository ProductRepository { get; set; }
         public Product Product { get; set; }
-        public Boolean InsertorUpdate { get; set; }
+        public bool InsertorUpdate { get; set; }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -35,7 +35,7 @@ namespace SalesWinApp
                     ProductName = txtProductName.Text,
                     CategoryId = int.Parse(txtCategogyId.Text),
                     Weight = txtWeight.Text,
-                    UnitPrice = int.Parse(txtUnitPrice.Text),
+                    UnitPrice = decimal.Parse(txtUnitPrice.Text),
                     UnitInStock = int.Parse(txtUnitslnStock.Text)
                 };
                 if (InsertorUpdate == false)
