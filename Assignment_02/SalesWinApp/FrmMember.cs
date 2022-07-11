@@ -19,48 +19,83 @@ namespace SalesWinApp
         }
         IMemberRopository memberRopository = new MemberRopository();
         BindingSource source;
+        public Member member { get; set; }
+        public bool IsAdmin { get; set; }
         private void FrmMember_Load(object sender, EventArgs e)
         {
         }
         private void LoadListMembers()
         {
-            var members = memberRopository.GetMembers();
-            try
+            if (IsAdmin == true)
             {
-                source = new BindingSource();
-                source.DataSource = members;
-
-                txtMemberID.DataBindings.Clear();
-                txtEmail.DataBindings.Clear();
-                txtCompanyName.DataBindings.Clear();
-                txtCity.DataBindings.Clear();
-                txtCountry.DataBindings.Clear();
-                txtPassword.DataBindings.Clear();
-
-
-                txtMemberID.DataBindings.Add("Text", source, "MemberID");
-                txtEmail.DataBindings.Add("Text", source, "Email");
-                txtCompanyName.DataBindings.Add("Text", source, "CompanyName");
-                txtCity.DataBindings.Add("Text", source, "City");
-                txtCountry.DataBindings.Add("Text", source, "Country");
-                txtPassword.DataBindings.Add("Text", source, "Password");
-
-                dgvMemberList.DataSource = null;
-                dgvMemberList.DataSource = source;
-
-                if (members.Count() == 0)
+                var members = memberRopository.GetMembers();
+                try
                 {
-                    ClearText();
-                    btnDelete.Enabled = false;
+                    source = new BindingSource();
+                    source.DataSource = members;
+
+                    txtMemberID.DataBindings.Clear();
+                    txtEmail.DataBindings.Clear();
+                    txtCompanyName.DataBindings.Clear();
+                    txtCity.DataBindings.Clear();
+                    txtCountry.DataBindings.Clear();
+                    txtPassword.DataBindings.Clear();
+
+
+                    txtMemberID.DataBindings.Add("Text", source, "MemberID");
+                    txtEmail.DataBindings.Add("Text", source, "Email");
+                    txtCompanyName.DataBindings.Add("Text", source, "CompanyName");
+                    txtCity.DataBindings.Add("Text", source, "City");
+                    txtCountry.DataBindings.Add("Text", source, "Country");
+                    txtPassword.DataBindings.Add("Text", source, "Password");
+
+                    dgvMemberList.DataSource = null;
+                    dgvMemberList.DataSource = source;
+
+                    if (members.Count() == 0)
+                    {
+                        ClearText();
+                        btnDelete.Enabled = false;
+                    }
+                    else
+                    {
+                        btnDelete.Enabled = true;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    btnDelete.Enabled = true;
+                    MessageBox.Show(ex.Message, "Load Member List");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Load Member List");
+                try
+                {
+                    source = new BindingSource();
+                    source.DataSource = member;
+
+                    txtMemberID.DataBindings.Clear();
+                    txtEmail.DataBindings.Clear();
+                    txtCompanyName.DataBindings.Clear();
+                    txtCity.DataBindings.Clear();
+                    txtCountry.DataBindings.Clear();
+                    txtPassword.DataBindings.Clear();
+
+
+                    txtMemberID.DataBindings.Add("Text", source, "MemberID");
+                    txtEmail.DataBindings.Add("Text", source, "Email");
+                    txtCompanyName.DataBindings.Add("Text", source, "CompanyName");
+                    txtCity.DataBindings.Add("Text", source, "City");
+                    txtCountry.DataBindings.Add("Text", source, "Country");
+                    txtPassword.DataBindings.Add("Text", source, "Password");
+
+                    dgvMemberList.DataSource = null;
+                    dgvMemberList.DataSource = source;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Load Member List");
+                }
             }
         }
         private void ClearText()
