@@ -46,6 +46,8 @@
             this.txtUnitsInStock = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvProductList = new System.Windows.Forms.DataGridView();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnCLose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +107,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(114, 243);
+            this.btnAdd.Location = new System.Drawing.Point(251, 243);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 29);
             this.btnAdd.TabIndex = 6;
@@ -115,7 +117,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(341, 243);
+            this.btnDelete.Location = new System.Drawing.Point(446, 243);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 29);
             this.btnDelete.TabIndex = 7;
@@ -125,7 +127,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(573, 243);
+            this.btnUpdate.Location = new System.Drawing.Point(670, 243);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 29);
             this.btnUpdate.TabIndex = 8;
@@ -202,14 +204,36 @@
             this.dgvProductList.RowHeadersWidth = 51;
             this.dgvProductList.RowTemplate.Height = 29;
             this.dgvProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductList.Size = new System.Drawing.Size(902, 229);
+            this.dgvProductList.Size = new System.Drawing.Size(902, 280);
             this.dgvProductList.TabIndex = 17;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(60, 243);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(94, 29);
+            this.btnLoad.TabIndex = 18;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // btnCLose
+            // 
+            this.btnCLose.Location = new System.Drawing.Point(370, 615);
+            this.btnCLose.Name = "btnCLose";
+            this.btnCLose.Size = new System.Drawing.Size(94, 29);
+            this.btnCLose.TabIndex = 19;
+            this.btnCLose.Text = "Close";
+            this.btnCLose.UseVisualStyleBackColor = true;
+            this.btnCLose.Click += new System.EventHandler(this.btnCLose_Click);
             // 
             // frmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 570);
+            this.ClientSize = new System.Drawing.Size(897, 662);
+            this.Controls.Add(this.btnCLose);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dgvProductList);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.txtUnitsInStock);
@@ -256,5 +280,7 @@
         private TextBox txtUnitsInStock;
         private TextBox txtSearch;
         private DataGridView dgvProductList;
+        private Button btnLoad;
+        private Button btnCLose;
     }
 }
