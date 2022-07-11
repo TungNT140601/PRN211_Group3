@@ -28,7 +28,7 @@ namespace DataAccess
         // Get List Product
         public List<Product> GetProductList()
         {
-            List<Product> listProducts ;
+            List<Product> listProducts;
             try
             {
                 FStoreContext DbContext = new FStoreContext();
@@ -41,6 +41,7 @@ namespace DataAccess
 
             return listProducts;
         }
+    
 
         // Get IdByList
         public Product GetProductByID(int proID)
