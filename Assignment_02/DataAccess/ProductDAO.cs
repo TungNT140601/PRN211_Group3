@@ -65,7 +65,7 @@ namespace DataAccess
         public List<Product> GetProductByStock(int stock1, int stock2)
         {
             List<Product> listProducts = new List<Product>();
-            if (stock1 > stock2)
+            if(stock1 > stock2)
             {
                 var stock = stock1;
                 stock1 = stock2;
@@ -83,13 +83,13 @@ namespace DataAccess
                 throw new Exception("Get list by unit in stock fail");
             }
             return listProducts;
-
+           
         }
 
         // Hàm GetNameByList
-        public List<Product>? GetProductByName(string name)
+        public List<Product> GetProductByName(string name)
         {
-            List<Product>? listProducts = new List<Product>();
+            List<Product> listProducts = new List<Product>();
             try
             {
                 FStoreContext DbContext = new FStoreContext();
@@ -109,7 +109,7 @@ namespace DataAccess
         public List<Product> GetProductByPrice(decimal price1, decimal price2)
         {
             List<Product> listProducts = new List<Product>();
-            if (price1 > price2)
+            if(price1 > price2)
             {
                 var price = price1;
                 price1 = price2;
