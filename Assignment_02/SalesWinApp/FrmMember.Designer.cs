@@ -157,6 +157,7 @@
             // 
             // btnNew
             // 
+            this.btnNew.Enabled = false;
             this.btnNew.Location = new System.Drawing.Point(152, 409);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(94, 29);
@@ -198,6 +199,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(405, 409);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 29);

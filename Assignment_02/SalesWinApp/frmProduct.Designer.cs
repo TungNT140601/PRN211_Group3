@@ -43,7 +43,7 @@
             this.txtCategogyId = new System.Windows.Forms.TextBox();
             this.txtWeight = new System.Windows.Forms.TextBox();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
-            this.txtUnitslnStock = new System.Windows.Forms.TextBox();
+            this.txtUnitsInStock = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvProductList = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
@@ -179,12 +179,12 @@
             this.txtUnitPrice.Size = new System.Drawing.Size(125, 27);
             this.txtUnitPrice.TabIndex = 14;
             // 
-            // txtUnitslnStock
+            // txtUnitsInStock
             // 
-            this.txtUnitslnStock.Location = new System.Drawing.Point(542, 160);
-            this.txtUnitslnStock.Name = "txtUnitslnStock";
-            this.txtUnitslnStock.Size = new System.Drawing.Size(125, 27);
-            this.txtUnitslnStock.TabIndex = 15;
+            this.txtUnitsInStock.Location = new System.Drawing.Point(542, 160);
+            this.txtUnitsInStock.Name = "txtUnitsInStock";
+            this.txtUnitsInStock.Size = new System.Drawing.Size(125, 27);
+            this.txtUnitsInStock.TabIndex = 15;
             // 
             // txtSearch
             // 
@@ -212,7 +212,7 @@
             this.ClientSize = new System.Drawing.Size(897, 570);
             this.Controls.Add(this.dgvProductList);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.txtUnitslnStock);
+            this.Controls.Add(this.txtUnitsInStock);
             this.Controls.Add(this.txtUnitPrice);
             this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.txtCategogyId);
@@ -253,7 +253,7 @@
         private TextBox txtCategogyId;
         private TextBox txtWeight;
         private TextBox txtUnitPrice;
-        private TextBox txtUnitslnStock;
+        private TextBox txtUnitsInStock;
         private TextBox txtSearch;
         private DataGridView dgvProductList;
     }
