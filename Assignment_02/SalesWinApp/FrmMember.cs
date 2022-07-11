@@ -106,6 +106,16 @@ namespace SalesWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var mem = GetMembers();
+                memberRopository.DeleteMember(mem.MemberId);
+                LoadListMembers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete Member");
+            }
 
         }
 
