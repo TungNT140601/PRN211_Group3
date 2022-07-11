@@ -30,7 +30,32 @@ namespace SalesWinApp
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void membersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FStoreContext fStoreContext = new FStoreContext();
+            if (member.Email.Equals(fStoreContext.GetAdminEmail()))
+            {
+                FrmMember frmMember = new FrmMember
+                {
+                    Member = member,
+                    IsAdmin = true
+                };
+                frmMember.MdiParent = this;
+                frmMember.Show();
+            }
+            else
+            {
+                FrmMember frmMember = new FrmMember
+                {
+                    Member = member,
+                    IsAdmin = false
+                };
+                frmMember.MdiParent = this;
+                frmMember.Show();
+            }
         }
     }
 }
