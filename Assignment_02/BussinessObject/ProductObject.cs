@@ -8,5 +8,6 @@ namespace BussinessObject
 {
     internal class ProductObject
     {
+
     }
 }
