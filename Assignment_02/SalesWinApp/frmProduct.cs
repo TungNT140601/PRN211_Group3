@@ -221,7 +221,14 @@ namespace SalesWinApp
 
         }
 
-        
-       
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadProductList();
+        }
+
+        private void btnCLose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
