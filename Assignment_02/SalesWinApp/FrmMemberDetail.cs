@@ -49,11 +49,33 @@ namespace SalesWinApp
                 };
                 if (InsertOrUpdate == false)
                 {
-                    MemberRopository.AddMember(member);
+                    var m = new Member();
+                    m = MemberRopository.CheckEmail(m.Email);
+                    if (m != null)
+                    {
+                        throw new Exception("Error Email exits!!!!");
+                    }
+                    else
+                    {
+                        MemberRopository.AddMember(member);
+                    }
+
                 }
                 else
                 {
-                    MemberRopository.UpdateMember(member);
+                    var m = new Member();
+                    m = MemberRopository.CheckEmail(m.Email);
+                    if (m != null)
+                    {
+                        throw new Exception("Error Email exits!!!!");
+                    }
+                    else
+                    {
+                        MemberRopository.UpdateMember(member);
+                    }
+
+
+
                 }
             }
             catch (Exception ex)
