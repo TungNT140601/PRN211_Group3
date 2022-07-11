@@ -28,9 +28,9 @@ namespace DataAccess
             }
         }
 
-        public List<BussinessObject.Models.OrderDetail>? GetOrderDetails(int orderID)
+        public List<OrderDetail>? GetOrderDetails(int orderID)
         {
-            List<BussinessObject.Models.OrderDetail>? listOrders = new List<BussinessObject.Models.OrderDetail>();
+            List<OrderDetail>? listOrders = new List<OrderDetail>();
             try
             {
                 FStoreContext DbContext = new FStoreContext();
@@ -45,7 +45,7 @@ namespace DataAccess
             return listOrders;
         }
 
-        public void AddNewOrderDetail(BussinessObject.Models.OrderDetail orderDetails)
+        public void AddNewOrderDetail(OrderDetail orderDetails)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace DataAccess
             try
             {
                 FStoreContext DbContext = new FStoreContext();
-                BussinessObject.Models.OrderDetail? orderDetail = DbContext.OrderDetails.
+                OrderDetail? orderDetail = DbContext.OrderDetails.
                     SingleOrDefault(orderDetail => (orderDetail.OrderId == orderID && orderDetail.ProductId == productID));
                 DbContext.OrderDetails.Remove(orderDetail);
                 DbContext.SaveChanges();
@@ -75,12 +75,12 @@ namespace DataAccess
             }
         }
 
-        public void UpdateOrderDetail(BussinessObject.Models.OrderDetail orderDetail)
+        public void UpdateOrderDetail(OrderDetail orderDetail)
         {
             try
             {
                 FStoreContext DbContext = new FStoreContext();
-                DbContext.Entry<BussinessObject.Models.OrderDetail>(orderDetail).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                DbContext.Entry<OrderDetail>(orderDetail).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 DbContext.SaveChanges();
             }
             catch (Exception)
