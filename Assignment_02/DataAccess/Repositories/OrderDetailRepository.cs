@@ -20,4 +20,4 @@ namespace DataAccess.Repositories
         public void UpdateOrderDetail(OrderDetail orderDetail) => OrderDetailDAO.Instance.UpdateOrderDetail(orderDetail);
     }
 }
-}
+

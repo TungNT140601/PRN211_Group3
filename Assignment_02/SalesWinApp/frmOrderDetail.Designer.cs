@@ -33,11 +33,11 @@
             this.lbQuantity = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtOrderID = new System.Windows.Forms.MaskedTextBox();
+            this.txtDiscount = new System.Windows.Forms.MaskedTextBox();
+            this.txtQuantity = new System.Windows.Forms.MaskedTextBox();
+            this.cbProduct = new System.Windows.Forms.ComboBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
@@ -91,41 +91,42 @@
             this.lbPrice.TabIndex = 4;
             this.lbPrice.Text = "Price";
             // 
-            // maskedTextBox1
+            // txtOrderID
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(149, 22);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(225, 27);
-            this.maskedTextBox1.TabIndex = 5;
+            this.txtOrderID.Location = new System.Drawing.Point(149, 22);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.Size = new System.Drawing.Size(225, 27);
+            this.txtOrderID.TabIndex = 5;
             // 
-            // maskedTextBox2
+            // txtDiscount
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(546, 22);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(200, 27);
-            this.maskedTextBox2.TabIndex = 6;
+            this.txtDiscount.Location = new System.Drawing.Point(546, 22);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(200, 27);
+            this.txtDiscount.TabIndex = 6;
+            this.txtDiscount.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 
-            // maskedTextBox3
+            // txtQuantity
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(149, 121);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(225, 27);
-            this.maskedTextBox3.TabIndex = 7;
+            this.txtQuantity.Location = new System.Drawing.Point(149, 121);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(225, 27);
+            this.txtQuantity.TabIndex = 7;
             // 
-            // comboBox1
+            // cbProduct
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(149, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(225, 28);
-            this.comboBox1.TabIndex = 8;
+            this.cbProduct.FormattingEnabled = true;
+            this.cbProduct.Location = new System.Drawing.Point(149, 71);
+            this.cbProduct.Name = "cbProduct";
+            this.cbProduct.Size = new System.Drawing.Size(225, 28);
+            this.cbProduct.TabIndex = 8;
             // 
-            // textBox1
+            // txtPrice
             // 
-            this.textBox1.Location = new System.Drawing.Point(546, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 27);
-            this.textBox1.TabIndex = 9;
+            this.txtPrice.Location = new System.Drawing.Point(546, 71);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(200, 27);
+            this.txtPrice.TabIndex = 9;
             // 
             // dgvOrderDetails
             // 
@@ -188,11 +189,11 @@
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.dgvOrderDetails);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.cbProduct);
+            this.Controls.Add(this.txtQuantity);
+            this.Controls.Add(this.txtDiscount);
+            this.Controls.Add(this.txtOrderID);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbQuantity);
@@ -214,11 +215,11 @@
         private Label lbQuantity;
         private Label label4;
         private Label lbPrice;
-        private MaskedTextBox maskedTextBox1;
-        private MaskedTextBox maskedTextBox2;
-        private MaskedTextBox maskedTextBox3;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
+        private MaskedTextBox txtOrderID;
+        private MaskedTextBox txtDiscount;
+        private MaskedTextBox txtQuantity;
+        private ComboBox cbProduct;
+        private TextBox txtPrice;
         private DataGridView dgvOrderDetails;
         private Button btnNew;
         private Button btnLoad;
