@@ -29,7 +29,7 @@ namespace SalesWinApp
 
         private void dataGridViewOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            FrmOrderDetail orderDetail = new FrmOrderDetail
+            ViewOrderDetail orderDetail = new ViewOrderDetail
             {
                 Text = "Update order",
                 InsertOrUpdate = true,
@@ -144,7 +144,7 @@ namespace SalesWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmOrderDetail orderDetail = new FrmOrderDetail
+            ViewOrderDetail orderDetail = new ViewOrderDetail
             {
                 Text = "Add order",
                 InsertOrUpdate = false,
@@ -159,7 +159,7 @@ namespace SalesWinApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FrmOrderDetail orderDetail = new FrmOrderDetail
+            ViewOrderDetail orderDetail = new ViewOrderDetail
             {
                 Text = "Update order",
                 InsertOrUpdate = true,

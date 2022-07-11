@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace SalesWinApp
 {
-    public partial class FrmOrderDetail : Form
+    public partial class ViewOrderDetail : Form
     {
         public IOrderRepository OrderRepository { get; set; }
         public bool InsertOrUpdate { get; set; }
         public TblOrder OrderInfo { get; set; }
-        public FrmOrderDetail()
+        public ViewOrderDetail()
         {
             InitializeComponent();
         }
