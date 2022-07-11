@@ -28,7 +28,7 @@ namespace DataAccess
         // Get List Product
         public List<Product> GetProductList()
         {
-            List<Product> listProducts = new List<Product>();
+            List<Product> listProducts ;
             try
             {
                 FStoreContext DbContext = new FStoreContext();
@@ -36,26 +36,26 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                throw new Exception("Get list fail");
+                throw new Exception(ex.Message);
             }
 
             return listProducts;
         }
 
         // Get IdByList
-        public Product? GetProductByID(int proID)
+        public Product GetProductByID(int proID)
         {
-            Product? product = new Product();
+            Product? product;
             try
             {
                 FStoreContext DbContext = new FStoreContext();
                 product = DbContext.Products
                           .Where(a => a.ProductId == proID)
-                          .SingleOrDefault();
+                          .FirstOrDefault();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Get product fail");
+                throw new Exception(ex.Message);
             }
 
             return product;
@@ -78,9 +78,9 @@ namespace DataAccess
                                .Where(a => a.UnitInStock <= stock2 && a.UnitInStock >= stock1)
                                .ToList();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Get list by unit in stock fail");
+                throw new Exception(ex.Message);
             }
             return listProducts;
            
@@ -97,9 +97,9 @@ namespace DataAccess
                           .Where(a => a.ProductName == name)
                           .ToList();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Get list by name fail");
+                throw new Exception(ex.Message);
             }
 
             return listProducts;
@@ -122,9 +122,9 @@ namespace DataAccess
                           .Where(a => a.UnitPrice <= price2 && a.UnitPrice >= price1)
                           .ToList();
             }
-            catch (Exception)
+            catch (Exception ex )
             {
-                throw new Exception("Get list by unit price fail");
+                throw new Exception(ex.Message);
             }
 
             return listProducts;
@@ -139,9 +139,9 @@ namespace DataAccess
                 DbContext.Products.Add(pro);
                 DbContext.SaveChanges();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Create product fail");
+                throw new Exception(ex.Message);
             }
 
         }
@@ -155,9 +155,9 @@ namespace DataAccess
                 DbContext.Entry<Product>(pro).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 DbContext.SaveChanges();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Update product fail");
+                throw new Exception(ex.Message);
             }
 
         }
@@ -172,9 +172,9 @@ namespace DataAccess
                 DbContext.Products.Remove(product);
                 DbContext.SaveChanges();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Remove product fail");
+                throw new Exception(ex.Message);
             }
 
         }

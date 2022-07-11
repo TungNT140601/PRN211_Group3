@@ -120,7 +120,7 @@ go
 INSERT INTO tbl_Order ( MemberId, OrderDate, RequiredDate,ShippedDate,Freight)  VALUES ( 17, convert(datetime,'18-06-12 10:34:09 PM',5),null,null,null);
 go
 
-upd
+
 
 INSERT INTO Product ( CategoryId, ProductName, Weight,UnitPrice,UnitInStock)  VALUES ( 1, N'T-shirt',2,'$ 0.0001',1);
 go
@@ -180,3 +180,4 @@ INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUE
 go
 INSERT INTO OrderDetail(OrderId, ProductId, UnitPrice, Quantity,Discount)  VALUES (111, 10011,2,1,1.1);
 go
+ select * from Member

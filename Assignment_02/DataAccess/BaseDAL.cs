@@ -27,7 +27,7 @@ namespace DataAccess
                 .Build();
             connectionString = config["ConnectionString:FStore"];
             Console.WriteLine(connectionString);
-            return "Server=(local);uid=sa;pwd=tuongdo911;database=FStore;TrustServerCertificate=true";
+            return "Server=(local);uid=sa;pwd=12345;database=FStore;TrustServerCertificate=true";
         }
         //----------------------------------------------------------
         public void CloseConnection() => dataProvider.CloseConnection(connection);
