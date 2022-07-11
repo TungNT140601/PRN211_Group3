@@ -78,6 +78,39 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+        public void UpdateMember(Member member)
+        {
+            try
+            {
+                FStoreContext fstoreContext = new FStoreContext();
+                fstoreContext.Members.Update(member);
+                fstoreContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        public Member CheckEmail(string email)
+        {
+            FStoreContext fStoreContext = new FStoreContext();
+            Member? member = fStoreContext.Members.Where(p => p.Email == email).FirstOrDefault();
+            return member;
+        }
+        public void DeleteMember(int memberID)
+        {
+            try
+            {
+                FStoreContext fStoreContext = new FStoreContext();
+                Member? member = fStoreContext.Members.SingleOrDefault(member => member.MemberId == memberID);
+                fStoreContext.Members.Remove(member);
+                fStoreContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Delete does not exits");
+            }
+        }
 
     }
 }
