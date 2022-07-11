@@ -43,14 +43,14 @@ namespace SalesWinApp
             txtCategogyId.Text = string.Empty;
             txtUnitPrice.Text = string.Empty;
             txtWeight.Text = string.Empty;
-            txtUnitslnStock.Text = string.Empty;
+            txtUnitsInStock.Text = string.Empty;
         }
 
         // Get Products 
         private Product GetProductObject()
         {
 
-            Product product = null;
+            Product? product = null;
             try
             {
                 product = new Product
@@ -58,8 +58,8 @@ namespace SalesWinApp
                     ProductId = int.Parse(txtProductID.Text),
                     ProductName = txtProductName.Text,
                     CategoryId = int.Parse(txtCategogyId.Text),
-                    UnitPrice = Decimal.Parse(txtUnitPrice.Text),
-                    UnitInStock = int.Parse(txtUnitslnStock.Text),
+                    UnitPrice =decimal.Parse(txtUnitPrice.Text),
+                    UnitInStock = int.Parse(txtUnitsInStock.Text),
                     Weight = txtWeight.Text,
                 };
             }
@@ -79,7 +79,7 @@ namespace SalesWinApp
         // Load List Products
         public void LoadProductList()
         {
-            var products = productRepository.GetProducts();
+            var products = productRepository.GetProductList();
             try
             {
                 source = new BindingSource();
@@ -90,14 +90,14 @@ namespace SalesWinApp
                 txtCategogyId.DataBindings.Clear();
                 txtWeight.DataBindings.Clear();
                 txtUnitPrice.DataBindings.Clear();
-                txtUnitslnStock.DataBindings.Clear();
+                txtUnitsInStock.DataBindings.Clear();
 
                 txtProductID.DataBindings.Add("Text", source, "ProductId");
                 txtProductName.DataBindings.Add("Text", source, "ProductName");
                 txtCategogyId.DataBindings.Add("Text", source, "CategoryId");
                 txtWeight.DataBindings.Add("Text", source, "Weight");
                 txtUnitPrice.DataBindings.Add("Text", source, "UnitPrice");
-                txtUnitslnStock.DataBindings.Add("Text", source, "UnitslnStock");
+                txtUnitsInStock.DataBindings.Add("Text", source, "UnitInStock");
 
                 dgvProductList.DataSource = null;
                 dgvProductList.DataSource = source;
@@ -117,15 +117,9 @@ namespace SalesWinApp
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         // Hàm Add Products
         private void btnAdd_Click(object sender, EventArgs e)
@@ -149,6 +143,7 @@ namespace SalesWinApp
             {
                 var product = GetProductObject();
                 productRepository.DeleteProduct(product.ProductId);
+                var members1 = productRepository.GetProductList();
                 LoadProductList();
             }
             catch (Exception ex)
@@ -164,6 +159,7 @@ namespace SalesWinApp
             {
                 Text = "Update products",
                 InsertorUpdate = true,
+                Product = GetProductObject(),
                 ProductRepository = productRepository
             };
             if (frmProductDetails.ShowDialog() == DialogResult.OK)
@@ -173,52 +169,67 @@ namespace SalesWinApp
             }
         }
 
-        // Hàm search Products
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void LoadProductList(List<Product> products)
         {
-            List<Product> products = (List<Product>)productRepository.GetProducts();
-            List<Product>? pro = new List<Product>();
-            foreach (var product in products)
-            {
-                if (product.ProductName.ToLower().Contains(txtSearch.Text.ToLower()))
-                {
-                    pro.Add(product);
-                }
-            }
             try
             {
+
+
                 source = new BindingSource();
-                source.DataSource = pro;
-
+                source.DataSource = products;
                 txtProductID.DataBindings.Clear();
+                txtCategogyId.DataBindings.Clear();
                 txtProductName.DataBindings.Clear();
+                txtWeight.DataBindings.Clear();
                 txtUnitPrice.DataBindings.Clear();
-                txtUnitslnStock.DataBindings.Clear();
+                txtUnitsInStock.DataBindings.Clear();
 
-                txtProductID.DataBindings.Add("Text", source, "ProductId");
+                txtProductID.DataBindings.Add("Text", source, "ProductID");
+                txtCategogyId.DataBindings.Add("Text", source, "CategoryID");
                 txtProductName.DataBindings.Add("Text", source, "ProductName");
+                txtWeight.DataBindings.Add("Text", source, "Weight");
                 txtUnitPrice.DataBindings.Add("Text", source, "UnitPrice");
-                txtUnitslnStock.DataBindings.Add("Text", source, "UnitslnStock");
+                txtUnitsInStock.DataBindings.Add("Text", source, "UnitInStock");
 
                 dgvProductList.DataSource = null;
                 dgvProductList.DataSource = source;
-                if (pro.Count() == 0)
+                if (products.Count() == 0)
                 {
                     ClearText();
                     btnDelete.Enabled = false;
-                    btnAdd.Enabled = true;
                 }
                 else
                 {
                     btnDelete.Enabled = true;
-                    btnAdd.Enabled = true;
                 }
+
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message, "Search Product List");
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        // Hàm search Products
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            frmSearchProduct frmSearchProduct = new frmSearchProduct();
+            if(frmSearchProduct.ShowDialog() == DialogResult.OK)
+            {
+                List<Product> products = new List<Product>();
+                LoadProductList(products);
+            }
+
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadProductList();
+        }
+
+        private void btnCLose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
