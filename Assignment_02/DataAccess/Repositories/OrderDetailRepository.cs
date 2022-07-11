@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BusinessObject.Repository;
 using BussinessObject.Models;
-using DataAccess.BusinessObject.DataAccess;
+using DataAccess;
 
 namespace DataAccess.Repositories
 {

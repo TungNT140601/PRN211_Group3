@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using BussinessObject.Models;
 
 
-namespace BusinessObject.Repository
+namespace DataAccess.Repositories
 {
     public interface IOrderDetailRepository
     {

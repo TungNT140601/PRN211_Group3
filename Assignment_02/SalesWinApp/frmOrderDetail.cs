@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessObject.Models;
-using BusinessObject.Repository;
 using DataAccess.Repositories;
 
 namespace SalesWinApp
@@ -16,18 +15,14 @@ namespace SalesWinApp
     public partial class frmOrderDetail : Form
     {
         public IOrderDetailRepository orderDetailRepository = new OrderDetailRepository();
+        public IOrderRepository orderRepository = new OrderRepository();
         public BindingSource source;
-        //public TblOrder OrderInfo { get; set; }
-        public TblOrder OrderInfo = new TblOrder
+        public TblOrder OrderInfo { get; set; }
+        public TblOrder GetOrderInfo(int id) // nho xoa
         {
-            OrderId = 101,
-            MemberId = 1,
-            OrderDate = DateTime.Parse("2012-06-18 22:34:09.000"),
-            RequiredDate = DateTime.Parse("2012-06-18 22:34:09.000"),
-            ShippedDate = DateTime.Parse("2012-06-18 22:34:09.000"),
-            Freight = null
-
-        };
+            IOrderRepository orderRepository = new OrderRepository();
+            return orderRepository.GetOrderByID(id);
+        }
         public frmOrderDetail()
         {
             InitializeComponent();
@@ -42,7 +37,8 @@ namespace SalesWinApp
         }
         private void LoadOrderDetailList()
         {
-            var orderDetails = orderDetailRepository.GetOrderDetails(OrderInfo.OrderId);
+            //var orderDetails = orderDetailRepository.GetOrderDetails(OrderInfo.OrderId);
+            var orderDetails = orderDetailRepository.GetOrderDetails(GetOrderInfo(101).OrderId);
             try
             {
                 source = new BindingSource();
@@ -107,8 +103,7 @@ namespace SalesWinApp
             {
                 Text = "Add a order",
                 InsertOrUpdate = false,
-                OrderDetailRepository = orderDetailRepository,
-                OrderID = OrderInfo.OrderId.ToString()
+                OrderDetailRepository = orderDetailRepository
             };
             if (frmViewOrderDetail.ShowDialog() == DialogResult.OK)
             {
@@ -120,34 +115,33 @@ namespace SalesWinApp
         private void buttonLoad_Click(object sender, EventArgs e)
         {
             btnDelete.Enabled = true;
-            dgvOrderDetails.CellDoubleClick += DgvOrderDetails_CellDoubleClick;
+            //dgvOrderDetails.CellDoubleClick += DgvOrderDetails_CellDoubleClick;
             LoadOrderDetailList();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e) => Close();
 
-        private OrderDetail GetOrderDetailObject()
+        private BussinessObject.Models.OrderDetail GetOrderDetailObject()
         {
-            OrderDetail? orderDetail = null;
+            BussinessObject.Models.OrderDetail? orderDetail = null;
             try
             {
                 int orderID;
                 dynamic check = int.TryParse(txtOrderID.Text, out orderID);
                 int productID;
                 check = int.TryParse(cbProduct.Text, out productID);
-                string price = txtPrice.Text;
-                string quantity = txtQuantity.Text;
-                string discount = txtDiscount.Text;
-                decimal priceCheck;
-                bool found = decimal.TryParse(price, out priceCheck);
-
-                orderDetail = new OrderDetail
+                decimal price = decimal.Parse(txtPrice.Text);
+                int quantity = int.Parse(txtQuantity.Text);
+                double discount = double.Parse(txtDiscount.Text);
+                IOrderRepository orderRepository = new OrderRepository();
+                IProductRepository productRepository = new ProductRepository();
+                orderDetail = new BussinessObject.Models.OrderDetail
                 {
-                    OrderId = orderID,
-                    ProductId = productID,
-                    UnitPrice = priceCheck,
-                    Quantity = int.Parse(quantity),
-                    Discount = float.Parse(discount)
+                    Order = orderRepository.GetOrderByID(orderID),
+                    Product = productRepository.GetProductByID(productID),
+                    Quantity = quantity,
+                    Discount = discount,
+                    UnitPrice = price
                 };
             }
             catch (Exception ex)

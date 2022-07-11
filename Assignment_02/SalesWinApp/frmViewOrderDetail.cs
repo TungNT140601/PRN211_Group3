@@ -1,5 +1,6 @@
-﻿using BusinessObject.Repository;
-using BussinessObject.Models;
+﻿using BussinessObject.Models;
+using DataAccess;
+using DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,14 +12,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SalesWinApp
 {
     public partial class frmViewOrderDetail : Form
     {
         public IOrderDetailRepository OrderDetailRepository { get; set; }
         public bool InsertOrUpdate { get; set; }
-        public OrderDetail OrderDetailInfo { get; set; }
-        public string OrderID { get; set; }
+        public BussinessObject.Models.OrderDetail OrderDetailInfo { get; set; }
         public frmViewOrderDetail()
         {
             InitializeComponent();
@@ -31,7 +32,8 @@ namespace SalesWinApp
 
             if (InsertOrUpdate == true)
             {
-                txtOrderID.Text = OrderDetailInfo.OrderId.ToString();
+                txtOrderID.Text = OrderDetailInfo.Order.OrderId.ToString();
+                txtOrderID.ReadOnly = true;
                 txtProductID.Text = OrderDetailInfo.ProductId.ToString();
                 txtPrice.Text = OrderDetailInfo.UnitPrice.ToString();
                 txtQuantity.Text = OrderDetailInfo.Quantity.ToString();
@@ -39,11 +41,16 @@ namespace SalesWinApp
             }
             else
             {
-                txtOrderID.Text = OrderID.ToString();
+                txtOrderID.Text = OrderDetailInfo.Order.OrderId.ToString();
+                txtOrderID.ReadOnly = true;
+                txtProductID.Text = "";
+                txtPrice.Text = "";
+                txtQuantity.Text = "";
+                txtDiscount.Text = "";
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e) => Close();
+        private void btnCancel_Click(object sender, EventArgs e) => this.Hide();
         public record OrderDetailError()
         {
             public string? orderIdError { get; set; }
@@ -100,10 +107,12 @@ namespace SalesWinApp
                 }
                 else
                 {
-                    OrderDetail orderDetail = new OrderDetail
+                    IOrderRepository orderRepository = new OrderRepository();
+                    IProductRepository productRepository = new ProductRepository();
+                    BussinessObject.Models.OrderDetail orderDetail = new BussinessObject.Models.OrderDetail
                     {
-                        OrderId = int.Parse(orderId),
-                        ProductId = int.Parse(productId),
+                        Order = orderRepository.GetOrderByID(int.Parse(orderId)),
+                        Product = productRepository.GetProductByID(int.Parse(productId)),
                         Quantity = int.Parse(quantity),
                         Discount = float.Parse(discount),
                         UnitPrice = decimal.Parse(txtPrice.Text)
