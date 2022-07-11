@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessObject.Models;
+using DataAccess;
 using DataAccess.Repositories;
 
 namespace SalesWinApp
@@ -121,27 +122,21 @@ namespace SalesWinApp
 
         private void buttonCancel_Click(object sender, EventArgs e) => Close();
 
-        private BussinessObject.Models.OrderDetail GetOrderDetailObject()
+        private OrderDetail GetOrderDetailObject()
         {
-            BussinessObject.Models.OrderDetail? orderDetail = null;
+            OrderDetail? orderDetail = null;
             try
             {
-                int orderID;
-                dynamic check = int.TryParse(txtOrderID.Text, out orderID);
-                int productID;
-                check = int.TryParse(cbProduct.Text, out productID);
-                decimal price = decimal.Parse(txtPrice.Text);
-                int quantity = int.Parse(txtQuantity.Text);
-                double discount = double.Parse(txtDiscount.Text);
                 IOrderRepository orderRepository = new OrderRepository();
                 IProductRepository productRepository = new ProductRepository();
-                orderDetail = new BussinessObject.Models.OrderDetail
+                ProductDAO productDAO = new ProductDAO();
+                orderDetail = new OrderDetail
                 {
-                    Order = orderRepository.GetOrderByID(orderID),
-                    Product = productRepository.GetProductByID(productID),
-                    Quantity = quantity,
-                    Discount = discount,
-                    UnitPrice = price
+                    Order = orderRepository.GetOrderByID(int.Parse(txtOrderID.Text)),
+                    Product = productRepository.GetProductByID(int.Parse(cbProduct.Text)),
+                    Quantity = int.Parse(txtQuantity.Text),
+                    Discount = double.Parse(txtDiscount.Text),
+                    UnitPrice = decimal.Parse(txtPrice.Text)
                 };
             }
             catch (Exception ex)
@@ -181,6 +176,11 @@ namespace SalesWinApp
         }
 
         private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void dgvOrderDetails_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
