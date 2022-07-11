@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace SalesWinApp
 {
-    public partial class frmOrders : Form
+    public partial class FrmOrder : Form
     {
         IOrderRepository orderRepository = new OrderRepository();
         BindingSource source;
-        public frmOrders()
+        public FrmOrder()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace SalesWinApp
 
         private void dataGridViewOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            OrderDetail orderDetail = new OrderDetail
+            ViewOrderDetail orderDetail = new ViewOrderDetail
             {
                 Text = "Update order",
                 InsertOrUpdate = true,
@@ -144,7 +144,7 @@ namespace SalesWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            OrderDetail orderDetail = new OrderDetail
+            ViewOrderDetail orderDetail = new ViewOrderDetail
             {
                 Text = "Add order",
                 InsertOrUpdate = false,
@@ -159,7 +159,7 @@ namespace SalesWinApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            OrderDetail orderDetail = new OrderDetail
+            ViewOrderDetail orderDetail = new ViewOrderDetail
             {
                 Text = "Update order",
                 InsertOrUpdate = true,
