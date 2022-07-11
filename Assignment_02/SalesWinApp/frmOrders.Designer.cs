@@ -44,6 +44,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,30 +147,33 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(124, 224);
+            this.btnLoad.Location = new System.Drawing.Point(95, 224);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(94, 29);
             this.btnLoad.TabIndex = 12;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(383, 224);
+            this.btnAdd.Location = new System.Drawing.Point(305, 224);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 29);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(668, 224);
+            this.btnDelete.Location = new System.Drawing.Point(719, 224);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 29);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dataGridViewOrder
             // 
@@ -177,14 +182,37 @@
             this.dataGridViewOrder.Name = "dataGridViewOrder";
             this.dataGridViewOrder.RowHeadersWidth = 51;
             this.dataGridViewOrder.RowTemplate.Height = 29;
-            this.dataGridViewOrder.Size = new System.Drawing.Size(900, 444);
+            this.dataGridViewOrder.Size = new System.Drawing.Size(900, 405);
             this.dataGridViewOrder.TabIndex = 15;
+            this.dataGridViewOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrder_CellContentClick);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(409, 687);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(94, 29);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(514, 224);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(94, 29);
+            this.btnUpdate.TabIndex = 17;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 723);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dataGridViewOrder);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
@@ -204,6 +232,7 @@
             this.Name = "frmOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmOrders";
+            this.Load += new System.EventHandler(this.frmOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,5 +257,7 @@
         private Button btnAdd;
         private Button btnDelete;
         private DataGridView dataGridViewOrder;
+        private Button btnClose;
+        private Button btnUpdate;
     }
 }
