@@ -17,7 +17,7 @@ namespace SalesWinApp
     {
         IOrderRepository orderRepository = new OrderRepository();
         BindingSource source;
-        public Member Member { get; set; }
+        public Member MembertTest { get; set; }
         public FrmOrder()
         {
             InitializeComponent();
@@ -57,12 +57,13 @@ namespace SalesWinApp
         private TblOrder GetOrderObject()
         {
             TblOrder tblorder = null;
+            MemberDAO memberDAO = new MemberDAO();
             try
             {
                 tblorder = new TblOrder
                 {
                     OrderId = int.Parse(txtOrderId.Text),
-                    Member = Member,
+                    Member = MembertTest,
                     OrderDate = DateTime.Parse(txtOrderDate.Text),
                     RequiredDate = DateTime.Parse(txtRequiredDate.Text),
                     ShippedDate = DateTime.Parse(txtShippedDate.Text),

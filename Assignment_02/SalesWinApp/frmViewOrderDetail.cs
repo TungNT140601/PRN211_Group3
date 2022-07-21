@@ -19,7 +19,7 @@ namespace SalesWinApp
     {
         public IOrderDetailRepository OrderDetailRepository { get; set; }
         public bool InsertOrUpdate { get; set; }
-        public BussinessObject.Models.OrderDetail OrderDetailInfo { get; set; }
+        public OrderDetail OrderDetailInfo { get; set; }
         public frmViewOrderDetail()
         {
             InitializeComponent();
@@ -29,25 +29,20 @@ namespace SalesWinApp
         {
             txtOrderID.Enabled = false;
             txtProductID.Enabled = !InsertOrUpdate;
-
-            if (InsertOrUpdate == true)
-            {
-                txtOrderID.Text = OrderDetailInfo.Order.OrderId.ToString();
-                txtOrderID.ReadOnly = true;
-                txtProductID.Text = OrderDetailInfo.ProductId.ToString();
-                txtPrice.Text = OrderDetailInfo.UnitPrice.ToString();
-                txtQuantity.Text = OrderDetailInfo.Quantity.ToString();
-                txtDiscount.Text = OrderDetailInfo.Discount.ToString();
-            }
-            else
-            {
-                txtOrderID.Text = OrderDetailInfo.Order.OrderId.ToString();
-                txtOrderID.ReadOnly = true;
-                txtProductID.Text = "";
-                txtPrice.Text = "";
-                txtQuantity.Text = "";
-                txtDiscount.Text = "";
-            }
+            //if (InsertOrUpdate == true)
+            //{
+            //    txtOrderID.Text = OrderDetailInfo.Order.OrderId.ToString();
+            //    txtOrderID.ReadOnly = true;
+            //    txtProductID.Text = OrderDetailInfo.ProductId.ToString();
+            //    txtPrice.Text = OrderDetailInfo.UnitPrice.ToString();
+            //    txtQuantity.Text = OrderDetailInfo.Quantity.ToString();
+            //    txtDiscount.Text = OrderDetailInfo.Discount.ToString();
+            //}
+            //else
+            //{
+            //    txtOrderID.Text = OrderDetailInfo.Order.OrderId.ToString();
+            //    txtOrderID.ReadOnly = true;
+            //}
         }
 
         private void btnCancel_Click(object sender, EventArgs e) => this.Hide();
@@ -109,7 +104,7 @@ namespace SalesWinApp
                 {
                     IOrderRepository orderRepository = new OrderRepository();
                     IProductRepository productRepository = new ProductRepository();
-                    BussinessObject.Models.OrderDetail orderDetail = new BussinessObject.Models.OrderDetail
+                    OrderDetail orderDetail = new OrderDetail
                     {
                         Order = orderRepository.GetOrderByID(int.Parse(orderId)),
                         Product = productRepository.GetProductByID(int.Parse(productId)),
