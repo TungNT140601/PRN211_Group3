@@ -133,11 +133,13 @@
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderDetails.Location = new System.Drawing.Point(1, 210);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
+            this.dgvOrderDetails.ReadOnly = true;
             this.dgvOrderDetails.RowHeadersWidth = 51;
             this.dgvOrderDetails.RowTemplate.Height = 29;
             this.dgvOrderDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrderDetails.Size = new System.Drawing.Size(800, 190);
             this.dgvOrderDetails.TabIndex = 13;
+            this.dgvOrderDetails.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvOrderDetails_CellDoubleClick);
             // 
             // btnNew
             // 

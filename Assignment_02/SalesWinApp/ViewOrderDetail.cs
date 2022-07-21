@@ -18,18 +18,19 @@ namespace SalesWinApp
         public IOrderRepository OrderRepository { get; set; }
         public bool InsertOrUpdate { get; set; }
         public TblOrder OrderInfo { get; set; }
+        public Member MembertTest { get; set; }
         public ViewOrderDetail()
         {
             InitializeComponent();
         }
 
-        private void OrderDetail_Load(object sender, EventArgs e)
+        private void ViewOrderDetail_Load(object sender, EventArgs e)
         {
             txtOrderId.Enabled = !InsertOrUpdate;
             if (InsertOrUpdate == true)
             {
                 txtOrderId.Text = OrderInfo.OrderId.ToString();
-                txtMemberId.Text = OrderInfo.Member.MemberId.ToString();
+                txtMemberId.Text = /*OrderInfo.Member.MemberId.ToString()*/ MembertTest.MemberId.ToString();
                 txtOrderDate.Text = OrderInfo.OrderDate.ToString();
                 txtRequiredDate.Text = OrderInfo.RequiredDate.ToString();
                 txtShippedDate.Text = OrderInfo.ShippedDate.ToString();
@@ -64,6 +65,11 @@ namespace SalesWinApp
             {
                 MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add a new order" : "Update a order");
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
