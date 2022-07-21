@@ -1,0 +1,24 @@
+﻿@using Assignment_03_Library.DataAccess
+@using Assignment_03_WebApp.Helpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @{
+        if (ViewBag.PopUp != null)
+        {
+                <script>
+    alert(ViewBag.PopUp);
+                </script>
+        }
+    }
+    @{
+        Member mem = (Member)Context.Session.GetObjectFromJson<Member>("Member");
+        if (mem != null)
+        {
+                <p>Hello @mem.Email</p>
+        }
+    }
+
+</div>
