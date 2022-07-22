@@ -45,7 +45,7 @@ namespace Assignment_03_WebApp.Controllers
                 {
                     productRepository.Add(product);
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ListProduct));
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace Assignment_03_WebApp.Controllers
                 {
                     productRepository.Update(product);
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ListProduct));
             }
             catch (Exception ex)
             {
@@ -116,7 +116,7 @@ namespace Assignment_03_WebApp.Controllers
             try
             {
                 productRepository.Delete(id);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ListProduct));
             }
             catch (Exception ex)
             {

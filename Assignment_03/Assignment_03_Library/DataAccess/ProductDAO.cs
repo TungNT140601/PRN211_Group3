@@ -48,7 +48,7 @@ namespace Assignment_03_Library.DataAccess
                 Product pro = GetProductById(product.ProductId);
                 if (pro == null)
                 {
-                    context.Products.Add(pro);
+                    context.Products.Add(product);
                     context.SaveChanges();
                 }
                 else
@@ -69,7 +69,7 @@ namespace Assignment_03_Library.DataAccess
                 if (product != null)
                 {
                     using var context = new FStoreContext();
-                    context.Products.Update(product);
+                    context.Products.Update(pro);
                     context.SaveChanges();
                 }
                 else
@@ -90,7 +90,7 @@ namespace Assignment_03_Library.DataAccess
                 if (product != null)
                 {
                     using var context = new FStoreContext();
-                    context.Products.Update(product);
+                    context.Products.Remove(product);
                     context.SaveChanges();
                 }
                 else
