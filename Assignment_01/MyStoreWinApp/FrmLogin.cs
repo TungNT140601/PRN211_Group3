@@ -77,6 +77,11 @@ namespace MyStoreWinApp
             txtEmail.Text = "";
             txtPassword.Text = "";
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
