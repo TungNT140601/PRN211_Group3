@@ -15,24 +15,14 @@ namespace Assignment_03_WebApp
     {
         private readonly IHttpContextAccessor _httpContextAccessor = new HttpContextAccessor();
         IOrderRepository orderRepository = null;
+        public OrdersController() => orderRepository = new OrderRepository();
+        // GET OrdersController
+       
 
-        public OrdersController()
+        public ActionResult Index()
         {
-            this.orderRepository = new OrderRepository();
-        }
-
-        public ActionResult Index(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var order = orderRepository.GetOrderByID(id.Value);
-            if (order == null)
-            {
-                return NotFound();
-            }
-            return View(order);
+           var orderList = orderRepository.GetOrderList();
+            return View(orderList);
         }
 
         // GET: OrdersController/Details/5
@@ -51,6 +41,7 @@ namespace Assignment_03_WebApp
         }
 
         // POST: OrdersController/Create
+        public ActionResult Create() => View();
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Order order)
@@ -63,10 +54,26 @@ namespace Assignment_03_WebApp
                 }
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                ViewBag.Message = ex.Message;
+                return View(order);
             }
+        }
+
+        // GET : OrdersControllers/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var order = orderRepository.GetOrderByID(id.Value);
+            if (order == null)
+            {
+                return NotFound();
+            }
+            return View(order);
         }
         // POST: OrdersController/Edit/5
         [HttpPost]
@@ -92,10 +99,24 @@ namespace Assignment_03_WebApp
             }
         }
 
+        // GET: CarsController/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var order = orderRepository.GetOrderByID(id.Value);
+            if(order == null)
+            {
+                return NotFound();
+            }
+            return View(order);
+        }
         // POST: OrdersController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, Order order)
+        public ActionResult Delete(int id)
         {
             try
             {
@@ -109,4 +130,4 @@ namespace Assignment_03_WebApp
             }
         }
     }
-}
+}// end class
