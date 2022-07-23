@@ -1,5 +1,6 @@
 ﻿using Assignment_03_Library.DataAccess;
 using Assignment_03_Library.Repositories;
+<<<<<<< HEAD
 using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Localization;
@@ -9,10 +10,17 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Assignment_03_WebApp.Models;
+=======
+using Assignment_03_WebApp.Helpers;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+>>>>>>> main
 namespace Assignment_03_WebApp
 {
     public class OrdersController : Controller
     {
+<<<<<<< HEAD
         private readonly IHttpContextAccessor _httpContextAccessor = new HttpContextAccessor();
         IOrderRepository orderRepository = null;
         public OrdersController() => orderRepository = new OrderRepository();
@@ -131,3 +139,8 @@ namespace Assignment_03_WebApp
         }
     }
 }// end class
+=======
+       
+    }
+}
+>>>>>>> main
