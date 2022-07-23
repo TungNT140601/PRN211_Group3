@@ -3,25 +3,21 @@
 @model IEnumerable<Assignment_03_Library.DataAccess.Order>
 // order
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "ReportOrder";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>View</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-@*@*<p>
+<h1>ReportOrder</h1>
+@*<p>
     <a asp-action="ReportOrder">Report Order</a>
 </p>*@
-@*<div class="row">
+<div class="row">
     <div class="col-md-4">
         <form asp-action="ReportOrder">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>           
             <div class="form-group" style="display: flex;">
                 @*<label asp-for="OrderDate1" class="control-label"></label>*@
-                @*<div style="display: flex; margin-left: 250px;">
+                <div style="display: flex; margin-left: 250px;">
                     <p style="margin-right: 10px;">StartDate:</p> 
                     <input type="date" class="form-control" />
                 </div>
@@ -31,14 +27,14 @@
                 </div>
                 <div class="form-group" style="margin-left: 50px;">
                     <input type="submit" value="Search" class="btn btn-primary" />
-                </div>*@
+                </div>
                @* <span asp-validation-for="OrderDate1" class="text-danger"></span>*@
-            @*</div>
+            </div>
 
         </form>
     </div>
-</div>*@
-<table class="table">
+</div>
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -92,3 +88,4 @@
 }
     </tbody>
 </table>
+*@
