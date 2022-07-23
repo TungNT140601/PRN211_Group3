@@ -8,7 +8,7 @@ using BussinessObject.Models;
 
 namespace DataAccess
 {
-    public class OrderDetailDAO
+    public class OrderDetailDAO : FStoreContext
     {
         private OrderDetailDAO() { }
         private static OrderDetailDAO instance = null;

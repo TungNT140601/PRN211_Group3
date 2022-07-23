@@ -57,15 +57,15 @@ namespace SalesWinApp
 
         private void FrmProductDetail_Load(object sender, EventArgs e)
         {
+            txtProductID.ReadOnly = !InsertorUpdate;
             if (InsertorUpdate == true)
             {
                 txtProductID.Text = Product.ProductId.ToString();
-                txtProductName.Text = Product.ProductName;
                 txtCategogyId.Text = Product.CategoryId.ToString();
+                txtProductName.Text = Product.ProductName;
                 txtWeight.Text = Product.Weight;
                 txtUnitPrice.Text = Product.UnitPrice.ToString();
                 txtUnitslnStock.Text = Product.UnitInStock.ToString();
-                txtProductID.ReadOnly = true;
             }
         }
 

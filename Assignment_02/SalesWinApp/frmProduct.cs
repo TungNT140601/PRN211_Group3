@@ -15,6 +15,7 @@ namespace SalesWinApp
     {
         IProductRepository productRepository = new ProductRepository();
         BindingSource source;
+        public bool IsAdmin { get; set; }
         public frmProduct()
         {
             InitializeComponent();
@@ -56,11 +57,11 @@ namespace SalesWinApp
                 product = new Product
                 {
                     ProductId = int.Parse(txtProductID.Text),
-                    ProductName = txtProductName.Text,
                     CategoryId = int.Parse(txtCategogyId.Text),
-                    UnitPrice =decimal.Parse(txtUnitPrice.Text),
-                    UnitInStock = int.Parse(txtUnitsInStock.Text),
+                    ProductName = txtProductName.Text,
                     Weight = txtWeight.Text,
+                    UnitPrice = decimal.Parse(txtUnitPrice.Text),
+                    UnitInStock = int.Parse(txtUnitsInStock.Text),
                 };
             }
             catch (Exception ex)
@@ -117,11 +118,11 @@ namespace SalesWinApp
             }
         }
 
-        
 
-        
 
-        // Hàm Add Products
+
+
+        //Add Products
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ProductDetail frmProductDetails = new ProductDetail
@@ -136,7 +137,7 @@ namespace SalesWinApp
                 source.Position = source.Count - 1;
             }
         }
-        // Hàm Delete Products
+        //Delete Products
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
@@ -152,7 +153,7 @@ namespace SalesWinApp
             }
         }
 
-        // Hàm update Products
+        //update Products
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             ProductDetail frmProductDetails = new ProductDetail
@@ -210,11 +211,11 @@ namespace SalesWinApp
             }
         }
 
-        // Hàm search Products
+        //search Products
         private void btnSearch_Click(object sender, EventArgs e)
         {
             frmSearchProduct frmSearchProduct = new frmSearchProduct();
-            if(frmSearchProduct.ShowDialog() == DialogResult.OK)
+            if (frmSearchProduct.ShowDialog() == DialogResult.OK)
             {
                 List<Product> products = new List<Product>();
                 LoadProductList(products);

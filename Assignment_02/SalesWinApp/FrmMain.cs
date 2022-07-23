@@ -57,5 +57,53 @@ namespace SalesWinApp
                 frmMember.Show();
             }
         }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FStoreContext fStoreContext = new FStoreContext();
+            if (member.Email.Equals(fStoreContext.GetAdminEmail()))
+            {
+                frmProduct frmProduct = new frmProduct
+                {
+                    IsAdmin = true
+                };
+                frmProduct.MdiParent = this;
+                frmProduct.Show();
+            }
+            else
+            {
+                frmProduct frmProduct = new frmProduct
+                {
+                    IsAdmin = true
+                };
+                frmProduct.MdiParent = this;
+                frmProduct.Show();
+            }
+        }
+
+        private void ordersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FStoreContext fStoreContext = new FStoreContext();
+            if (member.Email.Equals(fStoreContext.GetAdminEmail()))
+            {
+                FrmOrder frmOrder = new FrmOrder
+                {
+                    Member = member,
+                    IsAdmin = true
+                };
+                frmOrder.MdiParent = this;
+                frmOrder.Show();
+            }
+            else
+            {
+                FrmOrder frmOrder = new FrmOrder
+                {
+                    Member = member,
+                    IsAdmin = true
+                };
+                frmOrder.MdiParent = this;
+                frmOrder.Show();
+            }
+        }
     }
 }

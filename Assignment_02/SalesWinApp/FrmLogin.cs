@@ -78,9 +78,9 @@ namespace SalesWinApp
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            FStoreContext context = new FStoreContext();
-            txtEmail.Text = context.GetAdminEmail();
-            txtPassword.Text = context.GetAdminPassword();
+            //FStoreContext context = new FStoreContext();
+            //txtEmail.Text = context.GetAdminEmail();
+            //txtPassword.Text = context.GetAdminPassword();
         }
     }
 }

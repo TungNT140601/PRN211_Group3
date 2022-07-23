@@ -19,11 +19,6 @@ namespace SalesWinApp
         public IOrderRepository orderRepository = new OrderRepository();
         public BindingSource source;
         public TblOrder OrderInfo { get; set; }
-        public TblOrder GetOrderInfo(int id) // nho xoa
-        {
-            IOrderRepository orderRepository = new OrderRepository();
-            return orderRepository.GetOrderByID(id);
-        }
         public frmOrderDetail()
         {
             InitializeComponent();
@@ -38,8 +33,7 @@ namespace SalesWinApp
         }
         private void LoadOrderDetailList()
         {
-            //var orderDetails = orderDetailRepository.GetOrderDetails(OrderInfo.OrderId);
-            var orderDetails = orderDetailRepository.GetOrderDetails(GetOrderInfo(101).OrderId);
+            var orderDetails = orderDetailRepository.GetOrderDetails(OrderInfo.OrderId);
             try
             {
                 source = new BindingSource();
@@ -129,7 +123,6 @@ namespace SalesWinApp
             {
                 IOrderRepository orderRepository = new OrderRepository();
                 IProductRepository productRepository = new ProductRepository();
-                ProductDAO productDAO = new ProductDAO();
                 orderDetail = new OrderDetail
                 {
                     Order = orderRepository.GetOrderByID(int.Parse(txtOrderID.Text)),
